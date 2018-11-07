@@ -46,5 +46,34 @@
  </div>
 <div class="clear"></div>
 
+<div class="commentaires">
+  <h2>Commentaires de nos utilisateurs satisfaits</h2>
+  <div class="photos">
+
+    <div class="photo">
+      <img src="http://www.jeromeoliveras.com/v3/wp-content/uploads/image-03-full-c.jpg" alt="camille">
+      <p>J'ai adoré ce service</p>
+      <p>Michel</p>
+    </div>
+    <div class="photo">
+      <img src="http://www.jeromeoliveras.com/v3/wp-content/uploads/image-03-full-c.jpg" alt="jonathan">
+      <p>J'ai adoré ce service</p>
+      <p>Paul</p>
+    </div>
+    <div class="photo">
+      <img src="http://www.jeromeoliveras.com/v3/wp-content/uploads/image-03-full-c.jpg" alt="ahmed">
+      <p>J'ai adoré ce service</p>
+      <p>Fatima</p>
+    </div>
+    <div class="photo">
+      <img src="http://www.jeromeoliveras.com/v3/wp-content/uploads/image-03-full-c.jpg" alt="emilie">
+      <p>J'ai adoré ce service</p>
+      <p>Aurélie</p>
+    </div>
+    <div class="clear"></div>
+  </div>
+
+</div>
+
 
 <?php include('inc/footer.php');?>
