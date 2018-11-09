@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `bdd_vaccin`
 --
 
-CREATE TABLE `bdd_vaccin` (
+CREATE TABLE `table_vaccin_v5` (
   `id` int(11) NOT NULL,
   `nom` varchar(100) NOT NULL,
   `obligatoire` tinyint(1) NOT NULL,
@@ -71,7 +71,7 @@ INSERT INTO `bdd_vaccin` (`id`, `nom`, `obligatoire`, `rappel`, `created_at`, `u
 -- Structure de la table `table_relation`
 --
 
-CREATE TABLE `table_relation` (
+CREATE TABLE `table_relation_v5` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `vaccin_id` int(11) NOT NULL,
@@ -85,7 +85,7 @@ CREATE TABLE `table_relation` (
 -- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `table_users_v5` (
   `id` int(11) NOT NULL,
   `mail` varchar(255) NOT NULL,
   `mdp` varchar(255) NOT NULL,
