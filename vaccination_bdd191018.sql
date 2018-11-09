@@ -92,7 +92,7 @@ CREATE TABLE `users` (
   `token` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
-  `status` enum('connecte','deconnecté') NOT NULL,
+  `status` enum('actif','inactif') NOT NULL,
   `nom` varchar(100) NOT NULL,
   `prenom` varchar(100) NOT NULL,
   `sexe` enum('femme','homme') NOT NULL,
