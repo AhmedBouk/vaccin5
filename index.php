@@ -45,6 +45,6 @@
 
  </div>
 <div class="clear"></div>
-
+<a href="dashboard_vaccin/index.php">back office</a>
 
 <?php include('inc/footer.php');?>
