@@ -22,11 +22,17 @@
               <table class="table table-hover">
                 <tr>
                   <th>Id</th> <!-- titre -->
-                  <th>Nom</th>
-                  <th>Obligatoire</th>
-                  <th>Rappel du vaccin</th>
+                  <th>Email</th>
+                  <th>Mot-de-passe</th>
+                  <th>Token</th>
                   <th>Created_at</th>
                   <th>Uptaded_at</th>
+                  <th>Status</th>
+                  <th>Nom</th>
+                  <th>Prénom</th>
+                  <th>Date de naissance</th>
+                  <th>Role</th>
+
                 </tr>
                 <tr>
                   <td>183</td>
@@ -34,7 +40,12 @@
                   <td>John Doe</td>
                   <td>11-7-2014</td>
                   <td><span class="label label-success">Actif</span></td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  <td> ??????</td>
+                  <td> ??????</td>
+                  <td> ??????</td>
+                  <td> ??????</td>
+                  <td> ??????</td>
+                  <td> ??????</td>
                 </tr>
 
                 <tr>

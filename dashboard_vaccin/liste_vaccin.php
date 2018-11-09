@@ -31,18 +31,18 @@
                 <tr>
                   <td>183</td>
                   <td>John Doe</td>
-                  <td>John Doe</td>
+                  <td><span class="label label-success">Non obligatoire</span></td>
                   <td>11-7-2014</td>
-                  <td><span class="label label-success">Actif</span></td>
+                  <td>John Doe</td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
 
                 <tr>
                   <td>175</td>
                   <td>Mike Doe</td>
+                  <td><span class="label label-danger">Obligatoire</span></td>
                   <td>Mike Doe</td>
                   <td>11-7-2014</td>
-                  <td><span class="label label-danger">Inactif</span></td>
                   <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
                 </tr>
               </table>
