@@ -28,13 +28,14 @@ SET time_zone = "+00:00";
 -- Structure de la table `bdd_vaccin`
 --
 
-CREATE TABLE `bdd_vaccin` (
+CREATE TABLE `table_relation` (
   `id` int(11) NOT NULL,
-  `nom` varchar(100) NOT NULL,
-  `obligatoire` tinyint(1) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `vaccin_id` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
-  `rappel` date NOT NULL
+  `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 --
 -- Déchargement des données de la table `bdd_vaccin`
