@@ -1,3 +1,4 @@
+<?php  ?>
 <!-- Left side column. contains the sidebar -->
 <aside class="main-sidebar">
   <!-- sidebar: style can be found in sidebar.less -->
@@ -15,7 +16,7 @@
 
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu" data-widget="tree">
-      <li class="header">MAIN NAVIGATION</li>
+      <li class="header">MENU</li>
       <li class="treeview">
         <a href="#">
           <i class="fa fa-edit"></i> <span>Utilisateurs</span>
@@ -37,7 +38,7 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="tables.php"><i class="fa fa-circle-o"></i>Liste</a></li>
+          <li><a href="liste_vaccin.php"><i class="fa fa-circle-o"></i>Liste</a></li>
           <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i>Ajout</a></li>
         <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i>Modification</a></li>
         </ul>
