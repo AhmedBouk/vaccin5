@@ -39,8 +39,8 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="liste_vaccin.php"><i class="fa fa-circle-o"></i>Liste</a></li>
-          <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i>Ajout</a></li>
-        <li><a href="../tables/data.html"><i class="fa fa-circle-o"></i>Modification</a></li>
+          <li><a href="ajout_vaccins.php"><i class="fa fa-circle-o"></i>Ajout</a></li>
+        <li><a href="modification_vaccins.php"><i class="fa fa-circle-o"></i>Modification</a></li>
         </ul>
       </li>
     </ul>
