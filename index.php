@@ -46,6 +46,9 @@
  </div>
 <div class="clear"></div>
 
+<a href="dashboard_vaccin/index.php">back office</a>
+
+
 <div class="commentaires">
   <h2>Commentaires de nos utilisateurs satisfaits</h2>
   <div class="photos">
@@ -74,6 +77,7 @@
   </div>
 
 </div>
+
 
 
 <?php include('inc/footer.php');?>
