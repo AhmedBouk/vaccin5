@@ -18,7 +18,7 @@
   <body>
       <header>
         <div class="wrapHF">
-          <img src="assets/image/weblitzer.svg" alt="logo">
+          <img src="assets/image/logo.png" alt="logo">
           <div class="titre">
             <h2>Mon Carnet de Vaccination</h2>
           </div>

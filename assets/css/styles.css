@@ -32,8 +32,9 @@ header{
 
 header img{
   float: left;
-  width: 20%;
+  width: 8%;
   margin-left: 2%;
+  /* height: 100px; */
 }
 
 header .titre{
@@ -172,6 +173,46 @@ div #slider figure {
   display: none;
 }
 
+/* COMMENTAIRES */
+
+.commentaire{
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.commentaires .photos{
+background-color: #4CAF50;
+display: flex;
+}
+
+.commentaires h2{
+  text-align: center;
+  font-size: 2em;
+}
+.commentaires .photos{
+  width: 100%;
+  padding: 1%;
+}
+.commentaires .photo{
+  margin: auto;
+}
+
+.commentaires .photo img{
+  height: 100px;
+  /* width: 100%; */
+  padding: 0 10px;
+  float: left;
+}
+.commentaires .photo  p{
+  text-align: center;
+  margin-left: 30px;
+  margin-top: 5%;
+}
+
+.commentaires .photo  p:last-child{
+  margin-top: 10%;
+}
+
+
 /* FOOTER */
 
 footer{
@@ -179,7 +220,7 @@ footer{
 
 }
 
-.photos{
+footer .photos{
 background-color: lime;
 display: flex;
 }
