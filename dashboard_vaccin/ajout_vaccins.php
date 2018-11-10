@@ -82,9 +82,9 @@ include('inc/sidebar.php');
             </div>
 
             <div class="form-group">
-         			<label for="injections">Fréquence d'injection : </label>
+         			<label for="frequences_injections">Fréquence d'injection : </label>
    			            <span class="error"><?php if(!empty($error['frequences_injections'])) { echo $error['frequences_injections']; } ?></span>
-   			                <textarea name="injections" class="form-control" rows="5" id="content"><?php if(!empty($_POST['frequences_injections'])) { echo $_POST['frequences_injections']; } ?></textarea>
+   			                <textarea name="frequences_injections" class="form-control" rows="5" id="content"><?php if(!empty($_POST['frequences_injections'])) { echo $_POST['frequences_injections']; } ?></textarea>
    		                 </div>
 
             <div class="form-group">
