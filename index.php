@@ -1,7 +1,8 @@
 <?php
+include('inc/pdo.php');
   include('inc/fonctions.php');
-
   $title = 'ACCUEIL';
+
   include('inc/header.php');
 
  ?>

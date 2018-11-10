@@ -1,9 +1,9 @@
 <?php
 include('inc/fonctions.php');
 include('inc/pdo.php');
-
-
 $title = 'nextpage';
+
+
 include('inc/header.php');
 
 ?>
