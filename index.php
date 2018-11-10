@@ -3,10 +3,11 @@
   include('inc/fonctions.php');
   $title = 'ACCUEIL';
   $error_reg = array();
-  $error_login = array();
+  $error_log = array();
+  $inscrit = '';
   include('inc/header.php');
 // Inscription:
-debug($error_reg);
+
 // Lors de la soumission du formulaire
 if (!empty($_POST['submit_register'])) {
 
@@ -24,7 +25,7 @@ if (!empty($_POST['submit_register'])) {
       $error_reg['nom'] = 'Ce champs est trop court.(minimum 3 caractères)';
     } elseif(strlen($nom) > 20) {
         $error_reg['nom'] = 'Ce champs est trop long.(maximum 20 caractères)';
-      }
+      } $inscrit = 1;
   } else {
       $error_reg['nom'] = 'Veuillez renseigner ce champs';
     }
@@ -33,7 +34,7 @@ if (!empty($_POST['submit_register'])) {
       $error_reg['prenom'] = 'Ce champs est trop court.(minimum 3 caractères)';
     } elseif(strlen($prenom) > 20) {
         $error_reg['prenom'] = 'Ce champs est trop long.(maximum 20 caractères)';
-      }
+      } $inscrit .= 2;
       } else {
           $error_reg['prenom'] = 'Veuillez renseigner ce champs';
         }
@@ -50,7 +51,7 @@ if (!empty($_POST['submit_register'])) {
 
       if (!empty($testmail)) {
           $error_reg['mail'] =  'Cet email est déjà pris';
-      }
+      } $inscrit .= 3;
     }
   } else {
     $error_reg['mail'] = 'Veuillez renseigner ce champs';
@@ -60,7 +61,7 @@ if (!empty($_POST['submit_register'])) {
   if(!empty($pwd1) && !empty($pwd2)) {
     if($pwd1 != $pwd2) {
       $error_reg['pwd1'] = 'Les mots de passe sont différents';
-    }
+    }$inscrit .= 4;
 
    }else  {
        $error_reg['pwd1'] = 'Veuillez renseigner ce champs';
@@ -72,7 +73,7 @@ if (!empty($_POST['submit_register'])) {
     $hash     = password_hash($pwd1 , PASSWORD_DEFAULT);
     $token    = generateRandomString(120);
 
-    $sql = "INSERT INTO `users`(`nom`, `prenom`,`mail`, `token`, `mdp`, `role`, `created_at`) VALUES (:nom , :prenom , :mail , :token, :pwd1 ,'user' , now()) ";
+    $sql = "INSERT INTO `users`(`nom`, `prenom`,`mail`, `token`, `mdp`, `role`, `created_at`) VALUES (:nom , :prenom , :mail , :token, :pwd1 ,'utilisateur' , now()) ";
     $query= $pdo -> prepare($sql) ;
     $query-> bindvalue(':nom' , $nom , PDO::PARAM_STR );
     $query-> bindvalue(':prenom' , $prenom , PDO::PARAM_STR );
@@ -81,7 +82,46 @@ if (!empty($_POST['submit_register'])) {
     $query-> bindvalue(':token' , $token , PDO::PARAM_STR );
     $query-> execute();
   }
- }?>
+ }
+
+// Connexion
+// Lors de la soumission du formulaire
+if(!empty($_POST['submit_login'])){
+
+// fonction declarant et nettoyant (expace au debut et à la fin & supprimant les caractère pouvant créer un script) une variable
+$mail_login  = clean('mail');
+$pwd_loggin  = clean('pwd');
+
+// test si le mail existe
+$sql="SELECT * FROM users WHERE mail =:mail "; //requete à modifier
+$query= $pdo -> prepare($sql) ;//preparer la requete
+$query-> bindvalue(':mail' , $mail_login , PDO::PARAM_STR );
+$query-> execute(); //execute la requete
+$user = $query -> fetch(); // $a variable retourner / fetchall() pour les requetes avec multiple array sinon fetch()
+
+// test si le mot de passe existe
+if(!empty($user)) {
+  if (!password_verify ($pwd_loggin , $user['mdp'] )) {
+    $error_log['mdp'] = 'Mauvais mot de passe';
+  }
+  }else{
+    $error_mdp['mdp'] = 'Veuillez vous inscrire';
+}
+
+if (count($error_log) == 0) {
+  $_SESSION['user'] = array(
+    'id'      =>$user['id'],
+    'nom'     =>$user['nom'],
+    'prenom'  =>$user['prenom'],
+    'mail'    =>$user['mail'],
+    'role'    =>$user['role'],
+    'ip'      =>$_SERVER["REMOTE_ADDR"]
+
+  );
+}
+
+}
+ ?>
  <div class="contenu">
 
    <div class="sliders">
@@ -117,16 +157,20 @@ if (!empty($_POST['submit_register'])) {
            <span><?php spanError($error_reg,'pwd1') ?></span>
 
            <input class="button" type="submit" name="submit_register" value="Créer">
+           <span><?php if ($inscrit =1234) {
+             echo $inscrit;
+           }
+            ?></span>
 
            <p class="message">Déjà inscrit ? <a href="#">Connectez-vous</a></p>
-           <p class="pwdoublie"> <a href="#">Mot de passe oublié</a></p>
+
          </form>
 
-         <form class="login-form">
+         <form class="login-form" action="" method="post">
            <input type="text" name="mail"  placeholder="Mail"/>
            <span><?php spanError($error_log,'mail') ?></span>
-           <input type="password" name="pwd1" placeholder="Mot de passe"/>
-           <span><?php spanError($error_log,'pwd1') ?></span>
+           <input type="password" name="pwd" placeholder="Mot de passe"/>
+           <span><?php spanError($error_log,'pwd') ?></span>
            <input class="button" type="submit" name="submit_login" value="Connexion">
            <p class="message">Pas de compte ? <a href="#">Créer un compte</a></p>
            <p class="pwdoublie"> <a href="#">Mot de passe oublié</a></p>
@@ -138,7 +182,7 @@ if (!empty($_POST['submit_register'])) {
  </div>
 <div class="clear"></div>
 
-<a href="dashboard_vaccin/index.php">back office</a>
+
 
 
 <div class="commentaires">
@@ -172,4 +216,6 @@ if (!empty($_POST['submit_register'])) {
 
 
 
-<?php include('inc/footer.php');?>
+<?php
+debug($error_reg);
+include('inc/footer.php');?>

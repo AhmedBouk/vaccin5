@@ -52,7 +52,7 @@ function validation2Password($error,$password1,$password2,$key){
     }
    }else  {
        $error[$key] = 'Veuillez renseigner ce champs';
-     } 
+     }
   }
 
 function generateRandomString($length = 10) {
@@ -67,8 +67,9 @@ function generateRandomString($length = 10) {
 function is_logged(){
   if (
     !empty($_SESSION['user']['id'])
-  && !empty($_SESSION['user']['pseudo'])
-  && !empty($_SESSION['user']['email'])
+  && !empty($_SESSION['user']['nom'])
+  && !empty($_SESSION['user']['prenom'])
+  && !empty($_SESSION['user']['mail'])
   && !empty($_SESSION['user']['role'])
   && $_SESSION['user']['ip'] = $_SERVER['REMOTE_ADDR']){
     return true;

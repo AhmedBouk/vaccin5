@@ -23,8 +23,21 @@
             <h2>Mon Carnet de Vaccination</h2>
           </div>
           <div class="bienvenue">
-            <p>Bienvenue Ahmed</p>
-            <a href="#">Deconnexion</a>
+          <p>
+            <?php
+              if (is_logged()) {
+
+                echo '<p>Bienvenue : '. $_SESSION['user']['prenom'] .' </p> <br/>
+                <p> <a href="deconnexion.php"> Deconnexion </a> </p>';
+                // header('refresh: 1; URL=index.php');
+              }
+              if (is_admin()) {
+                echo '<a href="dashboard_vaccin/index.php">back office</a>';
+              }
+            ?>
+          </p>
+          <a href="contact.php">Contact</a>
+
 
         </div>
       </div>
