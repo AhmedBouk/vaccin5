@@ -61,8 +61,7 @@ if (!empty($_POST['submit_register'])) {
     if($pwd1 != $pwd2) {
       $error_reg['pwd1'] = 'Les mots de passe sont différents';
     }
-
-
+}
 if (validationEmail($error_reg,$mail,'mail')) {
   $sql="SELECT mail FROM v5_users WHERE mail = :mail";
   $query= $pdo -> prepare($sql) ;
@@ -72,8 +71,6 @@ if (validationEmail($error_reg,$mail,'mail')) {
 
    }else  {
        $error_reg['pwd1'] = 'Veuillez renseigner ce champs';
-
-
   }
 
 
