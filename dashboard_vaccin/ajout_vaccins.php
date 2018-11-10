@@ -10,9 +10,9 @@ include('inc/header.php');
   if (!empty($_POST['submitted'])){
 
     //Protection contre les failles xss
-    $nom = trim(strip_tags($_POST['nom']));
+    $nom = clean('nom');
     //error index indefini
-    $injections = trim(strip_tags($_POST['frequences_injections']));
+    $injections = clean('frequences_injections');
 
     //Recupere la valeur de radio et verification
     if (isset($_POST['optionsRadios'])){

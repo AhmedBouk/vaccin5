@@ -34,7 +34,7 @@ if (validationText($error_reg,$prenom,3,20,'prenom')) {
 }
 
 if (validationEmail($error_reg,$mail,'mail')) {
-  $sql="SELECT mail FROM users WHERE mail = :mail";
+  $sql="SELECT mail FROM v5_users WHERE mail = :mail";
   $query= $pdo -> prepare($sql) ;
   $query-> bindValue(':mail' , $mail , PDO::PARAM_STR );
   $query-> execute();
@@ -54,7 +54,7 @@ if (validationEmail($error_reg,$mail,'mail')) {
     $hash     = password_hash($pwd1 , PASSWORD_DEFAULT);
     $token    = generateRandomString(120);
 
-    $sql = "INSERT INTO `users`(`nom`, `prenom`,`mail`, `token`, `mdp`, `role`, `created_at`) VALUES (:nom , :prenom , :mail , :token, :pwd1 ,'user' , now()) ";
+    $sql = "INSERT INTO `v5_users`(`nom`, `prenom`,`mail`, `token`, `mdp`, `role`, `created_at`) VALUES (:nom , :prenom , :mail , :token, :pwd1 ,'user' , now()) ";
     $query= $pdo -> prepare($sql) ;
     $query-> bindvalue(':nom' , $nom , PDO::PARAM_STR );
     $query-> bindvalue(':prenom' , $prenom , PDO::PARAM_STR );
