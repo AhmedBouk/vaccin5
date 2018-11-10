@@ -3,9 +3,10 @@
   include('inc/fonctions.php');
   $title = 'ACCUEIL';
   $error_reg = array();
+  $error_login = array();
   include('inc/header.php');
 // Inscription:
-
+debug($error_reg);
 // Lors de la soumission du formulaire
 if (!empty($_POST['submit_register'])) {
 
@@ -18,20 +19,49 @@ if (!empty($_POST['submit_register'])) {
   $pwd2     = clean('pwd2');
 
 
-if (validationText($error_reg,$nom,3,20,'nom')) {
-  if(!empty($_POST['nom'])) {
-
+  if(!empty($nom)) {
+    if(strlen($nom) < 3 ) {
+      $error_reg['nom'] = 'Ce champs est trop court.(minimum 3 caractères)';
+    } elseif(strlen($nom) > 20) {
+        $error_reg['nom'] = 'Ce champs est trop long.(maximum 20 caractères)';
+      }
   } else {
-    $error_reg['nom'] = 'Veuillez renseigner ce champs';
+      $error_reg['nom'] = 'Veuillez renseigner ce champs';
     }
-}
-if (validationText($error_reg,$prenom,3,20,'prenom')) {
-  if(!empty($_POST['prenom'])) {
+  if(!empty($prenom)) {
+    if(strlen($prenom) < 3 ) {
+      $error_reg['prenom'] = 'Ce champs est trop court.(minimum 3 caractères)';
+    } elseif(strlen($prenom) > 20) {
+        $error_reg['prenom'] = 'Ce champs est trop long.(maximum 20 caractères)';
+      }
+      } else {
+          $error_reg['prenom'] = 'Veuillez renseigner ce champs';
+        }
 
-  } else {
-    $error_reg['prenom'] = 'Veuillez renseigner ce champs';
+  if(!empty($mail)) {
+    if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+      $error_reg['mail'] = 'Ceci n\'est pas une adresse mail.';
+    } else {
+      $sql="SELECT mail FROM users WHERE mail = :mail";
+      $query= $pdo -> prepare($sql) ;
+      $query-> bindValue(':mail' , $mail , PDO::PARAM_STR );
+      $query-> execute();
+      $testmail = $query -> fetch();
+
+      if (!empty($testmail)) {
+          $error_reg['mail'] =  'Cet email est déjà pris';
+      }
     }
-}
+  } else {
+    $error_reg['mail'] = 'Veuillez renseigner ce champs';
+  }
+
+  // test le mot de passe si il peut être inclut dans la base de donnée
+  if(!empty($pwd1) && !empty($pwd2)) {
+    if($pwd1 != $pwd2) {
+      $error_reg['pwd1'] = 'Les mots de passe sont différents';
+    }
+
 
 if (validationEmail($error_reg,$mail,'mail')) {
   $sql="SELECT mail FROM v5_users WHERE mail = :mail";
@@ -40,15 +70,12 @@ if (validationEmail($error_reg,$mail,'mail')) {
   $query-> execute();
   $testmail = $query -> fetch();
 
-  if (!empty($testmail)) {
-      $error_reg['mail'] =  'Cet email est déjà pris';
-  }
-  }
-  else {
-  $error_reg['mail'] = 'Veuillez renseigner ce champs';
+   }else  {
+       $error_reg['pwd1'] = 'Veuillez renseigner ce champs';
+
+
   }
 
-  validation2Password($error_reg,$pwd1,$pwd2,'pwd1');
 
   if (count($error_reg)==0) {
     $hash     = password_hash($pwd1 , PASSWORD_DEFAULT);
@@ -105,9 +132,11 @@ if (validationEmail($error_reg,$mail,'mail')) {
          </form>
 
          <form class="login-form">
-           <input type="text" placeholder="Nom"/>
-           <input type="password" placeholder="Mot de passe"/>
-           <input class="button" type="submit" name="submit_register" value="Connexion">
+           <input type="text" name="mail"  placeholder="Mail"/>
+           <span><?php spanError($error_log,'mail') ?></span>
+           <input type="password" name="pwd1" placeholder="Mot de passe"/>
+           <span><?php spanError($error_log,'pwd1') ?></span>
+           <input class="button" type="submit" name="submit_login" value="Connexion">
            <p class="message">Pas de compte ? <a href="#">Créer un compte</a></p>
            <p class="pwdoublie"> <a href="#">Mot de passe oublié</a></p>
          </form>
