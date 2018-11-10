@@ -11,6 +11,7 @@ include('inc/header.php');
 
     //Protection contre les failles xss
     $nom = trim(strip_tags($_POST['nom']));
+    //error index indefini
     $injections = trim(strip_tags($_POST['frequences_injections']));
 
     //Recupere la valeur de radio et verification
@@ -42,13 +43,13 @@ include('inc/header.php');
   if (count($error) == 0){
 
     $sql = "INSERT INTO v5_vaccin (nom, obligatoire,frequences_injections , created_at) VALUES
-    (:nom, :obligatoire,:injections,now())";
+    (:nom, :obligatoire, :injections, now())";
     // preparation de la requête
     $stmt = $pdo->prepare($sql);
     // Protection injections SQL
     $stmt->bindValue(':nom',$nom, PDO::PARAM_STR);
     $stmt->bindValue(':obligatoire',$obligatoire, PDO::PARAM_INT);
-    $stmt->bindValue(':frequencesInjections',$injections, PDO::PARAM_STR);
+    $stmt->bindValue(':injections',$injections, PDO::PARAM_STR);
     // execution de la requête preparé
     $stmt->execute();
 
@@ -72,9 +73,10 @@ include('inc/sidebar.php');
     <section class="content">
       <div class="box box-primary">
         <!-- /.box-header -->
-        <!-- form start -->
+        <!-- debut du formulaire -->
         <form action="" method="POST" role="form">
           <div class="box-body">
+            <!-- input du nom -->
             <div class="form-group">
               <label for="nom">Nom du vaccin</label>
               <input type="text" class="form-control" id="inputError" name="nom" placeholder="Nom du vaccin..." value="<?php if(!empty($_POST['nom'])) { echo $_POST['nom']; } ?>">
@@ -111,18 +113,6 @@ include('inc/sidebar.php');
           </div>
         </form>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
