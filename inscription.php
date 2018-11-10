@@ -93,19 +93,19 @@ include('inc/header.php');
 
 <form action="" method="post">
   <label for="pseudo">Pseudo :</label>
-  <input type="text" name="pseudo" value="<?php value('pseudo') ?>">
-  <span><?php spanError($error,'pseudo') ?></span>
+  <input type="text" name="nom" placeholder="Nom" value="<?php value('nom') ?>">
+  <span><?php spanError($error,'nom') ?></span>
 
   <label for="email">Email :</label>
-  <input type="text" name="email" value="<?php value('email') ?>">
+  <input type="text" name="email" placeholder="Mail" value="<?php value('email') ?>">
   <span><?php spanError($error,'email') ?></span>
 
   <label for="pwd">Mot de passe :</label>
-  <input type="password" name="pwd" value="<?php value('pwd') ?>">
+  <input type="password" name="pwd" placeholder="Mot de passe" value="<?php value('pwd') ?>">
   <span><?php spanError($error,'pwd') ?></span>
 
   <label for="pwd2">Confirmation du mot de passe :</label>
-  <input type="password" name="pwd2" value="">
+  <input type="password" name="pwd2" placeholder="Confirmation du mot de passe" value="">
 
   <input type="submit" name="submitted" value="Envoyer">
 
