@@ -1,50 +1,60 @@
 <?php
   include('inc/header.php');
+
+
+  $sql = "SELECT * FROM v5_vaccin";
+
+  $query= $pdo -> prepare($sql) ;
+  $query-> execute();
+  $tableauVaccins = $query -> fetchall();
+
+
+
   include('inc/sidebar.php');
 ?>
 <section class="content-header">
   <h1>
-    Tables
+    Liste des vaccins
     <small></small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-         <li class="active">Tables</li>
+         <li class="active">Liste des vaccins</li>
   </ol>
 </section>
 
 <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Responsive Hover Table</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
+              <table id="example2_paginate" class="table table-hover">
                 <tr>
                   <th>Id</th> <!-- titre -->
                   <th>Nom</th>
                   <th>Obligatoire</th>
-                  <th>Rappel du vaccin</th>
+                  <th>Fréquences d'injection</th>
                   <th>Created_at</th>
                   <th>Uptaded_at</th>
                 </tr>
-                <tr>
-                  <td>183</td>
-                  <td>John Doe</td>
-                  <td><span class="label label-success">Non obligatoire</span></td>
-                  <td>11-7-2014</td>
-                  <td>John Doe</td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
-
-                <tr>
-                  <td>175</td>
-                  <td>Mike Doe</td>
-                  <td><span class="label label-danger">Obligatoire</span></td>
-                  <td>Mike Doe</td>
-                  <td>11-7-2014</td>
-                  <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-                </tr>
+                <?php foreach ($tableauVaccins as $tableauVaccin) {
+                    echo '<tr><td>'.$tableauVaccin['id']
+                    .'</td><td>'
+                    .$tableauVaccin['nom']
+                    .'</td>';
+                    if ($tableauVaccin['obligatoire'] == 1){
+                       echo '<td><span class="label label-success"</span>Obligatoire</td>';
+                    } else {
+                      echo '<td><span class="label label-danger">Non obligatoire</span></td>';
+                    }
+                    echo '</td><td>'
+                    .$tableauVaccin['frequences_injections']
+                    .'</td><td>'
+                    .$tableauVaccin['created_at']
+                    .'</td><td>'
+                    .$tableauVaccin['updated_at']
+                    .'</td></tr>' ;
+                } ?>
               </table>
             </div>
             <!-- /.box-body -->
@@ -52,4 +62,5 @@
 
           <?php
             include('inc/footer.php');
-          ?>
+
+          

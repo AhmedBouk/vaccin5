@@ -18,7 +18,7 @@
   <body>
       <header>
         <div class="wrapHF">
-          <img src="assets/image/logo.png" alt="logo">
+          <a href="index.php"><img src="assets/image/logo.png" alt="logo"></a>
           <div class="titre">
             <h2>Mon Carnet de Vaccination</h2>
           </div>
@@ -43,3 +43,4 @@
       </div>
       </header>
     <div id="wrapper">
+<a href="#"></a>
