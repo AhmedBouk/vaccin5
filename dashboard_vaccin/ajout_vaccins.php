@@ -1,13 +1,25 @@
 <?php
 include('inc/header.php');
-include('inc/sidebar.php');
+
+
+
+// creer un tableau d'erreur
   $error = array();
 
+// Condition de soumission du formulaire
   if (!empty($_POST['submitted'])){
-    -
-    $nom = clean('nom');
 
+    //Protection contre les failles xss
+    $nom = trim(strip_tags($_POST['nom']));
+    $injections = trim(strip_tags($_POST['frequences_injections']));
 
+    //Recupere la valeur de radio et verification
+    if (isset($_POST['optionsRadios'])){
+    $obligatoire = $_POST['optionsRadios'];
+    }else {
+      $error['optionsRadios'] = 'Veuillez selectionnez une option';
+    }
+    //Verification contenu
     if (!empty($nom)){
       if(strlen($nom) < 3 ) {
         $error['nom'] = 'Le nom du vaccin est trop court. (minimum 3 caractères)';
@@ -17,24 +29,34 @@ include('inc/sidebar.php');
       }else {
       $error['nom'] = 'Veuillez entrer le nom du vaccin';
     }
+    //verification content
+    if (!empty($injections)){
+        if(strlen($injections) < 3 ) {
+    $error['frequences_injections'] = 'Votre contenu est trop court. (minimum 3 caractères)';
+  }
 
-debug($error);
-
+    } else {
+      $error['frequences_injections'] = 'Veuillez renseigner un contenu';
+    }
+    //Condition pas d'erreur
   if (count($error) == 0){
 
-    $sql = "INSERT INTO bdd_vaccin (nom, created_at) VALUES
-    (:nom, :now())";
+    $sql = "INSERT INTO v5_vaccin (nom, obligatoire,frequences_injections , created_at) VALUES
+    (:nom, :obligatoire,:injections,now())";
+    // preparation de la requête
     $stmt = $pdo->prepare($sql);
-
+    // Protection injections SQL
     $stmt->bindValue(':nom',$nom, PDO::PARAM_STR);
-
+    $stmt->bindValue(':obligatoire',$obligatoire, PDO::PARAM_INT);
+    $stmt->bindValue(':frequencesInjections',$injections, PDO::PARAM_STR);
+    // execution de la requête preparé
     $stmt->execute();
 
-
+    header("Location: index.php");
 
   }
 }
-
+include('inc/sidebar.php');
 ?>
 <section class="content-header">
   <h1>
@@ -55,35 +77,38 @@ debug($error);
           <div class="box-body">
             <div class="form-group">
               <label for="nom">Nom du vaccin</label>
-              <input type="text" class="form-control" id="inputError" name="nom" placeholder="Nom du vaccin...">
-              <span class="help-block"><?php spanError($error,'nom') ?></span>
+              <input type="text" class="form-control" id="inputError" name="nom" placeholder="Nom du vaccin..." value="<?php if(!empty($_POST['nom'])) { echo $_POST['nom']; } ?>">
+              <span class="error"><?php spanError($error,'nom');?></span>
             </div>
-            <!-- <div class="form-group">
+
+            <div class="form-group">
+         			<label for="injections">Fréquence d'injection : </label>
+   			            <span class="error"><?php if(!empty($error['frequences_injections'])) { echo $error['frequences_injections']; } ?></span>
+   			                <textarea name="injections" class="form-control" rows="5" id="content"><?php if(!empty($_POST['frequences_injections'])) { echo $_POST['frequences_injections']; } ?></textarea>
+   		                 </div>
+
+            <div class="form-group">
               <div class="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" >
+                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="obligatoire" >
                   Obligatoire
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="0">
+                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="optionnel">
                   Optionnel
                 </label>
               </div>
+              <span class="error"><?php spanError($error,'optionsRadios');?></span>
             </div>
-            <div class="form-group"> -->
-
-<input type="submit" name="submitted" value="ajouter">
-
-            </div>
-
           </div>
           <!-- /.box-body -->
 
-          <!-- <div class="box-footer">
-            <button type="submit" name="submitted" class="btn btn-primary">Ajouter</button>
-          </div> -->
+          <div class="box-footer">
+
+            <input type="submit" name="submitted" class="btn btn-primary" value="Ajouter" >
+          </div>
         </form>
       </div>
 

@@ -28,10 +28,11 @@ SET time_zone = "+00:00";
 -- Structure de la table `bdd_vaccin`
 --
 
-CREATE TABLE `bdd_vaccin` (
+CREATE TABLE `v5_vaccin` (
   `id` int(11) NOT NULL,
   `nom` varchar(100) NOT NULL,
   `obligatoire` tinyint(1) NOT NULL,
+  `frequences_injections` varchar(255) NOT NULL,
   `rappel` date NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
@@ -41,7 +42,7 @@ CREATE TABLE `bdd_vaccin` (
 -- Déchargement des données de la table `bdd_vaccin`
 --
 
-INSERT INTO `bdd_vaccin` (`id`, `nom`, `obligatoire`, `rappel`, `created_at`, `updated_at`) VALUES
+INSERT INTO `v5_vaccin` (`id`, `nom`, `obligatoire`, `rappel`, `created_at`, `updated_at`) VALUES
 (33, ' Le Tétanos ', 1, '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (34, ' La Poliomyélite', 1, '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (35, ' L’Haemophilius Influenzae B ', 1, '0000-00-00', '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
@@ -71,7 +72,7 @@ INSERT INTO `bdd_vaccin` (`id`, `nom`, `obligatoire`, `rappel`, `created_at`, `u
 -- Structure de la table `table_relation`
 --
 
-CREATE TABLE `table_relation` (
+CREATE TABLE `v5_relation` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `vaccin_id` int(11) NOT NULL,
@@ -85,7 +86,7 @@ CREATE TABLE `table_relation` (
 -- Structure de la table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE `v5_users` (
   `id` int(11) NOT NULL,
   `mail` varchar(255) NOT NULL,
   `mdp` varchar(255) NOT NULL,
@@ -104,7 +105,7 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `mail`, `mdp`, `token`, `created_at`, `updated_at`, `status`, `nom`, `prenom`, `sexe`, `date_naissance`, `role`) VALUES
+INSERT INTO `v5_users` (`id`, `mail`, `mdp`, `token`, `created_at`, `updated_at`, `status`, `nom`, `prenom`, `sexe`, `date_naissance`, `role`) VALUES
 (1, '0', '', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'connecte', 'Irwin', 'Armando', 'homme', '0000-00-00', 'utilisateur'),
 (2, '0', '', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'connecte', 'Whitney', 'Holmes', 'homme', '0000-00-00', 'utilisateur'),
 (3, '0', '', '0', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'connecte', 'Griffin', 'Tanek', 'homme', '0000-00-00', 'utilisateur'),
@@ -273,19 +274,19 @@ INSERT INTO `users` (`id`, `mail`, `mdp`, `token`, `created_at`, `updated_at`, `
 --
 -- Index pour la table `bdd_vaccin`
 --
-ALTER TABLE `bdd_vaccin`
+ALTER TABLE `v5_vaccin`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `table_relation`
 --
-ALTER TABLE `table_relation`
+ALTER TABLE `v5_relation`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `v5_users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -295,19 +296,19 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT pour la table `bdd_vaccin`
 --
-ALTER TABLE `bdd_vaccin`
+ALTER TABLE `v5_vaccin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT pour la table `table_relation`
 --
-ALTER TABLE `table_relation`
+ALTER TABLE `v5_relation`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
-ALTER TABLE `users`
+ALTER TABLE `v5_users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
 COMMIT;
 
