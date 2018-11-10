@@ -53,7 +53,7 @@ include('inc/header.php');
 <!-- Formulaire de connexion -->
 <form  action="" method="post">
 
-  <input type="text" name="login" placeholder="Pseudo" value="">
+  <input type="text" name="nom" placeholder="Pseudo" value="">
   <span><?php spanError($error,'login') ?></span>
 
   <input type="password" name="password" placeholder="Mot de passe" value="">

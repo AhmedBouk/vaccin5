@@ -137,11 +137,10 @@ div #slider figure {
   border: 0;
   margin: 0 0 15px;
   padding: 15px;
-  /* box-sizing: border-box; */
   font-size: 14px;
   resize: none;
 }
-.form button , .formulaire button {
+.form .button , .formulaire .button {
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
@@ -154,8 +153,8 @@ div #slider figure {
   transition: all 0.3 ease;
   cursor: pointer;
 }
-.form button:hover,.form button:active,.form button:focus,
-.formulaire button:hover,.formulaire button:active,.formulaire button:focus {
+.form .button:hover,.form .button:active,.form .button:focus,
+.formulaire .button:hover,.formulaire .button:active,.formulaire .button:focus {
   background: #43A047;
 }
 .form .message , .form .pwdoublie {
@@ -167,7 +166,7 @@ div #slider figure {
   color: #4CAF50;
   text-decoration: none;
 }
-.form .register-form {
+.form .login-form {
   display: none;
 }
 

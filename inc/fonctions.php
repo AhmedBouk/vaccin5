@@ -18,6 +18,43 @@ function spanError($error, $key){
 function clean($key){
   return trim(strip_tags($_POST[$key]));
 }
+
+function value($key){
+	 if(!empty($_POST[$key])) {
+     echo $_POST[$key]; }
+}
+
+//valide un texte, comme un pseudo, nom ou message (necessite le array suivant : $error =array();)
+function validationText($error,$value,$min,$max,$key) {
+  if(!empty($value)) {
+    if(strlen($value) < $min ) {
+      $error[$key] = 'Ce champs est trop court.(minimum '. $min .' caractères)';
+    } elseif(strlen($value) > $max) {
+      $error[$key] = 'Ce champs est trop long.(maximum '. $max .'  caractères)';
+    }
+  }  return true;
+}
+
+//valide un mail (necessite le array suivant : $error =array();)
+function validationEmail($error,$email,$key){
+  if(!empty($email)) {
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $error[$key] = 'Ceci n\'est pas une adresse mail.';
+    }return true;
+  }
+}
+
+//valide si deux champs mot de passe sont identiques.
+function validation2Password($error,$password1,$password2,$key){
+  if(!empty($password1) && !empty($password2)) {
+    if($password1 != $password2) {
+      $error[$key] = 'Les mots de passe sont différents';
+    }
+   }else  {
+       $error[$key] = 'Veuillez renseigner ce champs';
+     } 
+  }
+
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
