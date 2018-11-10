@@ -10,31 +10,25 @@
 
 
 
-
-
-
-
-
   include('inc/sidebar.php');
 ?>
 <section class="content-header">
   <h1>
-    Tables
+    Liste des vaccins
     <small></small>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
-         <li class="active">Tables</li>
+         <li class="active">Liste des vaccins</li>
   </ol>
 </section>
 
 <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Responsive Hover Table</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
+              <table id="example2_paginate" class="table table-hover">
                 <tr>
                   <th>Id</th> <!-- titre -->
                   <th>Nom</th>
@@ -68,4 +62,5 @@
 
           <?php
             include('inc/footer.php');
-          ?>
+
+          
