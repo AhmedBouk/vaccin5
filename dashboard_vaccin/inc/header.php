@@ -1,4 +1,7 @@
-<?php  ?>
+<?php
+  include('pdo.php');
+  include('fonctions.php');
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
