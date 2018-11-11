@@ -92,13 +92,13 @@ include('inc/sidebar.php');
             <div class="form-group">
               <div class="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="obligatoire" >
+                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" >
                   Obligatoire
                 </label>
               </div>
               <div class="radio">
                 <label>
-                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="optionnel">
+                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="0">
                   Optionnel
                 </label>
               </div>
