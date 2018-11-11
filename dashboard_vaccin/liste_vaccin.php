@@ -54,7 +54,7 @@
                     .$tableauVaccin['created_at']
                     .'</td><td>'
                     .$tableauVaccin['updated_at']
-                    .'</td><td><a href="modification_vaccins.php" class=".btn.btn-app"><i class="fa fa-edit"></i></a><td></tr>' ;
+                    .'</td><td><a href="modification_vaccins.php?id='.$tableauVaccin['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a><td></tr>' ;
                 } ?>
               </table>
             </div>
