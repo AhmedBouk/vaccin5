@@ -22,20 +22,25 @@ if(!empty($_GET['mail']) && !empty($_GET['token'])){
         $password      = clean('password');
         $password2     = clean('password2');
 
-        validation2Password($error,$password,$password2,'password');
+        if(!empty($password) && !empty($password2)) {
+          if($password != $password2) {
+            $error['password'] = 'Les mots de passe sont différents';
+          }
+        }
 
         if (count($error)==0) {
           $hash     = password_hash($password , PASSWORD_DEFAULT);
           $token    = generateRandomString(120);
 
-          $sql = "UPDATE v5_users set mdp= :password ,token= :token WHERE id= :id";
+          $sql = "UPDATE v5_users set mdp= :password ,token= :token, updated_at= now() WHERE id= :id";
           $query= $pdo -> prepare($sql) ;
           $query-> bindvalue(':password' , $hash , PDO::PARAM_STR );
           $query-> bindvalue(':token' , $token , PDO::PARAM_STR );
           $query-> bindvalue(':id' , $user , PDO::PARAM_INT );
           $query-> execute();
 
-          header('location: index.php');
+debug($user);
+          // header('location: index.php');
 
     }
   }
