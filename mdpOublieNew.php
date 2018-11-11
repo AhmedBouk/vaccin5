@@ -45,10 +45,10 @@ debug($user);
     }
   }
     }else{
-      die('4041');
+      header('location:404.php');
     }
   }else {
-  die('4042');
+    header('location:404.php');
   }
 
 

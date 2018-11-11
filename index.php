@@ -179,6 +179,7 @@ if (count($error_log) == 0) {
 
          </form>
 
+
          <form class="login-form" action="" method="post">
            <input type="text" name="mail"  placeholder="Mail"/>
            <span><?php spanError($error_log,'mail') ?></span>
@@ -198,30 +199,34 @@ if (count($error_log) == 0) {
 
 
 
-<div class="commentaires">
+<div class="comment-users">
   <h2>Commentaires de nos utilisateurs satisfaits</h2>
-  <div class="photos">
+  <div class="commentaires">
 
-    <div class="photo">
-      <img src="http://www.jeromeoliveras.com/v3/wp-content/uploads/image-03-full-c.jpg" alt="camille">
-      <p>J'ai adoré ce service</p>
+    <div class="commentaire">
       <p>Michel</p>
+      <p>Je trouve ce service utile et d'utilité publique</p>
+      <p>inscrit depuis le 10/05/2017</p>
     </div>
-    <div class="photo">
-      <img src="http://www.jeromeoliveras.com/v3/wp-content/uploads/image-03-full-c.jpg" alt="jonathan">
-      <p>J'ai adoré ce service</p>
-      <p>Paul</p>
+
+    <div class="commentaire">
+      <p>Berénice</p>
+      <p>Je l'utilise pour mes enfants, plus de risque d'oublié</p>
+      <p>inscrite depuis le 21/09/2017</p>
     </div>
-    <div class="photo">
-      <img src="http://www.jeromeoliveras.com/v3/wp-content/uploads/image-03-full-c.jpg" alt="ahmed">
-      <p>J'ai adoré ce service</p>
-      <p>Fatima</p>
+
+    <div class="commentaire">
+      <p>Rashid</p>
+      <p>Simple et utile, je le recommande et bla bla bla</p>
+      <p>inscrit depuis le 01/02/2018</p>
     </div>
-    <div class="photo">
-      <img src="http://www.jeromeoliveras.com/v3/wp-content/uploads/image-03-full-c.jpg" alt="emilie">
-      <p>J'ai adoré ce service</p>
-      <p>Aurélie</p>
+
+    <div class="commentaire">
+      <p>Joseph</p>
+      <p>Super Cool, youp salla boule et bla bla bla</p>
+      <p>inscrit depuis le 30/10/2017</p>
     </div>
+
     <div class="clear"></div>
   </div>
 
