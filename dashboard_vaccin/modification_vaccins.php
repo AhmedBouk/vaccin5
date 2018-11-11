@@ -54,7 +54,7 @@
       // execution de la requête preparé
       $stmt->execute();
 
-      // header("Location: liste_vaccin.php");
+      header("Location: liste_vaccin.php");
 
     }
   }else {
