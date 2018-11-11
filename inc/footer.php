@@ -28,7 +28,8 @@
     <div class="clear"></div>
 
     <div class="copyright">
-      <p>Nfactory</p>
+      <p>Copyright (c) 2018 Copyright Holder All Rights Reserved.</p>
+      <p>Ce site est un exercice dans le cadre de la Nfactory School</p>
 
     </div>
   </footer>

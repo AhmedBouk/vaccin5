@@ -40,7 +40,7 @@ header img{
 
 header .titre{
   float: left;
-  font-size: 2.5em;
+  font-size: 3em;
   width: 60%;
   margin: 50px 0 0 8%;
   text-align: center;
@@ -216,14 +216,16 @@ display: flex;
 /* P.CONTACT */
 /* FORM CONTACT */
 /* aussi dans index inscription */
-.contact{
-  margin-top: 60px;
+
+.contact h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin: 40px 0 40px 0;
 }
 
 
-
 /* FOOTER */
-
+/* Notre equipe */
 footer{
   background-color: #d2d6cc;
 
@@ -235,7 +237,7 @@ display: flex;
 
 footer h2{
   text-align: center;
-  font-size: 3em;
+  font-size: 2.8em;
 }
 footer .photos{
   width: 100%;
@@ -250,5 +252,11 @@ footer .photo img{
   padding: 0 10px;
 }
 footer .photo  p{
+  text-align: center;
+}
+
+/* FOOTER */
+/* Legal */
+.copyright p{
   text-align: center;
 }
