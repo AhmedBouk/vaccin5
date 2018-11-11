@@ -43,19 +43,18 @@
       //Condition pas d'erreur
     if (count($error) == 0){
 
-      $sql = "UPDATE v5_vaccin SET
-      nom = :nom, obligatoire = :obligatoire, frequences_injections = :injections, updated_at = NOW() WHERE id = :id";
+      $sql = "UPDATE v5_vaccin SET nom = :nom, obligatoire = :obligatoire, frequences_injections = :injections, updated_at = NOW() WHERE id = :id";
       // preparation de la requête
       $stmt = $pdo->prepare($sql);
       // Protection injections SQL
       $stmt->bindValue(':nom',$nom, PDO::PARAM_STR);
       $stmt->bindValue(':obligatoire',$obligatoire, PDO::PARAM_INT);
       $stmt->bindValue(':injections',$injections, PDO::PARAM_STR);
-      $stmt->bindValue(':id',$idarticle, PDO::PARAM_INT);
+      $stmt->bindValue(':id',$id, PDO::PARAM_INT);
       // execution de la requête preparé
       $stmt->execute();
 
-      header("Location: liste_vaccin.php");
+      // header("Location: liste_vaccin.php");
 
     }
   }else {
@@ -65,8 +64,13 @@
     $query -> execute();
     $vaccin = $query -> fetch();
 
-    $nom = $vaccin['nom'];
-    $injections = $vaccin['frequences_injections'];
+
+    if(!empty($vaccin)) {
+      $nom = $vaccin['nom'];
+      $injections = $vaccin['frequences_injections'];
+
+    }
+
   }
 
 
@@ -78,12 +82,12 @@
 ?>
 <section class="content-header">
   <h1>
-    <?php echo $vaccin['nom'] ;?>
+    <?php if(!empty($_POST['nom'])) { echo $_POST['nom']; } else { echo $nom; } ?>
   </h1>
   <ol class="breadcrumb">
     <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
     <li><a href="liste_vaccin.php"><i class="fa fa-dashboard"></i>liste des vaccins</a></li>
-         <li class="active"><?php echo $vaccin['nom'] ;?></li>
+         <li class="active"><?php if(!empty($_POST['nom'])) { echo $_POST['nom']; } else { echo $nom; } ?></li>
   </ol>
 </section>
 <section class="content">
