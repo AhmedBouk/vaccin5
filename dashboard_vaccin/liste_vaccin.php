@@ -2,12 +2,18 @@
 include('inc/pdo.php');
 include('inc/fonctions.php');
 
-  $sql = "SELECT * FROM v5_vaccin";
+  $sql = "SELECT * FROM v5_vaccin WHERE 1=1";
 
   $query= $pdo -> prepare($sql) ;
   $query-> execute();
   $tableauVaccins = $query -> fetchall();
 
+  
+  // if (!empty($tableauVaccin['updated_at'])) { //Création de la variable modifier pour la date de modif dans la BDD
+  //     $modifVaccin = date('d/m/Y', strtotime($tableauVaccin['updated_at']));
+  // }else{
+  //     $modifVaccin = 'Il n\'as pas encore été modifié';
+  // }
 
   include('inc/header.php');
   include('inc/sidebar.php');
