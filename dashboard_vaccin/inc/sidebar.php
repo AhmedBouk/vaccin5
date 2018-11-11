@@ -26,8 +26,6 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="liste_utilisateurs.php"><i class="fa fa-circle-o"></i>Liste</a></li>
-          <li><a href="ajout_utilisateurs.php"><i class="fa fa-circle-o"></i>Ajout</a></li>
-          <li><a href="modification_utilisateurs.php"><i class="fa fa-circle-o"></i>Modification</a></li>
         </ul>
       </li>
       <li class="treeview">

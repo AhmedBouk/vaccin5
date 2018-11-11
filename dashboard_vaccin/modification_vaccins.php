@@ -1,5 +1,7 @@
 <?php
-  include('inc/header.php');
+include('inc/pdo.php');
+include('inc/fonctions.php');
+
 
   $error = array();
 
@@ -77,7 +79,7 @@
 
 
 
-
+  include('inc/header.php');
   include('inc/sidebar.php');
 ?>
 <section class="content-header">
@@ -129,7 +131,7 @@
 
       <div class="box-footer">
 
-        <input type="submit" name="submitted" class="btn btn-primary" value="Ajouter" >
+        <input type="submit" name="submitted" class="btn btn-primary" value="Sauvegarder" >
       </div>
     </form>
   </div>
