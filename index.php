@@ -61,9 +61,6 @@ if (!empty($_POST['submit_register'])) {
   if(!empty($pwd1) && !empty($pwd2)) {
     if($pwd1 != $pwd2) {
       $error_reg['pwd1'] = 'Les mots de passe sont différents';
-<<<<<<< HEAD
-    }$inscrit .= 4;
-=======
     }
 }
 if (validationEmail($error_reg,$mail,'mail')) {
@@ -72,7 +69,6 @@ if (validationEmail($error_reg,$mail,'mail')) {
   $query-> bindValue(':mail' , $mail , PDO::PARAM_STR );
   $query-> execute();
   $testmail = $query -> fetch();
->>>>>>> 7bdb6af039d1d8ee9ea702b65d0fa024288fdd57
 
    }else  {
        $error_reg['pwd1'] = 'Veuillez renseigner ce champs';
@@ -83,11 +79,7 @@ if (validationEmail($error_reg,$mail,'mail')) {
     $hash     = password_hash($pwd1 , PASSWORD_DEFAULT);
     $token    = generateRandomString(120);
 
-<<<<<<< HEAD
     $sql = "INSERT INTO `users`(`nom`, `prenom`,`mail`, `token`, `mdp`, `role`, `created_at`) VALUES (:nom , :prenom , :mail , :token, :pwd1 ,'utilisateur' , now()) ";
-=======
-    $sql = "INSERT INTO `v5_users`(`nom`, `prenom`,`mail`, `token`, `mdp`, `role`, `created_at`) VALUES (:nom , :prenom , :mail , :token, :pwd1 ,'user' , now()) ";
->>>>>>> 7bdb6af039d1d8ee9ea702b65d0fa024288fdd57
     $query= $pdo -> prepare($sql) ;
     $query-> bindvalue(':nom' , $nom , PDO::PARAM_STR );
     $query-> bindvalue(':prenom' , $prenom , PDO::PARAM_STR );
