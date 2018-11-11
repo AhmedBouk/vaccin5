@@ -18,6 +18,10 @@ function spanError($error, $key){
 function clean($key){
   return trim(strip_tags($_POST[$key]));
 }
+function value($key){
+	 if(!empty($_POST[$key])) {
+     echo $_POST[$key]; }
+}
 function generateRandomString($length = 10) {
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
