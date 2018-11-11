@@ -23,7 +23,7 @@ include('inc/header.php');
 
       <textarea name="msg" rows="8" cols="80" placeholder="Votre Message"><?php spanError($error,'nom') ?></textarea>
 
-      <input class="button" type="submit" name="submit_register" value="Créer">
+      <input class="button" type="submit" name="submit_register" value="Envoyer">
 
     </form>
   </div>
