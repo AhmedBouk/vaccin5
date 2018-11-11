@@ -43,7 +43,7 @@ if (!empty($_POST['submit_register'])) {
     if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
       $error_reg['mail'] = 'Ceci n\'est pas une adresse mail.';
     } else {
-      $sql="SELECT mail FROM users WHERE mail = :mail";
+      $sql="SELECT mail FROM v5_users WHERE mail = :mail";
       $query= $pdo -> prepare($sql) ;
       $query-> bindValue(':mail' , $mail , PDO::PARAM_STR );
       $query-> execute();
@@ -61,20 +61,18 @@ if (!empty($_POST['submit_register'])) {
   if(!empty($pwd1) && !empty($pwd2)) {
     if($pwd1 != $pwd2) {
       $error_reg['pwd1'] = 'Les mots de passe sont différents';
-<<<<<<< HEAD
+
     }$inscrit .= 4;
-=======
+
     }
-}
+
 if (validationEmail($error_reg,$mail,'mail')) {
   $sql="SELECT mail FROM v5_users WHERE mail = :mail";
   $query= $pdo -> prepare($sql) ;
   $query-> bindValue(':mail' , $mail , PDO::PARAM_STR );
   $query-> execute();
   $testmail = $query -> fetch();
->>>>>>> 7bdb6af039d1d8ee9ea702b65d0fa024288fdd57
-
-   }else  {
+ }else  {
        $error_reg['pwd1'] = 'Veuillez renseigner ce champs';
   }
 
@@ -83,11 +81,9 @@ if (validationEmail($error_reg,$mail,'mail')) {
     $hash     = password_hash($pwd1 , PASSWORD_DEFAULT);
     $token    = generateRandomString(120);
 
-<<<<<<< HEAD
-    $sql = "INSERT INTO `users`(`nom`, `prenom`,`mail`, `token`, `mdp`, `role`, `created_at`) VALUES (:nom , :prenom , :mail , :token, :pwd1 ,'utilisateur' , now()) ";
-=======
-    $sql = "INSERT INTO `v5_users`(`nom`, `prenom`,`mail`, `token`, `mdp`, `role`, `created_at`) VALUES (:nom , :prenom , :mail , :token, :pwd1 ,'user' , now()) ";
->>>>>>> 7bdb6af039d1d8ee9ea702b65d0fa024288fdd57
+
+    $sql = "INSERT INTO `v5_users`(`nom`, `prenom`,`mail`, `token`, `mdp`, `role`, `created_at`) VALUES (:nom , :prenom , :mail , :token, :pwd1 ,'utilisateur' , now()) ";
+
     $query= $pdo -> prepare($sql) ;
     $query-> bindvalue(':nom' , $nom , PDO::PARAM_STR );
     $query-> bindvalue(':prenom' , $prenom , PDO::PARAM_STR );
@@ -96,7 +92,7 @@ if (validationEmail($error_reg,$mail,'mail')) {
     $query-> bindvalue(':token' , $token , PDO::PARAM_STR );
     $query-> execute();
   }
- }
+}
 
 // Connexion
 // Lors de la soumission du formulaire
@@ -107,7 +103,7 @@ $mail_login  = clean('mail');
 $pwd_loggin  = clean('pwd');
 
 // test si le mail existe
-$sql="SELECT * FROM users WHERE mail =:mail "; //requete à modifier
+$sql="SELECT * FROM v5_users WHERE mail =:mail "; //requete à modifier
 $query= $pdo -> prepare($sql) ;//preparer la requete
 $query-> bindvalue(':mail' , $mail_login , PDO::PARAM_STR );
 $query-> execute(); //execute la requete
