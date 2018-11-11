@@ -222,6 +222,4 @@ if (count($error_log) == 0) {
 
 
 
-<?php
-debug($error_reg);
-include('inc/footer.php');?>
+<?php include('inc/footer.php');?>
