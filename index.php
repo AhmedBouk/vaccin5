@@ -179,6 +179,7 @@ if (count($error_log) == 0) {
 
          </form>
 
+
          <form class="login-form" action="" method="post">
            <input type="text" name="mail"  placeholder="Mail"/>
            <span><?php spanError($error_log,'mail') ?></span>
