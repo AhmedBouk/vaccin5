@@ -36,6 +36,7 @@
                   <th>Fréquences d'injection</th>
                   <th>Created_at</th>
                   <th>Uptaded_at</th>
+                  <th>Modifier</th>
                 </tr>
                 <?php foreach ($tableauVaccins as $tableauVaccin) {
                     echo '<tr><td>'.$tableauVaccin['id']
@@ -53,7 +54,7 @@
                     .$tableauVaccin['created_at']
                     .'</td><td>'
                     .$tableauVaccin['updated_at']
-                    .'</td></tr>' ;
+                    .'</td><td><a href="modification_vaccins.php" class=".btn.btn-app"><i class="fa fa-edit"></i></a><td></tr>' ;
                 } ?>
               </table>
             </div>
@@ -62,5 +63,3 @@
 
           <?php
             include('inc/footer.php');
-
-          
