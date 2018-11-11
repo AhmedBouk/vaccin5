@@ -4,16 +4,8 @@
   $error = array();
 
   if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
-  	$id = $_GET['id'];
+  	$id = $_GET['id'];} else { $id= ''; }
 
-    $sql= "SELECT * FROM v5_vaccin WHERE id=:id";
-    $query = $pdo -> prepare($sql);
-    $query->bindValue(':id',$id, PDO::PARAM_STR);
-    $query -> execute();
-    $vaccin = $query -> fetch();
-
-    $nom = $vaccin['nom'];
-    $injections = $vaccin['frequences_injections'];
   // Condition de soumission du formulaire
 
     if (!empty($_POST['submitted'])){
@@ -51,22 +43,32 @@
       //Condition pas d'erreur
     if (count($error) == 0){
 
-      $sql = "UPDATE v5_vaccin  SET
-      nom = :nom, obligaoire = :obligatoire,frequences_injections =  :injections, updated_at = now())";
+      $sql = "UPDATE v5_vaccin SET
+      nom = :nom, obligatoire = :obligatoire, frequences_injections = :injections, updated_at = NOW() WHERE id = :id";
       // preparation de la requête
       $stmt = $pdo->prepare($sql);
       // Protection injections SQL
       $stmt->bindValue(':nom',$nom, PDO::PARAM_STR);
       $stmt->bindValue(':obligatoire',$obligatoire, PDO::PARAM_INT);
       $stmt->bindValue(':injections',$injections, PDO::PARAM_STR);
+      $stmt->bindValue(':id',$idarticle, PDO::PARAM_INT);
       // execution de la requête preparé
       $stmt->execute();
 
       header("Location: liste_vaccin.php");
 
     }
+  }else {
+    $sql= "SELECT * FROM v5_vaccin WHERE id=:id";
+    $query = $pdo -> prepare($sql);
+    $query->bindValue(':id',$id, PDO::PARAM_STR);
+    $query -> execute();
+    $vaccin = $query -> fetch();
+
+    $nom = $vaccin['nom'];
+    $injections = $vaccin['frequences_injections'];
   }
-} else { $id= ''; }
+
 
 
 
