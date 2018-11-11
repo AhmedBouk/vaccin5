@@ -32,7 +32,7 @@ if(!empty($_GET['mail']) && !empty($_GET['token'])){
           $hash     = password_hash($password , PASSWORD_DEFAULT);
           $token    = generateRandomString(120);
 
-          $sql = "UPDATE v5_users set mdp= :password ,token= :token, updated_at= now() WHERE id= :id";
+          $sql = "UPDATE v5_users SET mdp= :password ,token= :token, updated_at= now() WHERE id= :id";
           $query= $pdo -> prepare($sql) ;
           $query-> bindvalue(':password' , $hash , PDO::PARAM_STR );
           $query-> bindvalue(':token' , $token , PDO::PARAM_STR );
@@ -45,10 +45,10 @@ debug($user);
     }
   }
     }else{
-      die('4041');
+      header('location:404.php');
     }
   }else {
-  die('4042');
+    header('location:404.php');
   }
 
 
