@@ -1,4 +1,11 @@
 <?php
+include('../inc/pdo.php');
+include('../inc/fonctions.php');
+
+
+
+
+
 
 include('inc/header.php');
 include('inc/sidebar.php');
@@ -12,8 +19,6 @@ include('inc/sidebar.php');
      <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
    </ol>
  </section>
-
-
    <!-- LINE CHART -->
    <div class="box box-info">
      <div class="box-header with-border">

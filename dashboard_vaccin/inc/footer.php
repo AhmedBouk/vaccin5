@@ -209,6 +209,9 @@
 <script src="assets/js/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
 <script src="assets/js/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
@@ -226,6 +229,19 @@
     $('.sidebar-menu').tree()
   })
 </script>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  })
+</script>
 
 <script>
 // LINE CHART
@@ -233,7 +249,7 @@ var line = new Morris.Line({
   element: 'line-chart',
   resize: true,
   data: [
-    {y: '2011 Q1', item1: 2666}, 
+    {y: '2011 Q1', item1: 2666},
     {y: '2011 Q2', item1: 2778},
     {y: '2011 Q3', item1: 4912},
     {y: '2011 Q4', item1: 3767},

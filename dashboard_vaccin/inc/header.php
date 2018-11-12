@@ -1,5 +1,10 @@
 <?php
+ is_logged();
+  if (is_admin()){
 
+  }else {
+    header("Location: ../index.php");
+  }
  ?>
 <!DOCTYPE html>
 <html>
@@ -52,7 +57,29 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-
+      <div class="navbar-custom-menu">
+    <ul class="nav navbar-nav">
+      <li class="dropdown user user-menu">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+          <span class="hidden-xs">Administrateur</span>
+        </a>
+        <ul class="dropdown-menu">
+          <!-- User image -->
+          <li class="user-header">
+            <p>
+              Bonjour
+            </p>
+          </li>
+        <!-- Menu Body -->
+          <!-- Menu Footer-->
+          <li class="user-footer">
+              <a href="#" class="btn btn-default btn-flat">Déconnexion</a>
+          </li>
+        </ul>
+      </li>
+      <!-- Control Sidebar Toggle Button -->
+    </ul>
+  </div>
 
     </nav>
   </header>
