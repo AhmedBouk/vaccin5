@@ -2,22 +2,22 @@
   <footer>
       <div class="wrapHF">
           <h2>Notre Equipe</h2>
-          <div class="photos">
+          <div class="zoom photos">
 
             <div class="photo">
-              <img src="http://www.jeromeoliveras.com/v3/wp-content/uploads/image-03-full-c.jpg" alt="camille">
+              <img src="assets/image/jonathan.jpg" alt="camille">
               <p>Camille</p>
             </div>
             <div class="photo">
-              <img src="http://www.jeromeoliveras.com/v3/wp-content/uploads/image-03-full-c.jpg" alt="jonathan">
+              <img src="assets/image/jonathan.jpg" alt="jonathan">
               <p>Jonathan</p>
             </div>
             <div class="photo">
-              <img src="http://www.jeromeoliveras.com/v3/wp-content/uploads/image-03-full-c.jpg" alt="ahmed">
+              <img src="assets/image/jonathan.jpg" alt="ahmed">
               <p>Ahmed</p>
             </div>
             <div class="photo">
-              <img src="https://www.ladn.eu/wp-content/uploads/2016/07/actu_10073_vignette_alaune-680x500.jpg" alt="emilie">
+              <img src="assets/image/jonathan.jpg" alt="emilie">
               <p>Emilie</p>
             </div>
             <div class="clear"></div>

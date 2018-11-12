@@ -30,39 +30,39 @@ if(is_logged()){
 
 
 
-  $sql = "SELECT *
-          FROM v5_vaccin
-          WHERE obligatoire = 1";
-  $query = $pdo -> prepare($sql);
+      $sql = "SELECT *
+              FROM v5_vaccin
+              WHERE obligatoire = 1";
+      $query = $pdo -> prepare($sql);
 
-// $query -> bindValue(':obligatoire',1, PDO ::PARAM_STR);
-  $query -> execute();
-  $vaccinObligatoires= $query -> fetchAll();
-//  debug($vaccinObligatoire);
-
-
-$sql = "SELECT *
-        FROM v5_vaccin
-        WHERE obligatoire = 0";
-$query = $pdo -> prepare($sql);
-
-// $query -> bindValue(':obligatoire',1, PDO ::PARAM_STR);
-$query -> execute();
-$vaccinNonObligatoires= $query -> fetchAll();
- debug($vaccinNonObligatoire);
+    // $query -> bindValue(':obligatoire',1, PDO ::PARAM_STR);
+      $query -> execute();
+      $vaccinObligatoires= $query -> fetchAll();
+    //  debug($vaccinObligatoire);
 
 
+      $sql = "SELECT *
+              FROM v5_vaccin
+              WHERE obligatoire = 0";
+      $query = $pdo -> prepare($sql);
 
-  $sql = "SELECT * FROM v5_vaccin AS v
-          LEFT JOIN v5_relation AS pivot
-          ON v.id = pivot.vaccin_id
-          WHERE pivot.user_id = $id
-          AND v.obligatoire = 1";
+      // $query -> bindValue(':obligatoire',1, PDO ::PARAM_STR);
+      $query -> execute();
+      $vaccinNonObligatoires = $query -> fetchAll();
+ // debug($vaccinNonObligatoires);
 
-  $query = $pdo -> prepare($sql);
-  $query -> execute();
-  $vaccinfait= $query -> fetchAll();
-      debug($vaccinfait);
+
+
+        $sql = "SELECT * FROM v5_vaccin AS v
+                LEFT JOIN v5_relation AS pivot
+                ON v.id = pivot.vaccin_id
+                WHERE pivot.user_id = $id
+                AND v.obligatoire = 1";
+
+        $query = $pdo -> prepare($sql);
+        $query -> execute();
+        $vaccinfait= $query -> fetchAll();
+            // debug($vaccinfait);
 
 
     }else {
@@ -111,22 +111,28 @@ include('inc/header.php');
       <li>  Date de Naissance : <?php echo $profil['date_naissance'] ;?></li>
 </ul>
 
-<table classe="vaccinFait">
+<br>
+
+<table classe="vaccinObligatoires">
 
    <?php foreach ($vaccinObligatoires as $vaccinObligatoire):
      ?> <tr> <?php
  echo '<td>' .$vaccinObligatoire['nom']. '</td>';
+ echo '<td>' .$vaccinObligatoire['frequences_injections']. '</td>';
  echo '<td>' .$vaccinObligatoire['rappel']. '</td>';
     ?> </tr> <?php
    endforeach; ?>
 
 </table>
+
 <br>
-<table classe="vaccinFait">
+
+<table classe="vaccinNonObligatoires">
 
    <?php foreach ($vaccinNonObligatoires as $vaccinNonObligatoire):
      ?> <tr> <?php
  echo '<td>' .$vaccinNonObligatoire['nom']. '</td>';
+ echo '<td>' .$vaccinNonObligatoire['frequences_injections']. '</td>';
  echo '<td>' .$vaccinNonObligatoire['rappel']. '</td>';
     ?> </tr> <?php
    endforeach; ?>

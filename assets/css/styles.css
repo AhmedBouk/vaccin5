@@ -55,7 +55,7 @@ header .bienvenue{
 header .bienvenue p{
   color: #FFF;
   font-size: 1.1em;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 
 }
 
@@ -247,32 +247,50 @@ footer{
 
 }
 
-footer .photos{
-display: flex;
-}
-
-footer h2{
+footer h2 {
   text-align: center;
-  font-size: 2.8em;
-}
-footer .photos{
-  width: 100%;
-}
-footer .photo{
-  margin: auto;
+  font-size: 2em;
 }
 
-footer .photo img{
-  height: 100px;
-  width: 100%;
-  padding: 0 10px;
+.photos {
+	margin: 15px 25px 0 25px;
+	padding: 0;
 }
-footer .photo  p{
-  text-align: center;
+.photos:last-child {
+	padding-bottom: 60px;
 }
+.photos::after {
+	content: '';
+	clear: both;
+	display: block;
+}
+.photos div {
+	position: relative;
+	float: left;
+	width: 200px;
+	height: 150px;
+	margin: 0 0 0 35px;
+	padding: 0;
+}
+.photos div:first-child {
+	margin-left: 0;
+}
+.photo {
+	width: 200px;
+	height: 150px;
+	margin: 0;
+	padding: 0;
+	background: #F4F4F4;
+	overflow: hidden;}
 
+  .zoom div img {
 
-
+  	transform: scale(1);
+  	transition: .3s ease-in-out;
+  }
+  .zoom div:hover img {
+  	transform: scale(1.3);
+  }
 /* FOOTER */
 /* Legal */
 .copyright p{
