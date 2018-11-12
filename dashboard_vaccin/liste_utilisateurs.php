@@ -50,8 +50,13 @@ include('inc/fonctions.php');
                     .$tableauUser['prenom']
                     .'</td><td>'
                     .$tableauUser['created_at']
-                    .'</td><td>'
-                    .$tableauUser['updated_at']
+                    .'</td><td>';
+                    if (!empty($tableauVaccin['updated_at'])) { //Création de la variable modifier pour la date de modif dans la BDD
+                        $modifVaccin = date('d/m/Y', strtotime($tableauVaccin['updated_at']));
+                    }else{
+                        $modifVaccin = 'Il n\'a pas encore été modifié';
+                    }
+                    echo  $modifVaccin
                     .'</td><td>'
                     .$tableauUser['role']
                     .'</td><td><a href="modification_utilisateurs.php?id='.$tableauUser['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a><td></tr>';
