@@ -31,4 +31,13 @@ function deleteuser($id){
   $query -> execute();
 }
 
+function compteUtilisateur(){
+  $sql = "SELECT COUNT(id) FROM v5_users ";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute();
+  $count = $stmt->fetchColumn();
+}
+
+
+
 ?>
