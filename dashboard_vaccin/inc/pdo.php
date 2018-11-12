@@ -1,6 +1,5 @@
-
 <?php
-
+session_start();
     try {
         $pdo = new PDO('mysql:host=localhost;dbname=vaccination_bdd191018', "root", "", array(
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
