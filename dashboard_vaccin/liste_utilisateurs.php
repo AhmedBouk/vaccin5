@@ -35,6 +35,7 @@ include('inc/sidebar.php');
                   <th>Uptaded_at</th>
                   <th>Role</th>
                   <th>Modifier</th>
+                  <th>Delete</th>
                 </tr>
                 <?php foreach ($tableauUsers as $tableauUser) {
                     echo '<tr><td>'.$tableauUser['id']
@@ -50,12 +51,14 @@ include('inc/sidebar.php');
                     changementDate($tableauUser,'updated_at');
                     echo '</td><td>'
                     .$tableauUser['role']
-                    .'</td><td><a href="modification_utilisateurs.php?id='.$tableauUser['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a><td></tr>';
+                    .'</td><td><a href="modification_utilisateurs.php?id='.$tableauUser['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a></td><td><a href="delete_user.php?id='
+                    .$tableauUser['id']
+                    .'"><i class="fa fa-trash-o"></i></a><td></tr>';
                 } ?>
               </table>
             </div>
             <!-- /.box-body -->
           </div>
-
+<a href="#">supprimer</a>
 <?php
     include('inc/footer.php');
