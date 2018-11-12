@@ -30,8 +30,10 @@
             <?php
               if (is_logged()) {
 
-                echo '<p>Bienvenue  '. $_SESSION['user']['prenom'] .' </p>';
-                echo '<a href="deconnexion.php"> Deconnexion </a>';
+                echo '<p> Bienvenue  '. $_SESSION['user']['prenom'] .' </p>' ;
+                echo '<a href="deconnexion.php"> Deconnexion </a> </p>';
+                echo '<p> <a href="profil.php"> Profil </a> </p>';
+
                 ?> <style media="screen">
                   .inscription{display: none;}
                   .sliders{width: 100%;margin: 40px 0;}
