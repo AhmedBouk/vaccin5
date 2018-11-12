@@ -29,7 +29,7 @@ if (count($error_log) == 0) {
     'nom'     =>$user['nom'],
     'prenom'  =>$user['prenom'],
     'mail'    =>$user['mail'],
-    'sexe'    =>$user['sexe']
+    'sexe'    =>$user['sexe'],
     'date_naissance'    =>$user['date_naissance'],
     'role'    =>$user['role'],
     'ip'      =>$_SERVER["REMOTE_ADDR"]

@@ -1,10 +1,10 @@
 <?php
-include('inc/pdo.php');
+include('../inc/pdo.php');
 include('inc/fonctions.php');
 include('inc/request.php');
 
 
-
+$tableauUsers=requeteListeUser();
 
 
 include('inc/header.php');
