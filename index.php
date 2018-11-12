@@ -77,31 +77,31 @@
 
 
 <div class="comment-users">
-  <h2>Commentaires de nos utilisateurs satisfaits</h2>
+  <h2>Commentaires de nos utilisateurs satisfaits.</h2>
   <div class="commentaires">
 
     <div class="commentaire">
       <p>Michel</p>
-      <p>Je trouve ce service utile et d'utilité publique</p>
-      <p>inscrit depuis le 10/05/2017</p>
+      <p>Je trouve ce service utile et d'utilité publique.</p>
+      <p>Inscrit depuis le 10/05/2017</p>
     </div>
 
     <div class="commentaire">
       <p>Berénice</p>
-      <p>Je l'utilise pour mes enfants, plus de risque d'oublié</p>
-      <p>inscrite depuis le 21/09/2017</p>
+      <p>Je l'utilise pour mes enfants, plus de risque d'oublier.</p>
+      <p>Inscrite depuis le 21/09/2017</p>
     </div>
 
     <div class="commentaire">
       <p>Rashid</p>
-      <p>Simple et utile, je le recommande et bla bla bla</p>
-      <p>inscrit depuis le 01/02/2018</p>
+      <p>Simple et utile, je le recommande et bla bla bla.</p>
+      <p>Inscrit depuis le 01/02/2018</p>
     </div>
 
     <div class="commentaire">
       <p>Joseph</p>
-      <p>Super Cool, youp salla boule et bla bla bla</p>
-      <p>inscrit depuis le 30/10/2017</p>
+      <p>Super Cool, youp salla boule et bla bla bla.</p>
+      <p>Inscrit depuis le 30/10/2017</p>
     </div>
 
     <div class="clear"></div>
