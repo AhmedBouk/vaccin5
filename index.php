@@ -8,7 +8,7 @@
 
   $inscrit = '';
   include('inc/header.php');
-<<<<<<< HEAD
+
 // Inscription:
 
 // Lors de la soumission du formulaire
@@ -139,9 +139,7 @@ if (count($error_log) == 0) {
 }
 
 }
-=======
 
->>>>>>> a6b5fb187de915bc4e76c4b8629e6363becedb7d
  ?>
  <div class="contenu">
 
