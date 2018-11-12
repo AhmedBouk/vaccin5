@@ -146,7 +146,8 @@ div #slider figure {
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
-.form input, .formulaire input, .formulaire textarea {
+
+.form input, .formulaire input, .formulaire textarea, .form .radio {
   outline: 0;
   background: #f2f2f2;
   width: 100%;
@@ -156,6 +157,15 @@ div #slider figure {
   font-size: 14px;
   resize: none;
 }
+
+.form .radio{
+  display: flex;
+}
+
+.form .radio label, .form .radio input {
+  margin: auto;
+}
+
 .form .button , .formulaire .button {
   text-transform: uppercase;
   outline: 0;
@@ -229,7 +239,7 @@ div #slider figure {
 /* FORM CONTACT */
 /* aussi dans index inscription */
 
-.contact h2 {
+.contact h2 , .modif_profil h2 {
   text-align: center;
   font-size: 2.5em;
   margin: 40px 0 40px 0;
@@ -244,7 +254,6 @@ div #slider figure {
 /* Notre equipe */
 footer{
   background-color: #d2d6cc;
-
 }
 
 footer h2 {
@@ -293,6 +302,10 @@ footer h2 {
   }
 /* FOOTER */
 /* Legal */
+.copyright{
+  margin-top: 30px;
+}
+
 .copyright p{
   text-align: center;
 }

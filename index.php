@@ -103,9 +103,9 @@
       <p>inscrit depuis le 30/10/2017</p>
     </div>
 
-    <div class="clear"></div>
-  </div>
 
+  </div>
+<div class="clear"></div>
 </div>
 
 
