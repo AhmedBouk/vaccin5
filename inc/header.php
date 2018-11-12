@@ -29,10 +29,10 @@
           <p>
             <?php
               if (is_logged()) {
-
                 echo '<p> Bienvenue  '. $_SESSION['user']['prenom'] .' </p>' ;
-                echo '<a href="deconnexion.php"> Deconnexion </a> </p>';
-                echo '<p> <a href="profil.php"> Profil </a> </p>';
+                echo '<p> <a href="profil.php"> Profil </a></p>';
+                echo '<p> <a href="deconnexion.php"> Deconnexion </a> </p>';
+
 
                 ?> <style media="screen">
                   .inscription{display: none;}
@@ -40,13 +40,15 @@
                 </style>
                 <?php
                 }
-              if (is_admin()) {
-                echo '<br /><a href="dashboard_vaccin/index.php">back office</a>';
-              }
+
             ?>
           </p>
           <a href="contact.php">Contact</a>
-
+          <?php
+              if (is_admin()) {
+                echo '<p><a href="dashboard_vaccin/index.php">back office</a></p>';
+              }
+          ?>
 
         </div>
       </div>
