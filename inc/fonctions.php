@@ -24,6 +24,11 @@ function value($key){
      echo $_POST[$key]; }
 }
 
+function valueofvariable($variable,$key){
+	 if(!empty($variable[$key])) {
+     echo $variable[$key]; }
+}
+
 //valide un texte, comme un pseudo, nom ou message (necessite le array suivant : $error =array();)
 function validationText($error,$value,$min,$max,$key) {
   if(!empty($value)) {
