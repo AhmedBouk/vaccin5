@@ -1,11 +1,14 @@
 <?php
   include('inc/pdo.php');
   include('inc/fonctions.php');
+  include('inc/connexion.php');
+  include('inc/inscription.php');
   $title = 'ACCUEIL';
-  $error_reg = array();
-  $error_log = array();
+
+
   $inscrit = '';
   include('inc/header.php');
+<<<<<<< HEAD
 // Inscription:
 
 // Lors de la soumission du formulaire
@@ -136,6 +139,9 @@ if (count($error_log) == 0) {
 }
 
 }
+=======
+
+>>>>>>> a6b5fb187de915bc4e76c4b8629e6363becedb7d
  ?>
  <div class="contenu">
 
@@ -189,7 +195,7 @@ if (count($error_log) == 0) {
            <span><?php spanError($error_log,'pwd') ?></span>
            <input class="button" type="submit" name="submit_login" value="Connexion">
            <p class="message">Pas de compte ? <a href="#">Créer un compte</a></p>
-           <p class="pwdoublie"> <a href="mdpOublie.php">Mot de passe oublié</a></p>
+           <p class="pwdoublie"> <a href="mdpoublie.php">Mot de passe oublié</a></p>
          </form>
        </div>
      </div>
@@ -197,6 +203,8 @@ if (count($error_log) == 0) {
 
  </div>
 <div class="clear"></div>
+
+
 
 
 

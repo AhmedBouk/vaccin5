@@ -48,3 +48,11 @@ function is_admin(){
     return true;
   }
 }
+function changementDate($tableau,$key){
+  if ($tableau[$key] != NULL) { //Création de la variable modifier pour la date de modif dans la BDD
+      $modif = date('d/m/Y', strtotime($tableau[$key]));
+  }else{
+      $modif = 'Il n\'a pas encore été modifié';
+  }
+  echo  $modif;
+}

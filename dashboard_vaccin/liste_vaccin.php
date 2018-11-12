@@ -1,5 +1,5 @@
 <?php
-include('inc/pdo.php');
+include('../inc/pdo.php');
 include('inc/fonctions.php');
 
   $sql = "SELECT * FROM v5_vaccin WHERE 1=1";
@@ -8,12 +8,6 @@ include('inc/fonctions.php');
   $query-> execute();
   $tableauVaccins = $query -> fetchall();
 
-  
-  // if (!empty($tableauVaccin['updated_at'])) { //Création de la variable modifier pour la date de modif dans la BDD
-  //     $modifVaccin = date('d/m/Y', strtotime($tableauVaccin['updated_at']));
-  // }else{
-  //     $modifVaccin = 'Il n\'as pas encore été modifié';
-  // }
 
   include('inc/header.php');
   include('inc/sidebar.php');
@@ -56,11 +50,11 @@ include('inc/fonctions.php');
                     }
                     echo '</td><td>'
                     .$tableauVaccin['frequences_injections']
-                    .'</td><td>'
-                    .$tableauVaccin['created_at']
-                    .'</td><td>'
-                    .$tableauVaccin['updated_at']
-                    .'</td><td><a href="modification_vaccins.php?id='.$tableauVaccin['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a><td></tr>' ;
+                    .'</td><td>';
+                    changementDate($tableauVaccin,'created_at');
+                    echo '</td><td>';
+                    changementDate($tableauVaccin,'updated_at');
+                    echo '</td><td><a href="modification_vaccins.php?id='.$tableauVaccin['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a><td></tr>' ;
                 }
 
 
