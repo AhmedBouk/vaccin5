@@ -126,8 +126,8 @@ if (count($error_log) == 0) {
     'id'      =>$user['id'],
     'nom'     =>$user['nom'],
     'prenom'  =>$user['prenom'],
-    'mail'    =>$user['mail']
-    'sexe'    =>$user['sexe']
+    'mail'    =>$user['mail'],
+    'sexe'    =>$user['sexe'],
     'date_naissance'    =>$user['date_naissance'],
     'role'    =>$user['role'],
     'ip'      =>$_SERVER["REMOTE_ADDR"]
