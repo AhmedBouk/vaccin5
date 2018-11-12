@@ -30,16 +30,15 @@
             <?php
               if (is_logged()) {
 
-                echo '<p>Bienvenue : '. $_SESSION['user']['prenom'] .' </p> <br/>
+                echo '<p> Bienvenue : '. $_SESSION['user']['prenom'] .' </p> <br/>
                 <p> <a href="deconnexion.php"> Deconnexion </a> </p>';
+                echo '<p> <a href="profil.php"> Profil </a> </p>';
                 // header('refresh: 1; URL=index.php');
                 ?> <style media="screen">
                   .inscription{display: none;}
                   .sliders{width: 100%;margin: 40px 0;}
                 </style>
-                <!-- <script type="text/javascript">
-              	   window.location.reload()
-                </script> -->
+
                 <?php
                 }
               if (is_admin()) {
