@@ -30,20 +30,18 @@
             <?php
               if (is_logged()) {
 
-                echo '<p>Bienvenue : '. $_SESSION['user']['prenom'] .' </p> <br/>
-                <p> <a href="deconnexion.php"> Deconnexion </a> </p>';
-                // header('refresh: 1; URL=index.php');
+                echo '<p> Bienvenue  '. $_SESSION['user']['prenom'] .' </p>' ;
+                echo '<a href="deconnexion.php"> Deconnexion </a> </p>';
+                echo '<p> <a href="profil.php"> Profil </a> </p>';
+
                 ?> <style media="screen">
                   .inscription{display: none;}
                   .sliders{width: 100%;margin: 40px 0;}
                 </style>
-                <!-- <script type="text/javascript">
-              	   window.location.reload()
-                </script> -->
                 <?php
                 }
               if (is_admin()) {
-                echo '<a href="dashboard_vaccin/index.php">back office</a>';
+                echo '<br /><a href="dashboard_vaccin/index.php">back office</a>';
               }
             ?>
           </p>
