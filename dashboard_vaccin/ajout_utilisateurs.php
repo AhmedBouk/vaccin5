@@ -1,5 +1,6 @@
 <?php
-  include('inc/header.php');
+  include('../inc/header.php');
+  include('../inc/fonctions.php');
   include('inc/sidebar.php');
 ?>
 <section class="content-header">

@@ -1,10 +1,10 @@
 <?php
- is_logged();
-  if (is_admin()){
+is_logged();
+if (is_admin()){
 
-  }else {
-    header("Location: ../index.php");
-  }
+}else {
+  header("Location: ../403.php");
+}
  ?>
 <!DOCTYPE html>
 <html>
@@ -73,7 +73,7 @@
         <!-- Menu Body -->
           <!-- Menu Footer-->
           <li class="user-footer">
-              <a href="#" class="btn btn-default btn-flat">Déconnexion</a>
+              <a href="../deconnexion.php" class="btn btn-default btn-flat">Déconnexion</a>
           </li>
         </ul>
       </li>
