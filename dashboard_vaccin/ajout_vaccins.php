@@ -1,5 +1,7 @@
 <?php
-include('inc/header.php');
+include('inc/pdo.php');
+include('inc/fonctions.php');
+
 
 
 
@@ -58,6 +60,7 @@ include('inc/header.php');
   }
 }
 include('inc/sidebar.php');
+include('inc/header.php');
 ?>
 <section class="content-header">
   <h1>

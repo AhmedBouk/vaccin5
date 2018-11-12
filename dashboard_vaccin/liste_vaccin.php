@@ -1,15 +1,21 @@
 <?php
-  include('inc/header.php');
+include('inc/pdo.php');
+include('inc/fonctions.php');
 
-
-  $sql = "SELECT * FROM v5_vaccin";
+  $sql = "SELECT * FROM v5_vaccin WHERE 1=1";
 
   $query= $pdo -> prepare($sql) ;
   $query-> execute();
   $tableauVaccins = $query -> fetchall();
 
+  
+  // if (!empty($tableauVaccin['updated_at'])) { //Création de la variable modifier pour la date de modif dans la BDD
+  //     $modifVaccin = date('d/m/Y', strtotime($tableauVaccin['updated_at']));
+  // }else{
+  //     $modifVaccin = 'Il n\'as pas encore été modifié';
+  // }
 
-
+  include('inc/header.php');
   include('inc/sidebar.php');
 ?>
 <section class="content-header">
@@ -18,7 +24,7 @@
     <small></small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+    <li><a href="index.php"><i class="fa fa-dashboard"></i>Home</a></li>
          <li class="active">Liste des vaccins</li>
   </ol>
 </section>
@@ -28,7 +34,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
-              <table id="example2_paginate" class="table table-hover">
+              <table class="table table-hover">
                 <tr>
                   <th>Id</th> <!-- titre -->
                   <th>Nom</th>
@@ -55,7 +61,10 @@
                     .'</td><td>'
                     .$tableauVaccin['updated_at']
                     .'</td><td><a href="modification_vaccins.php?id='.$tableauVaccin['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a><td></tr>' ;
-                } ?>
+                }
+
+
+                ?>
               </table>
             </div>
             <!-- /.box-body -->
