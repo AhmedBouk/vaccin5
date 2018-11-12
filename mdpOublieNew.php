@@ -32,15 +32,15 @@ if(!empty($_GET['mail']) && !empty($_GET['token'])){
           $hash     = password_hash($password , PASSWORD_DEFAULT);
           $token    = generateRandomString(120);
 
-          $sql = "UPDATE v5_users SET mdp= :password ,token= :token, updated_at= now() WHERE id= :id";
+          $sql = "UPDATE v5_users SET mdp = :password ,token= :token, updated_at = NOW() WHERE id= :id";
           $query= $pdo -> prepare($sql) ;
           $query-> bindvalue(':password' , $hash , PDO::PARAM_STR );
           $query-> bindvalue(':token' , $token , PDO::PARAM_STR );
-          $query-> bindvalue(':id' , $user , PDO::PARAM_INT );
+          $query-> bindvalue(':id' , $user['id'] , PDO::PARAM_INT );
           $query-> execute();
 
 debug($user);
-          // header('location: index.php');
+          header('location: index.php');
 
     }
   }
@@ -51,34 +51,22 @@ debug($user);
     header('location:404.php');
   }
 
-
-
-
 include('inc/header.php');
-
 
 ?>
 <!-- Il y a une div class container autour du body  -->
 
-<form  action="" method="post">
-  <input type="text" name="password" placeholder="MDP 1" value="">
-  <input type="text" name="password2" placeholder="MDP 2" value="">
+<div class="contact">
+  <h2>Nouveau mot de passe</h2>
+  <div class="form">
+    <form class="formulaire" action="" method="post">
+  <input type="password" name="password" placeholder="Nouveau mot de passe" value="">
+  <input type="password" name="password2" placeholder="Confirmation du mot de passe" value="">
   <span><?php spanError($error,'password') ?></span>
 
-  <input type="submit" name="submitted" value="Envoyer">
+  <input class="button" type="submit" name="submitted" value="Envoyer">
 
 
 </form>
 
-
-
-
-
-
-
-
-
-
-
-
-<?php include('inc/footer.php'); ?>
+<?php include('inc/footer.php');

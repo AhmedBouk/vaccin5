@@ -3,7 +3,7 @@ include('inc/fonctions.php');
 include('inc/pdo.php');
 $title = 'profil';
 
-// if(is_logged()){
+if(is_logged()){
   if(!empty($_GET['id'])){
 
     $id = $_GET['id'];
@@ -46,9 +46,9 @@ $title = 'profil';
   }else {
           // header("Location: 404.php");
   }
-// }else {
-//     header("Location: 404.php");
-// }
+}else {
+    header("Location: 404.php");
+}
 
 
 //si $_GET ['id'] est renseigné et pas vide  on faite une {
@@ -100,11 +100,11 @@ include('inc/header.php');
 
 
 <ul class="description">
-      <li>  Nom : <?php echo $_GET['id']['nom'] ;?> </li>
-      <li>  Prenom : <?php echo $_GET['id']['prenom'] ;?></li>
-      <li>  Sexe : <?php echo $_GET['id']['sexe'] ;?> </li>
-      <li>  mail :<?php echo $_GET['id']['mail'] ;?> </li>
-      <li>  Date de Naissance : <?php echo $_GET['id']['date_naissance'] ;?></li>
+      <li>  Nom : <?php echo $_SESSION['user']['nom'] ;?> </li>
+      <li>  Prenom : <?php echo $_SESSION['user']['prenom'] ;?></li>
+      <li>  Sexe : <?php echo $_SESSION['user']['sexe'] ;?> </li>
+      <li>  mail :<?php echo $_SESSION['user']['mail'] ;?> </li>
+      <li>  Date de Naissance : <?php echo $_SESSION['user']['date_naissance'] ;?></li>
 </ul>
 
 

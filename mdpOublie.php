@@ -23,7 +23,7 @@ if(!empty($_POST['submitted'])) {
 
       if (!empty($user)) {
         $body = '<p>Veuillez cliquer sur ce lien</p>';
-        $body .= '<a href="mdpOublieNew.php?mail='.urlencode($user['mail']) .'&token='.  urlencode($user['token']).'">ici</a>';
+        $body .= '<a href="mdpoublienew.php?mail='.urlencode($user['mail']) .'&token='.  urlencode($user['token']).'">ici</a>';
 
       }else {
         $error['mail'] = 'Mail non existant';
@@ -43,15 +43,16 @@ include('inc/header.php');
 
 ?>
 <!-- Il y a une div class container autour du body  -->
-
-
-<form  action="" method="post">
-  <label for="mail">Votre email</label>
-  <input type="text" name="mail" value="<?php value('mail') ?>">
-  <span><?php spanError($error,'mail') ?></span>
-  <input type="submit" name="submitted" value="Modifier le mot de passe">
-</form>
-
+<div class="contact">
+  <h2>Mot de passe oublié</h2>
+  <div class="form">
+    <form class="formulaire" action="" method="post">
+  <form  class="formulaire" action="" method="post">
+    <input type="text" name="mail" placeholder="Votre email" value="<?php value('mail') ?>">
+    <span><?php spanError($error,'mail') ?></span>
+    <input class="button" type="submit" name="submitted" value="Modifier le mot de passe">
+  </form>
+</div>
 
 
 
