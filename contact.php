@@ -5,7 +5,7 @@ include('inc/pdo.php');
 $title = 'Contact';
 $error = array();
 
-if (!empty($_POST['submit_register'])) {
+if (!empty($_POST['submit'])) {
 
 // fonction declarant et nettoyant (expace au debut et à la fin & supprimant les caractère pouvant créer un script) une variable
 
@@ -52,7 +52,7 @@ if (!empty($_POST['submit_register'])) {
           $error['message'] = 'Veuillez renseigner ce champs.';
         }
 
-    $sql = "INSERT INTO v5_contact ('id', 'nom', 'mail', 'objet', 'message', 'created_at') VALUES ('id',':nom',':mail',':objet',':message',now())";
+    $sql = "INSERT INTO v5_contact ('id', 'nom', 'mail', 'objet', 'message', 'created_at') VALUES ('id,:nom,:mail,:objet,:message,now())";
 
     $query= $pdo -> prepare($sql) ;
     $query-> bindvalue(':nom' , $nom , PDO::PARAM_STR );
@@ -82,7 +82,7 @@ if (!empty($_POST['submit_register'])) {
 
         <textarea name="msg" rows="8" cols="80" placeholder="Votre Message"><?php spanError($error,'nom') ?></textarea>
 
-        <input class="button" type="submit" name="submit_register" value="Envoyer">
+        <input class="button" type="submit" name="submit" value="Envoyer">
 
       </form>
     </div>
