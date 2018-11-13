@@ -66,37 +66,43 @@ include('inc/header.php');
 
 
 
-            <div class="">
-              <table class="">
+            <div class="modif_vaccin">
+              <h2>Ajouts / retrait vaccins</h2>
+              <table class="form table_vaccin">
                 <tr>
-                  <th>Nom</th>
-                  <th>Obligatoire</th>
-                  <th>Effectué</th>
-                  <th>Fréquences d'injection</th>
-                  <th>Ajouter</th>
+                  <th class="parent"><p class="enfant">Nom</p></th>
+                  <th class="parent"><p class="enfant">Obligatoire / Recommandé</p></th>
+                  <th class="parent"><p class="enfant">Effectué</p></th>
+                  <th class="parent"><p class="enfant">Fréquences d'injection</p></th>
+                  <th class="parent"><p class="enfant">Ajouter</p></th>
                 </tr>
                 <?php foreach ($listVaccins as $listVaccin) {
-                    echo '<tr><td>'.$listVaccin['nom'].'</td>';
+                    echo '<tr><td class="parent"><p class="enfant">'.$listVaccin['nom'].'</p></td>';
 
                     if ($listVaccin['obligatoire'] == 1) {
-                       echo '<td>Obligatoire</td>';
+                       echo '<td class="parent"><p class="enfant">Obligatoire</p></td>';
                     } else {
-                      echo '<td>Non obligatoire</td>';
+                      echo '<td class="parent"><p class="enfant">Recommandé</p></td>';
                     }
 
                     if(in_array($listVaccin['id'],$tableauId)) {
-                      echo '<td><img src="assets/image/icon_fait.svg" alt="Fait"></td>';
+                      echo '<td class="parent"><img class="enfant" src="assets/image/icon_fait.svg" alt="Fait"></td>';
                     } else {
-                      echo '<td><img src="assets/image/icon_non_fait.svg" alt="Fait"></td>';
+                      echo '<td class="parent"><img class="enfant" src="assets/image/icon_non_fait.svg" alt="Fait"></td>';
                     }
 
-                    echo '</td><td>'.$listVaccin['frequences_injections'].'</td>' ;
+                    echo '</td><td class="parent"><p class="enfant">'.$listVaccin['frequences_injections'].'</p></td>' ;
                     echo '<td>';
                     ?>
 
-                    <input type="submit" name="" value="Ajouter"><?php echo '</td></tr>' ;
+                    <input class="button" type="submit" name="" value="Ajouter"><?php echo '</td></tr>' ;
                   } ?>
               </table>
+
+              <div class="button_div">
+                <a class="button" href="profil.php">Retour</a>
+              </div>
             </div>
+
 
 <?php include('inc/footer.php');

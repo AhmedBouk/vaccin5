@@ -1,7 +1,7 @@
 </div>
   <footer>
-      <div class="wrapHF">
-          <h2>Notre Equipe</h2>
+      <div class="wrapF">
+          <h2 id="fittext4">Notre Equipe</h2>
           <div class="zoom photos">
 
             <div class="photo">
@@ -25,20 +25,56 @@
 
           <div class="clear"></div>
       </div>
-
+<div class="faq">
+  <a href="faq.php">faq</a>
+</div>
 
     <div class="copyright">
       <p>Copyright (c) 2018 Copyright Holder All Rights Reserved.</p>
       <p>Ce site est un exercice dans le cadre de la Nfactory School</p>
 
     </div>
+    <div class="clear"></div>
   </footer>
 
+<!-- FIT TEXT -->
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script src="assets\fittext\jquery.fittext.js"></script>
+    <script type="text/javascript"></script>
+    <script>
+    jQuery("#fittext1").fitText(1.5);
+    jQuery("#fittext2").fitText(1.5);
+    jQuery("#fittext3").fitText(1.5);
+    jQuery("#fittext4").fitText(1.8);
+    </script>
+
   <!-- INSCRIPTION -->
+
+
+    <script
+      src="https://code.jquery.com/jquery-2.0.0.min.js"
+      integrity="sha256-1IKHGl6UjLSIT6CXLqmKgavKBXtr0/jJlaGMEkh+dhw="
+      crossorigin="anonymous">
+  </script>
+
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src='inscription.js'></script>
 
+<!-- slicknav -->
+  <script src="assets/slicknav/jquery.slicknav.min.js"></script>
+
+  <script type="text/javascript" charset="utf-8">
+  $(function(){
+        $('#menu').slicknav();
+      });
+    </script>
+
+
+
+
   <!-- SLIDERS -->
+
   <script
     src="https://code.jquery.com/jquery-1.6.2.js"
     integrity="sha256-pXKSYZ0U64y9kjvenyjPmUrGarxI98l1t2kyj/M73ck="
@@ -52,6 +88,10 @@
         $('.flexslider').flexslider();
       });
     </script>
+
+    <!-- FIT TEXT -->
+
+
 
 </body>
 </html>
