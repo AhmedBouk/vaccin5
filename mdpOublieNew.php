@@ -9,7 +9,7 @@ if(!empty($_GET['mail']) && !empty($_GET['token'])){
     $mail   = urldecode($_GET['mail']);
     $token  = urldecode($_GET['token']);
 
-    $sql="SELECT id FROM v5_users WHERE mail = :mail AND token = :token"; //requete à modifier
+    $sql="SELECT id FROM v5_users WHERE mail = :mail AND token = :token";
     $query= $pdo -> prepare($sql) ;
     $query-> bindValue(':mail' , $mail , PDO::PARAM_STR );
     $query-> bindValue(':token' , $token , PDO::PARAM_STR );
@@ -66,7 +66,8 @@ include('inc/header.php');
 
   <input class="button" type="submit" name="submitted" value="Envoyer">
 
-
 </form>
+</div>
+</div>
 
 <?php include('inc/footer.php');

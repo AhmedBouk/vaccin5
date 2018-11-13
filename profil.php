@@ -123,5 +123,5 @@ echo '<td>' .$vaccinNonObligatoire['rappel']. '</td>';
 
 </table>
 
-<?php debug($_SESSION['user']['id']) ?>
+<a href="modif_vaccin.php">modifier vaccin</a>
 <?php include('inc/footer.php');
