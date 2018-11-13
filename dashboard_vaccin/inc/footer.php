@@ -1,4 +1,7 @@
-<?php  ?>
+<?php
+
+
+?>
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -218,7 +221,8 @@
 <!-- AdminLTE for demo purposes -->
 <script src="assets/js/demo.js"></script>
 
-<script src="assets/js/chart.js/Chart.js"></script>
+<script src="assets/js/raphael.min.js"></script>
+<script src="assets/js/morris.min.js"></script>
 
 <script>
   $(document).ready(function () {
@@ -227,37 +231,31 @@
 </script>
 
 <script>
+// LINE CHART
+var line = new Morris.Line({
+  element: 'line-chart',
+  resize: true,
+  data: [
+    {y: '2011 Q1', item1: 2666},
+    {y: '2011 Q2', item1: 2778},
+    {y: '2011 Q3', item1: 4912},
+    {y: '2011 Q4', item1: 3767},
+    {y: '2012 Q1', item1: 6810},
+    {y: '2012 Q2', item1: 5670},
+    {y: '2012 Q3', item1: 4820},
+    {y: '2012 Q4', item1: 15073},
+    {y: '2013 Q1', item1: 10687},
+    {y: '2013 Q2', item1: 8432}
+  ],
+  xkey: 'y',
+  ykeys: ['item1'],
+  labels: ['Item 1'],
+  lineColors: ['#3c8dbc'],
+  hideHover: 'auto'
+});
 
-$(function () {
-    //Create the line chart
-    areaChart.Line(LineChartData, LineChartOptions)
-
-    //-------------
-    //- LINE CHART -
-    //--------------
-    var lineChartData = {
-      labels  : ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'octobre', 'novembre','décembre'],
-      datasets: [
-        {
-          label               : 'Utilisateurs',
-          fillColor           : 'rgba(210, 214, 222, 1)',
-          strokeColor         : 'rgba(210, 214, 222, 1)',
-          pointColor          : 'rgba(210, 214, 222, 1)',
-          pointStrokeColor    : '#c1c7d1',
-          pointHighlightFill  : '#fff',
-          pointHighlightStroke: 'rgba(220,220,220,1)',
-          data                : [65, 59, 80, 81, 56, 55, 40,41,45,89,12,45]
-        },
-      ]
-    }
-
-
-    var lineChartCanvas          = $('#lineChart').get(0).getContext('2d')
-    
-    lineChartOptions.datasetFill = false
-    lineChart.Line(lineChartData, lineChartOptions)
-})
   </script>
+
 
 </body>
 </html>
