@@ -25,7 +25,9 @@
 
           <div class="clear"></div>
       </div>
-
+<div class="faq">
+  <a href="faq.php">faq</a>
+</div>
 
     <div class="copyright">
       <p>Copyright (c) 2018 Copyright Holder All Rights Reserved.</p>
@@ -49,8 +51,25 @@
 
   <!-- INSCRIPTION -->
 
+
+    <script
+      src="https://code.jquery.com/jquery-2.0.0.min.js"
+      integrity="sha256-1IKHGl6UjLSIT6CXLqmKgavKBXtr0/jJlaGMEkh+dhw="
+      crossorigin="anonymous">
+  </script>
+
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src='inscription.js'></script>
+
+<!-- slicknav -->
+  <script src="assets/slicknav/jquery.slicknav.min.js"></script>
+
+  <script type="text/javascript" charset="utf-8">
+  $(function(){
+        $('#menu').slicknav();
+      });
+    </script>
+
 
 
 
@@ -71,7 +90,6 @@
     </script>
 
     <!-- FIT TEXT -->
-
 
 
 

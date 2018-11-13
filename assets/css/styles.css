@@ -57,20 +57,32 @@ header .bienvenue{
   float: right;
   width: 15%;
   margin: 20px 2% 0 2%;
-  background-color: black;
+  /* background-color: ; */
 }
 
- .bienvenue p{
-  color: #FFF;
-  font-size: 1.1em;
-  padding-bottom: 5px;
 
+
+
+header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #577ba0;
 }
 
-header .bienvenue li {
-  color: black;
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
 }
 
+/* Change the link color on hover */
+li a:hover {
+    background-color: #555;
+    color: red;
+}
 
 /* BODY */
 /* P.INDEX */
@@ -140,7 +152,7 @@ header .bienvenue li {
   margin: auto;
 }
 
-.form .button , .formulaire .button {
+.form .button , .formulaire .button ,.modif_vaccin .button, .button_div .button {
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
@@ -211,9 +223,17 @@ header .bienvenue li {
 /* FORM CONTACT */
 /* aussi dans index inscription */
 
-.contact h2 , .modif_profil h2 {
+.contact h2 , .modif_profil h2, .modif_vaccin h2{
+  text-align: center;
+  font-size: 2.5em;
   margin: 40px 0 40px 0;
 }
+/* P.PROFIL */
+/* DESCRIPTION */
+.description{
+  margin-bottom: 30px;
+}
+
 
 /* P.mdpoublie */
 /* dans .inscription */
@@ -221,6 +241,33 @@ header .bienvenue li {
 /* P.mdpoublienew */
 /* dans .inscription */
 
+/* P*modif_vaccin */
+/* aussi dans inscription */
+
+.modif_vaccin{
+  margin-top: 50px;
+}
+
+.table_vaccin th, .table_vaccin td{
+  border: 3px solid black;
+}
+
+.table_vaccin .parent {
+  text-align: center;
+}
+
+
+.table_vaccin .enfant {
+  vertical-align:middle;
+  display:inline-block;
+}
+
+.button_div{
+  margin-bottom: 30px;
+}
+.button_div .center{
+  margin-left:  38%;
+}
 
 /* FOOTER */
 /* Notre equipe */
@@ -359,6 +406,85 @@ margin-left: 13%;
   margin-top: 0px;
   margin-bottom: 25px;
 }
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,800);
+
+body {
+  font-family: 'Open Sans';
+  font-size: 1.5em;
+  background: #eee;
+}
+
+.content {
+  width: 80%;
+  padding: 20px;
+  margin: 0 auto;
+  padding: 0 60px 0 0;
+}
+
+.centerplease {
+  margin: 0 auto;
+  max-width: 270px;
+  font-size: 60px;
+}
+
+.question {
+  position: relative;
+  background: #6b4848;
+  margin: 0;
+  padding: 10px 10px 10px 50px;
+  display: block;
+  width:100%;
+  cursor: pointer;
+}
+
+.answers {
+  background: #baabab;
+  padding: 0px 15px;
+  margin: 5px 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  position: relative;
+  opacity: 0;
+  -webkit-transition: .7s ease;
+  -moz-transition: .7s ease;
+  -o-transition: .7s ease;
+  transition: .7s ease;
+}
+
+.questions:checked ~ .answers{
+  height: auto;
+  opacity: 1;
+  padding: 15px;
+}
+
+.plus {
+  position: absolute;
+  margin-left: 10px;
+  z-index: 5;
+  font-size: 2em;
+  line-height: 100%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-transition: .3s ease;
+  -moz-transition: .3s ease;
+  -o-transition: .3s ease;
+  transition: .3s ease;
+}
+
+.questions:checked ~ .plus {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.questions {
+  display: none;
+}
 
 @media only screen and (max-width: 767px) {
   .notfound .notfound-404 {
@@ -380,5 +506,27 @@ margin-left: 13%;
   }
   .notfound h2 {
     font-size: 16px;
+  }
+}
+
+
+
+.slicknav_menu {
+  display:none;
+}
+
+@media screen and (max-width: 50em) {
+  /* #menu is the original menu */
+  #menu {
+    display:none;
+  }
+
+  .slicknav_menu {
+    display:block;
+  }
+}
+@media (max-width : 480px) {
+  header .titre{
+    font-size: 1em;
   }
 }
