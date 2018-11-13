@@ -37,5 +37,11 @@
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src='inscription.js'></script>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src="assets\fittext\jquery.fittext.js"></script>
+  <script>
+    jQuery("#responsive_headline").fitText();
+  </script>
 </body>
 </html>
