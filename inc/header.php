@@ -29,10 +29,10 @@
           <p>
             <?php
               if (is_logged()) {
-                echo '<p> Bienvenue  '. $_SESSION['user']['prenom'] .' </p>' ;
-                echo '<p> <a href="profil.php"> Profil </a></p>';
-                echo '<p> <a href="deconnexion.php"> Deconnexion </a> </p>';
-
+                 '<ul>';
+                echo '<p> Bienvenue  '. $_SESSION['user']['prenom'] .'</p>' ;
+                echo '<li> <a href="profil.php"> Profil </a></li>';
+                echo '<li> <a href="deconnexion.php"> Deconnexion </a></li>';
 
                 ?> <style media="screen">
                   .inscription{display: none;}
@@ -42,8 +42,10 @@
                 }
 
             ?>
-          </p>
-          <a href="contact.php">Contact</a>
+
+                <li><a href="contact.php">Contact</a></li>
+          </ul>
+        </p>
           <?php
               if (is_admin()) {
                 echo '<p><a href="dashboard_vaccin/index.php">back office</a></p>';

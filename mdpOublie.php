@@ -52,10 +52,12 @@ include('inc/header.php');
     <span><?php spanError($error,'mail') ?></span>
     <input class="button" type="submit" name="submitted" value="Modifier le mot de passe">
   </form>
+  <div class="clear"></div>
+</div>
 </div>
 
 
 
 <?php
 echo $body;
- include('inc/footer.php'); ?>
+ include('inc/footer.php');
