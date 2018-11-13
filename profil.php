@@ -76,11 +76,11 @@ include('inc/header.php');
 
 
 <ul class="description">
-      <li>  Nom : <?php echo $profil['nom'] ;?> </li>
-      <li>  Prenom : <?php echo $profil['prenom'] ; ?></li>
-      <li>  Sexe : <?php echo $profil['sexe'] ; ?> </li>
-      <li>  mail :<?php echo $profil['mail'] ; ?> </li>
-      <li>  Date de Naissance : <?php echo $profil['date_naissance'] ;?></li>
+      <li>  Nom : <?php echo $profil['nom']; ?> </li>
+      <li>  Prenom : <?php echo $profil['prenom']; ?></li>
+      <li>  Sexe : <?php  echo $profil['sexe']; ?> </li>
+      <li>  mail :<?php echo $profil['mail']; ?> </li>
+      <li>  Date de Naissance : <?php echo $profil['date_naissance']; ?></li>
 </ul>
 <a href="modifier_profil.php">Modifier profil</a>
 
