@@ -1,14 +1,21 @@
 <?php
 include('../inc/pdo.php');
-include('inc/fonctions.php');
+include('../inc/fonctions.php');
 include('inc/request.php');
+is_logged();
+if (is_admin()){
 
+}else {
+  header("Location: ../403.php");
+}
 
 $tableauUsers=requeteListeUser();
 
 
 include('inc/header.php');
 include('inc/sidebar.php');
+
+
 ?>
 <section class="content-header">
   <h1>

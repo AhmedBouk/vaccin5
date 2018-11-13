@@ -7,6 +7,10 @@ $title = 'profil';
 // si la personne est connecté
 if(is_logged()){
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 78127b5ebc907fecc1ba625ee283e17a6e277b62
 // requete on selectionne tout de la table v5_users de la personne connecté selon son id
     $id = $_SESSION['user']['id'];
     $sql = " SELECT *
@@ -15,15 +19,38 @@ if(is_logged()){
 
 // preparation de la bdd
     $query =$pdo ->prepare($sql);
+<<<<<<< HEAD
+// protection injextion sql
+// $query -> bindValue(':id',$id, PDO ::PARAM_STR);
+// execution de la requete
+=======
+>>>>>>> 78127b5ebc907fecc1ba625ee283e17a6e277b62
     $query -> execute();
     $profil= $query -> fetch();
 
     if(!empty($profil)) {
+<<<<<<< HEAD
+
+
+ // debug($profil);
+
+
+
+=======
 // a virer
+>>>>>>> 78127b5ebc907fecc1ba625ee283e17a6e277b62
       $sql = "SELECT *
               FROM v5_vaccin
               WHERE obligatoire = 1";
       $query = $pdo -> prepare($sql);
+<<<<<<< HEAD
+
+    // $query -> bindValue(':obligatoire',1, PDO ::PARAM_STR);
+      $query -> execute();
+      $vaccinObligatoires= $query -> fetchAll();
+    //  debug($vaccinObligatoire);
+
+=======
       $query -> execute();
       $listVaccinObligatoires= $query -> fetchAll();
 
@@ -36,9 +63,27 @@ if(is_logged()){
       $query = $pdo -> prepare($sql);
       $query -> execute();
       $vaccinNonObligatoires = $query -> fetchAll();
+>>>>>>> 78127b5ebc907fecc1ba625ee283e17a6e277b62
+
+      $sql = "SELECT *
+              FROM v5_vaccin
+              WHERE obligatoire = 0";
+      $query = $pdo -> prepare($sql);
+
+      // $query -> bindValue(':obligatoire',1, PDO ::PARAM_STR);
+      $query -> execute();
+      $vaccinNonObligatoires = $query -> fetchAll();
+ // debug($vaccinNonObligatoires);
+
+<<<<<<< HEAD
 
 
-
+        $sql = "SELECT * FROM v5_vaccin AS v
+                LEFT JOIN v5_relation AS pivot
+                ON v.id = pivot.vaccin_id
+                WHERE pivot.user_id = $id
+                AND v.obligatoire = 1";
+=======
 // Requete des vaccins obligatoires
       $sql = "SELECT * FROM v5_vaccin AS v
               LEFT JOIN v5_relation AS pivot
@@ -53,7 +98,12 @@ if(is_logged()){
       foreach ($vaccinObligatoires as $v) {
             $tableauId[] = $v['vaccin_id'];
       }
+>>>>>>> 78127b5ebc907fecc1ba625ee283e17a6e277b62
 
+        $query = $pdo -> prepare($sql);
+        $query -> execute();
+        $vaccinfait= $query -> fetchAll();
+            // debug($vaccinfait);
 
 
     }else {
@@ -109,6 +159,41 @@ include('inc/header.php');
 
 </table>
 
+<<<<<<< HEAD
+<ul class="description">
+      <li>  Nom : <?php echo $profil['nom'] ;?> </li>
+      <li>  Prenom : <?php echo $profil['prenom'] ;?></li>
+      <li>  Sexe : <?php echo $profil['sexe'] ;?> </li>
+      <li>  mail :<?php echo $profil['mail'] ;?> </li>
+      <li>  Date de Naissance : <?php echo $profil['date_naissance'] ;?></li>
+</ul>
+
+<br>
+
+<table classe="vaccinObligatoires">
+
+   <?php foreach ($vaccinObligatoires as $vaccinObligatoire):
+     ?> <tr> <?php
+ echo '<td>' .$vaccinObligatoire['nom']. '</td>';
+ echo '<td>' .$vaccinObligatoire['frequences_injections']. '</td>';
+ echo '<td>' .$vaccinObligatoire['rappel']. '</td>';
+    ?> </tr> <?php
+   endforeach; ?>
+
+</table>
+
+<br>
+
+<table classe="vaccinNonObligatoires">
+
+   <?php foreach ($vaccinNonObligatoires as $vaccinNonObligatoire):
+     ?> <tr> <?php
+ echo '<td>' .$vaccinNonObligatoire['nom']. '</td>';
+ echo '<td>' .$vaccinNonObligatoire['frequences_injections']. '</td>';
+ echo '<td>' .$vaccinNonObligatoire['rappel']. '</td>';
+    ?> </tr> <?php
+   endforeach; ?>
+=======
 <br>
 <h2>non obligatoire</h2>
 <table classe="vaccinNonObligatoires">
@@ -120,6 +205,7 @@ echo '<td>' .$vaccinNonObligatoire['frequences_injections']. '</td>';
 echo '<td>' .$vaccinNonObligatoire['rappel']. '</td>';
    ?> </tr> <?php
   endforeach; ?>
+>>>>>>> 78127b5ebc907fecc1ba625ee283e17a6e277b62
 
 </table>
 

@@ -1,4 +1,7 @@
-<?php  ?>
+<?php
+
+
+?>
 
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
@@ -266,8 +269,14 @@ var line = new Morris.Line({
   lineColors: ['#3c8dbc'],
   hideHover: 'auto'
 });
+<<<<<<< HEAD
+
+  </script>
+=======
 </script>
 
+
+>>>>>>> 78127b5ebc907fecc1ba625ee283e17a6e277b62
 
 
 </body>
