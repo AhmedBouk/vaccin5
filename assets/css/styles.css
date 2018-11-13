@@ -50,20 +50,21 @@ header .bienvenue{
   float: right;
   width: 15%;
   margin: 20px 2% 0 2%;
+  background-color: black;
 }
 
-header .bienvenue p{
+ .bienvenue p{
   color: #FFF;
   font-size: 1.1em;
   padding-bottom: 5px;
 
 }
 
-header .bienvenue a{
-
-
+header .bienvenue li {
+  color: black;
 
 }
+
 
 /* BODY */
 /* P.INDEX */
