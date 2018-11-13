@@ -4,68 +4,99 @@ include('inc/pdo.php');
 include('dashboard_vaccin/inc/request.php');
 $title = 'Ajout de vaccin';
 
-$sql = "SELECT * FROM v5_vaccin WHERE 1=1";
-$query= $pdo -> prepare($sql) ;
-$query-> execute();
-$tableauVaccins = $query -> fetchall();
+// si la personne est connecté
+if(is_logged()){
+
+// requete on selectionne tout de la table v5_users de la personne connecté selon son id
+    $id = $_SESSION['user']['id'];
+    $sql = " SELECT *
+             FROM v5_users
+             WHERE id = $id";
+    $query =$pdo ->prepare($sql);
+    $query -> execute();
+    $profil= $query -> fetch();
+
+    if(!empty($profil)) {
+
+      $sql = "SELECT *
+              FROM v5_vaccin";
+      $query = $pdo -> prepare($sql);
+      $query -> execute();
+      $listVaccins= $query -> fetchAll();
+
+
+
+
+// Requete des vaccins obligatoires
+      $sql = "SELECT * FROM v5_vaccin AS v
+              LEFT JOIN v5_relation AS pivot
+              ON v.id = pivot.vaccin_id
+              WHERE pivot.user_id = $id";
+      $query = $pdo -> prepare($sql);
+      $query -> execute();
+      $vaccinfaits= $query -> fetchall();
+
+      $tableauId = array();
+      foreach ($vaccinfaits as $v) {
+            $tableauId[] = $v['vaccin_id'];
+      }
+
+
+
+    }else {
+        header("Location: 404.php");
+    }
+}
+else {
+    header("Location: 404.php");
+}
+
+// creation d'un lien Modifier qui emmene vers une nouvelle page ou il ya un formulaire avec nom prenom etc pour modifier les informations
 
 
 include('inc/header.php');
-
 ?>
+
+<style media="screen">
+  table tr, table tr td{
+    padding : 15px;
+  }
+</style>
 <!-- Il y a une id class container autour du body  -->
 
-<div class="">
-            <div class="">
-            </div>
-            <!-- /.box-header -->
+
+
             <div class="">
               <table class="">
                 <tr>
-                  <th>Id</th> <!-- titre -->
                   <th>Nom</th>
                   <th>Obligatoire</th>
+                  <th>Effectué</th>
                   <th>Fréquences d'injection</th>
-                  <th>Created_at</th>
-                  <th>Uptaded_at</th>
-                  <th>Modifier</th>
+                  <th>Ajouter</th>
                 </tr>
-                <?php foreach ($tableauVaccins as $tableauVaccin) {
-                    echo '<tr><td>'.$tableauVaccin['id']
-                    .'</td><td>'
-                    .$tableauVaccin['nom']
-                    .'</td>';
-                    if ($tableauVaccin['obligatoire'] == 1){
-                       echo '<td><span class="label label-success"</span>Obligatoire</td>';
+                <?php foreach ($listVaccins as $listVaccin) {
+                    echo '<tr><td>'.$listVaccin['nom'].'</td>';
+
+                    if ($listVaccin['obligatoire'] == 1) {
+                       echo '<td>Obligatoire</td>';
                     } else {
-                      echo '<td><span class="label label-danger">Non obligatoire</span></td>';
+                      echo '<td>Non obligatoire</td>';
                     }
-                    echo '</td><td>'
-                    .$tableauVaccin['frequences_injections']
-                    .'</td><td>';
-                    changementDate($tableauVaccin,'created_at');
-                    echo '</td><td>';
-                    changementDate($tableauVaccin,'updated_at');
-                    echo '</td><td><a href="modification_vaccins.php?id='.$tableauVaccin['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a><td></tr>' ;
-                }
 
+                    if(in_array($listVaccin['id'],$tableauId)) {
+                      echo '<td><img src="assets/image/icon_fait.svg" alt="Fait"></td>';
+                    } else {
+                      echo '<td><img src="assets/image/icon_non_fait.svg" alt="Fait"></td>';
+                    }
 
-                ?>
+                    echo '</td><td>'.$listVaccin['frequences_injections'].'</td>' ;
+                    echo '<td>';
+                    ?>
+
+                    <input type="submit" name="" value="Ajouter"><?php echo '</td></tr>' ;
+                  } ?>
               </table>
             </div>
-            <!-- /.box-body -->
-          </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php include('inc/footer.php');

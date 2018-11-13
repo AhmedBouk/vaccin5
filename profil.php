@@ -84,7 +84,7 @@ include('inc/header.php');
 </ul>
 <a href="modifier_profil.php">Modifier profil</a>
 
-<h2>obligatoire</h2>
+<h2 id="fittext3">Obligatoires</h2>
 <table classe="vaccinObligatoires">
 
   <?php foreach ($listVaccinObligatoires as $listVaccinObligatoire):
@@ -107,7 +107,7 @@ include('inc/header.php');
 </table>
 <a href="#"></a>
 <br>
-<h2>non obligatoire</h2>
+<h2 id="fittext1">Non obligatoires</h2>
 <table classe="vaccinNonObligatoires">
 
   <?php foreach ($vaccinNonObligatoires as $vaccinNonObligatoire):

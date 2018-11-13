@@ -33,7 +33,7 @@ La troisième étape est pasteurienne. En maîtrisant le processus d’atténuat
   <input type="checkbox" id="question2" name="q" class="questions">
   <div class="plus">+</div>
   <label for="question2" class="question">
-   Pourquoi se faire vacciner ?
+
   </label>
   <div class="answers">
     Le principe de la vaccination est d’aider le système immunitaire à lutter contre diverses maladies infectieuses, qu'elles soient liées à des bactéries (diphtérie, typhoïde…) ou des virus (rougeole, grippe…). En mettant l'organisme humain en contact avec des substances proches ou dérivées d'un agent pathogène (bactérie, virus), il se développe une réponse immunitaire  spécifique de l'agent pathogène et protectrice de la maladie causée par cet agent  : en cas de contact avec la bactérie ou le virus contre lequel une personne a été protégée, la réponse immunitaire sera prête à temps pour empêcher l'apparition de la maladie ou, à défaut, la survenue d'une forme grave. En résumé, la vaccination permet de se protéger contre la maladie sans en faire les frais. Des effets indésirables peuvent survenir mais dans la très grande majorité des cas ils sont mineurs et passagers. De nombreux vaccins existent et leurs indications dépendent des risques d’exposition propres à chacun, d'où l'intérêt de recommandations personnalisées.
@@ -45,7 +45,7 @@ Se vacciner, c’est se prémunir contre des maladies potentiellement graves de 
   <input type="checkbox" id="question3" name="q" class="questions">
   <div class="plus">+</div>
   <label for="question3" class="question">
-Qu'est-ce qu'un vaccin atténué ?
+
   </label>
   <div class="answers">
     C'est un vaccin qui contient l'agent infectieux responsable de la maladie vivant mais atténué par différents procédés techniques ; grâce à cette atténuation (inventée par Pasteur), cet agent infectieux perd sa virulence mais conserve son pouvoir immunogène, à l'origine de la protection vaccinale.
@@ -102,6 +102,5 @@ Qu'est-ce qu'un vaccin atténué ?
    Le calendrier des vaccinations est complexe : il vise à protéger la population générale et certaines populations spécifiques au plus juste de l'état des connaissances scientifiques. Ainsi, il prend notamment en compte les situations épidémiologiques régionales et la fragilité de certains groupes de personnes.
 La simplification du calendrier des vaccinations s'est appuyée sur l'expérience d'autres pays européens (Suède, Danemark, Finlande et Italie) et les fondements de divers calendriers vaccinaux pour optimiser le nombre d'injections nécessaires à la protection de la population et rendre les âges des rendez-vous vaccinaux plus facilement mémorisables par les professionnels de santé et le public.
   </div>
-</div>
 </div>
 </div>

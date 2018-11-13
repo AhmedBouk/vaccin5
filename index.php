@@ -11,17 +11,20 @@
  ?>
  <div class="contenu">
 
-   <div class="sliders">
-      <div id="slider">
-        <figure>
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/austin-fireworks.jpg" alt>
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/taj-mahal_copy.jpg" alt>
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ibiza.jpg" alt>
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ankor-wat.jpg" alt>
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/austin-fireworks.jpg" alt>
-        </figure>
-      </div>
+   <div class="flexslider">
+     <ul class="slides">
+       <li>
+         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/austin-fireworks.jpg" />
+       </li>
+       <li>
+         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/taj-mahal_copy.jpg" alt>
+       </li>
+       <li>
+         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ibiza.jpg" alt>
+       </li>
+     </ul>
    </div>
+
 
    <div class="inscription">
      <div class="login-page">
@@ -76,7 +79,7 @@
 
 
 <div class="comment-users">
-  <h2>Commentaires de nos utilisateurs satisfaits.</h2>
+  <h2 id="fittext3">Commentaires de nos utilisateurs satisfaits.</h2>
   <div class="commentaires">
 
     <div class="commentaire">
