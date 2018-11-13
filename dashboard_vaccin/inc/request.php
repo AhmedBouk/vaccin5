@@ -3,7 +3,7 @@
 function requeteListeUser(){
 global $pdo;
 
-$sql = "SELECT * FROM v5_users ORDER BY created_at DESC LIMIT $offset,$userPerPage";
+$sql = "SELECT * FROM v5_users";
 $query= $pdo -> prepare($sql) ;
 $query-> execute();
 $tableauUsers = $query -> fetchall();
@@ -13,7 +13,7 @@ return $tableauUsers;
 function requeteListeVaccins(){
 global $pdo;
 
-$sql = "SELECT * FROM v5_vaccin WHERE 1=1";
+$sql = "SELECT * FROM v5_vaccin";
 $query= $pdo -> prepare($sql) ;
 $query-> execute();
 $tableauVaccins = $query -> fetchall();

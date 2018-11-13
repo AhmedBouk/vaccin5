@@ -1,5 +1,4 @@
 <?php
-include('inc/header.php');
 include('inc/fonctions.php');
 include('inc/pdo.php');
 $title = 'Contact';
@@ -61,7 +60,7 @@ if (!empty($_POST['submit'])) {
     $query-> bindvalue(':message' , $message , PDO::PARAM_STR );
     $query-> execute();
   }
-
+include('inc/header.php');
 ?>
 <!-- Il y a une id class container autour du body  -->
 
