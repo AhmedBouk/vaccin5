@@ -2,15 +2,25 @@
 include('../inc/pdo.php');
 include('../inc/fonctions.php');
 include('inc/request.php');
-is_logged();
-if (is_admin()){
 
-}else {
-  header("Location: ../403.php");
+
+
+$usersPerPage = 20;
+$page = 1;
+$offset = 0;
+
+if (!empty($_GET['page']) && is_numeric($_GET['page'])) {
+    $page = $_GET['page'];
+    $offset = $page * $usersPerPage - $usersPerPage;
+    // or
+    // $offset = ($page - 1) * $articlePerPage;
 }
 
 $tableauUsers=requeteListeUser();
 
+$nbreUsers = compteUtilisateur();
+
+debug($nbreUsers);
 
 include('inc/header.php');
 include('inc/sidebar.php');

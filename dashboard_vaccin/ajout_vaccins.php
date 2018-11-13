@@ -4,7 +4,6 @@ include('../inc/fonctions.php');
 include('inc/request.php');
 
 
-
 // creer un tableau d'erreur
   $error = array();
 
@@ -65,10 +64,9 @@ include('inc/header.php');
 <section class="content-header">
   <h1>
     Ajout de vaccins
-    <small></small>
   </h1>
   <ol class="breadcrumb">
-    <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+    <li><a href="index.php"><i class="fa fa-dashboard"></i>Home</a></li>
          <li class="active">Ajout de vaccins</li>
   </ol>
 </section>
@@ -109,16 +107,11 @@ include('inc/header.php');
             </div>
           </div>
           <!-- /.box-body -->
-
           <div class="box-footer">
-
             <input type="submit" name="submitted" class="btn btn-primary" value="Ajouter" >
           </div>
         </form>
       </div>
-
-
-
 </section>
 <!-- fin content wrapper -->
 </div>
