@@ -68,57 +68,84 @@ else {
 include('inc/header.php');
 ?>
 
-<style media="screen">
-  table tr, table tr td{
-    padding : 15px;
-  }
-</style>
+
+<div class="modif_vaccin">
 
 
-<ul class="description">
-      <li>  Nom : <?php echo $profil['nom'] ;?> </li>
-      <li>  Prenom : <?php echo $profil['prenom'] ; ?></li>
-      <li>  Sexe : <?php echo $profil['sexe'] ; ?> </li>
-      <li>  mail :<?php echo $profil['mail'] ; ?> </li>
-      <li>  Date de Naissance : <?php echo $profil['date_naissance'] ;?></li>
-</ul>
-<a href="modifier_profil.php">Modifier profil</a>
+  <h2>Description</h2>
+<div class="form table_vaccin">
 
-<h2>obligatoire</h2>
-<table classe="vaccinObligatoires">
+  <ul class="description">
+        <li>  Nom : <?php echo $profil['nom'] ;?> </li>
+        <li>  Prenom : <?php echo $profil['prenom'] ; ?></li>
+        <li>  Sexe : <?php echo $profil['sexe'] ; ?> </li>
+        <li>  mail :  <?php echo $profil['mail'] ; ?> </li>
+        <li>  Date de Naissance : <?php echo $profil['date_naissance'] ;?></li>
+  </ul>
 
-  <?php foreach ($listVaccinObligatoires as $listVaccinObligatoire):
-    ?> <tr> <?php
-    echo '<td>' .$listVaccinObligatoire['nom']. '</td>';
-
-      if(in_array($listVaccinObligatoire['id'],$tableauId)) {
-        echo '<td><img src="assets/image/icon_fait.svg" alt="Fait"></td>';
-      } else {
-        echo '<td><img src="assets/image/icon_non_fait.svg" alt="Fait"></td>';
-      }
-
-    echo '<td>' .$listVaccinObligatoire['frequences_injections']. '</td>';
-    echo '<td>' .$listVaccinObligatoire['rappel']. '</td>';
-       ?> </tr> <?php
-      endforeach; ?>
+<div class="button_div">
+  <a class="button" href="modifier_profil.php">Modifier profil</a>
+</div>
+</div>
+</div>
 
 
 
-</table>
-<a href="#"></a>
-<br>
-<h2>non obligatoire</h2>
-<table classe="vaccinNonObligatoires">
+
+<div class="modif_vaccin">
+
+  <h2>Vaccins Obligatoires</h2>
+    <table class="form table_vaccin">
+
+      <tr>
+        <th class="parent"><p class="enfant">Nom</p></th>
+        <th class="parent"><p class="enfant">Fait</p></th>
+        <th class="parent"><p class="enfant">Fréquences d'injection</p></th>
+        <th class="parent"><p class="enfant">Rappel</p></th>
+      </tr>
+
+      <?php foreach ($listVaccinObligatoires as $listVaccinObligatoire):
+        ?> <tr> <?php
+        echo '<td class="parent"><p class="enfant">' .$listVaccinObligatoire['nom']. '</p></td>';
+
+          if(in_array($listVaccinObligatoire['id'],$tableauId)) {
+            echo '<td class="parent"><img class="enfant" src="assets/image/icon_fait.svg" alt="Fait"></td>';
+          } else {
+            echo '<td class="parent"><img class="enfant" src="assets/image/icon_non_fait.svg" alt="Fait"></td>';
+          }
+
+        echo '<td class="parent"><p class="enfant">' .$listVaccinObligatoire['frequences_injections']. '</p></td>';
+        echo '<td class="parent"><p class="enfant">' .$listVaccinObligatoire['rappel']. '</p></td>';
+           ?> </tr> <?php
+          endforeach; ?>
+    </table>
+
+
+
+<h2>Vaccins non obligatoires efféctués</h2>
+<table class="form table_vaccin">
+
+  <tr>
+    <th class="parent"><p class="enfant">Nom</p></th>
+    <th class="parent"><p class="enfant">Fréquences d'injection</p></th>
+    <th class="parent"><p class="enfant">Rappel</p></th>
+  </tr>
 
   <?php foreach ($vaccinNonObligatoires as $vaccinNonObligatoire):
     ?> <tr> <?php
-echo '<td>' .$vaccinNonObligatoire['nom']. '</td>';
-echo '<td>' .$vaccinNonObligatoire['frequences_injections']. '</td>';
-echo '<td>' .$vaccinNonObligatoire['rappel']. '</td>';
+echo '<td class="parent"><p class="enfant">' .$vaccinNonObligatoire['nom']. '</p></td>';
+echo '<td class="parent"><p class="enfant">' .$vaccinNonObligatoire['frequences_injections']. '</p></td>';
+echo '<td class="parent"><p class="enfant">' .$vaccinNonObligatoire['rappel']. '</p></td>';
    ?> </tr> <?php
   endforeach; ?>
 
 </table>
-<a href="modif_vaccin.php">Modifier vaccin</a>
-<?php debug($_SESSION['user']['id']) ?>
+<div class="button_div">
+  <a class="button center" href="modif_vaccin.php">Ajout retrait de vaccin</a>
+</div>
+
+<div class="button_div">
+  <a class="button" href="index.php">Retour</a>
+</div>
+</div>
 <?php include('inc/footer.php');

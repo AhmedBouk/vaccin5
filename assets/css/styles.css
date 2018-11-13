@@ -140,7 +140,7 @@ h2{
   margin: auto;
 }
 
-.form .button , .formulaire .button {
+.form .button , .formulaire .button ,.modif_vaccin .button, .button_div .button {
   text-transform: uppercase;
   outline: 0;
   background: #4CAF50;
@@ -213,11 +213,17 @@ h2{
 /* FORM CONTACT */
 /* aussi dans index inscription */
 
-.contact h2 , .modif_profil h2 {
+.contact h2 , .modif_profil h2, .modif_vaccin h2{
   text-align: center;
   font-size: 2.5em;
   margin: 40px 0 40px 0;
 }
+/* P.PROFIL */
+/* DESCRIPTION */
+.description{
+  margin-bottom: 30px;
+}
+
 
 /* P.mdpoublie */
 /* dans .inscription */
@@ -225,6 +231,33 @@ h2{
 /* P.mdpoublienew */
 /* dans .inscription */
 
+/* P*modif_vaccin */
+/* aussi dans inscription */
+
+.modif_vaccin{
+  margin-top: 50px;
+}
+
+.table_vaccin th, .table_vaccin td{
+  border: 3px solid black;
+}
+
+.table_vaccin .parent {
+  text-align: center;
+}
+
+
+.table_vaccin .enfant {
+  vertical-align:middle;
+  display:inline-block;
+}
+
+.button_div{
+  margin-bottom: 30px;
+}
+.button_div .center{
+  margin-left:  38%;
+}
 
 /* FOOTER */
 /* Notre equipe */

@@ -55,6 +55,8 @@ include('inc/header.php');
 </form>
 </div>
 </div>
-
+<div class="button_div">
+  <a class="button" href="profil.php">Retour</a>
+</div>
 
 <?php include('inc/footer.php');
