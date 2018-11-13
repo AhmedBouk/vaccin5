@@ -1,5 +1,4 @@
 <?php
-is_logged();
 if (is_admin()){
 
 }else {

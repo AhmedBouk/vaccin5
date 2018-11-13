@@ -3,7 +3,7 @@
 function requeteListeUser(){
 global $pdo;
 
-$sql = "SELECT * FROM v5_users";
+$sql = "SELECT * FROM v5_users ORDER BY created_at DESC LIMIT $offset,$userPerPage";
 $query= $pdo -> prepare($sql) ;
 $query-> execute();
 $tableauUsers = $query -> fetchall();
@@ -32,10 +32,12 @@ function deleteuser($id){
 }
 
 function compteUtilisateur(){
+  global $pdo;
   $sql = "SELECT COUNT(id) FROM v5_users ";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
   $count = $stmt->fetchColumn();
+  return $count;
 }
 
 
