@@ -24,7 +24,7 @@
         <div class="wrapHF">
           <a href="index.php"><img src="assets/image/logo.png" alt="logo"></a>
           <div class="titre">
-            <h2>Mon Carnet de Vaccination</h2>
+            <h2 id="fittext2">Mon Carnet de Vaccination</h2>
           </div>
           <div class="bienvenue">
           <p>
@@ -55,6 +55,7 @@
 
         </div>
       </div>
+      <div class="clear"></div> <!-- float header-->
       </header>
     <div id="wrapper">
 <a href="#"></a>

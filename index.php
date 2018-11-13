@@ -79,7 +79,7 @@
 
 
 <div class="comment-users">
-  <h2>Commentaires de nos utilisateurs satisfaits.</h2>
+  <h2 id="fittext3">Commentaires de nos utilisateurs satisfaits.</h2>
   <div class="commentaires">
 
     <div class="commentaire">
