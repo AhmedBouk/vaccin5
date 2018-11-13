@@ -1,5 +1,4 @@
 <?php
-include('inc/header.php');
 include('inc/fonctions.php');
 include('inc/pdo.php');
 $title = 'Contact';
@@ -62,12 +61,16 @@ if (!empty($_POST['submit'])) {
     $query-> execute();
   }
 
+
+  include('inc/header.php');
+
+
 ?>
 <!-- Il y a une id class container autour du body  -->
 
 <div class="contact">
 
-  <h2>Formulaire de contact</h2>
+  <h2 id="fittext1">Formulaire de contact</h2>
 
     <div class="form">
       <form class="formulaire" action="" method="post">

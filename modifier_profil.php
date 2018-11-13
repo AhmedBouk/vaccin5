@@ -12,7 +12,7 @@ include('inc/header.php');
 <div class="modif_profil">
 
 
-<h2>Modification du profil</h2>
+<h2 id="fittext3">Modification du profil</h2>
 <div class="form">
 <form class="" action="" method="post">
 
