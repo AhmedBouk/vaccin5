@@ -213,8 +213,6 @@
 <!-- Bootstrap 3.3.7 -->
 <script src="assets/js/bootstrap.min.js"></script>
 
-<script src="assets/js/jquery.dataTables.min.js"></script>
-<script src="assets/js/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
 <script src="assets/js/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
@@ -224,52 +222,12 @@
 <!-- AdminLTE for demo purposes -->
 <script src="assets/js/demo.js"></script>
 
-<script src="assets/js/raphael.min.js"></script>
-<script src="assets/js/morris.min.js"></script>
-
 <script>
   $(document).ready(function () {
     $('.sidebar-menu').tree()
   })
 </script>
-<script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  })
-</script>
 
-<script>
-// LINE CHART
-var line = new Morris.Line({
-  element: 'line-chart',
-  resize: true,
-  data: [
-    {y: '2011 Q1', item1: 2666},
-    {y: '2011 Q2', item1: 2778},
-    {y: '2011 Q3', item1: 4912},
-    {y: '2011 Q4', item1: 3767},
-    {y: '2012 Q1', item1: 6810},
-    {y: '2012 Q2', item1: 5670},
-    {y: '2012 Q3', item1: 4820},
-    {y: '2012 Q4', item1: 15073},
-    {y: '2013 Q1', item1: 10687},
-    {y: '2013 Q2', item1: 8432}
-  ],
-  xkey: 'y',
-  ykeys: ['item1'],
-  labels: ['Item 1'],
-  lineColors: ['#3c8dbc'],
-  hideHover: 'auto'
-});
-  </script>
 
 
 
