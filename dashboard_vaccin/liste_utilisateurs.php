@@ -1,8 +1,13 @@
 <?php
 include('../inc/pdo.php');
-include('inc/fonctions.php');
+include('../inc/fonctions.php');
 include('inc/request.php');
+is_logged();
+if (is_admin()){
 
+}else {
+  header("Location: ../403.php");
+}
 
 $tableauUsers=requeteListeUser();
 
@@ -37,6 +42,7 @@ include('inc/sidebar.php');
                   <th>Uptaded_at</th>
                   <th>Role</th>
                   <th>Modifier</th>
+                  <th>Delete</th>
                 </tr>
                 <?php foreach ($tableauUsers as $tableauUser) {
                     echo '<tr><td>'.$tableauUser['id']
@@ -52,12 +58,31 @@ include('inc/sidebar.php');
                     changementDate($tableauUser,'updated_at');
                     echo '</td><td>'
                     .$tableauUser['role']
-                    .'</td><td><a href="modification_utilisateurs.php?id='.$tableauUser['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a><td></tr>';
+                    .'</td><td><a href="modification_utilisateurs.php?id='.$tableauUser['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a></td><td><a href="delete_user.php?id='
+                    .$tableauUser['id']
+                    .'"><i class="fa fa-trash-o"></i></a><td></tr>';
                 } ?>
               </table>
+              <div class="col-sm-7">
+                <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                  <ul class="pagination">
+                    <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a>
+                    </li>
+
+                    <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
+
+                    <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
+
+                    <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
+
+                    <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
+
+                    <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
+                    </ul>
+                  </div>
+              </div>
             </div>
             <!-- /.box-body -->
           </div>
-
 <?php
     include('inc/footer.php');

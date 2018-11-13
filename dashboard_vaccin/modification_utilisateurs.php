@@ -1,7 +1,7 @@
 <?php
 include('../inc/pdo.php');
-include('inc/fonctions.php');
-
+include('../inc/fonctions.php');
+include('inc/request.php');
 
   $error = array();
 
@@ -16,7 +16,7 @@ include('inc/fonctions.php');
       $nom = clean('nom');
       $prenom = clean('prenom');
       $mail = clean('mail');
-
+      $role = clean('role');
 
       //Verification contenu
       if(!empty($nom)) {
@@ -60,12 +60,13 @@ include('inc/fonctions.php');
       //Condition pas d'erreur
     if (count($error) == 0){
 
-      $sql = "UPDATE v5_users SET nom = :nom, prenom = :prenom, mail = :mail, updated_at = NOW() WHERE id = :id";
+      $sql = "UPDATE v5_users SET nom = :nom, prenom = :prenom, mail = :mail, role = :role, updated_at = NOW() WHERE id = :id";
       // preparation de la requête
       $stmt = $pdo->prepare($sql);
       // Protection injections SQL
       $stmt->bindValue(':nom',$nom, PDO::PARAM_STR);
-      $stmt->bindValue(':prenom',$prenom, PDO::PARAM_INT);
+      $stmt->bindValue(':prenom',$prenom, PDO::PARAM_STR);
+      $stmt->bindValue(':role',$role, PDO::PARAM_STR);
       $stmt-> bindValue(':mail' , $mail , PDO::PARAM_STR );
       $stmt->bindValue(':id',$id, PDO::PARAM_INT);
       // execution de la requête preparé
@@ -124,6 +125,16 @@ include('inc/fonctions.php');
           <input type="mail" class="form-control" id="inputError" name="mail" placeholder="Email..." value="<?php if(!empty($_POST['mail'])) { echo $_POST['mail']; } else { echo $mail; } ?>">
           <span class="error"><?php spanError($error,'mail');?></span>
         </div>
+        <div class="form-group">
+
+          <label>Select</label>
+          <select name ="role" class="form-control">
+              <option>utilisateur</option>
+              <option>administrateur</option>
+        </select>
+
+
+          </div>
       </div>
       <!-- /.box-body -->
 

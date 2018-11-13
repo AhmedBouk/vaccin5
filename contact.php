@@ -21,6 +21,9 @@ include('inc/header.php');
       <input type="text" name="mail" placeholder="Mail" value="<?php value('mail') ?>" />
       <span><?php spanError($error,'mail') ?></span>
 
+      <input type="text" name="objet" placeholder="Objet" value="<?php value('objet') ?>" />
+      <span><?php spanError($error,'objet') ?></span>
+
       <textarea name="msg" rows="8" cols="80" placeholder="Votre Message"><?php spanError($error,'nom') ?></textarea>
 
       <input class="button" type="submit" name="submit_register" value="Envoyer">

@@ -1,13 +1,9 @@
 <?php
 include('../inc/pdo.php');
-include('inc/fonctions.php');
+include('../inc/fonctions.php');
+include('inc/request.php');
 
-  $sql = "SELECT * FROM v5_vaccin WHERE 1=1";
-
-  $query= $pdo -> prepare($sql) ;
-  $query-> execute();
-  $tableauVaccins = $query -> fetchall();
-
+  $tableauVaccins = requeteListeVaccins();
 
   include('inc/header.php');
   include('inc/sidebar.php');

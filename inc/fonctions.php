@@ -24,6 +24,11 @@ function value($key){
      echo $_POST[$key]; }
 }
 
+function valueofvariable($variable,$key){
+	 if(!empty($variable[$key])) {
+     echo $variable[$key]; }
+}
+
 //valide un texte, comme un pseudo, nom ou message (necessite le array suivant : $error =array();)
 function validationText($error,$value,$min,$max,$key) {
   if(!empty($value)) {
@@ -81,4 +86,12 @@ function is_admin(){
   if (is_logged() == true && $_SESSION['user']['role'] === 'admin'){
     return true;
   }
+}
+function changementDate($tableau,$key){
+  if ($tableau[$key] != NULL) { //Création de la variable modifier pour la date de modif dans la BDD
+      $modif = date('d/m/Y', strtotime($tableau[$key]));
+  }else{
+      $modif = 'Il n\'a pas encore été modifié';
+  }
+  echo  $modif;
 }

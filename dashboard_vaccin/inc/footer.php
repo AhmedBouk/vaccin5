@@ -212,6 +212,9 @@
 <script src="assets/js/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="assets/js/bootstrap.min.js"></script>
+
+<script src="assets/js/jquery.dataTables.min.js"></script>
+<script src="assets/js/dataTables.bootstrap.min.js"></script>
 <!-- SlimScroll -->
 <script src="assets/js/jquery.slimscroll.min.js"></script>
 <!-- FastClick -->
@@ -227,6 +230,19 @@
 <script>
   $(document).ready(function () {
     $('.sidebar-menu').tree()
+  })
+</script>
+<script>
+  $(function () {
+    $('#example1').DataTable()
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
   })
 </script>
 
@@ -253,8 +269,14 @@ var line = new Morris.Line({
   lineColors: ['#3c8dbc'],
   hideHover: 'auto'
 });
+<<<<<<< HEAD
 
   </script>
+=======
+</script>
+
+
+>>>>>>> 78127b5ebc907fecc1ba625ee283e17a6e277b62
 
 
 </body>

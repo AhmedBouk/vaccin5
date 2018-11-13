@@ -1,5 +1,15 @@
 <?php
 include('../inc/pdo.php');
+<<<<<<< HEAD
+=======
+include('../inc/fonctions.php');
+include('inc/request.php');
+
+
+
+
+
+>>>>>>> 78127b5ebc907fecc1ba625ee283e17a6e277b62
 include('inc/header.php');
 include('inc/fonctions.php');
 include('inc/sidebar.php');
@@ -39,13 +49,20 @@ debug();
      <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
    </ol>
  </section>
+   <!-- LINE CHART -->
+   <div class="box box-info">
+     <div class="box-header with-border">
+       <h3 class="box-title">Line Chart</h3>
 
+<<<<<<< HEAD
 
    <!-- LINE CHART -->
    <div class="box box-info">
      <div class="box-header with-border">
        <h3 class="box-title">Nombre d'utilisateurs inscrits</h3>
 
+=======
+>>>>>>> 78127b5ebc907fecc1ba625ee283e17a6e277b62
        <div class="box-tools pull-right">
          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
          </button>

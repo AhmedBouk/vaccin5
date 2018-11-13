@@ -20,12 +20,12 @@
               <img src="assets/image/jonathan.jpg" alt="emilie">
               <p>Emilie</p>
             </div>
-            <div class="clear"></div>
+            <
           </div>
 
-
+          <div class="clear"></div>
       </div>
-    <div class="clear"></div>
+
 
     <div class="copyright">
       <p>Copyright (c) 2018 Copyright Holder All Rights Reserved.</p>
