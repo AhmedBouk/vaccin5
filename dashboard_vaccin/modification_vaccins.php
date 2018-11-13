@@ -75,10 +75,6 @@ include('../inc/fonctions.php');
 
   }
 
-
-
-
-
   include('inc/header.php');
   include('inc/sidebar.php');
 ?>
@@ -114,13 +110,26 @@ include('../inc/fonctions.php');
         <div class="form-group">
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios1" value="1" >
+              <input type="radio" name="optionsRadios" id="optionsRadios1" value="1"
+              <?php
+              if (empty($_POST['submitted'])){
+                  if ($vaccin['obligatoire'] == 1) {
+                    echo 'checked ="checked"';
+                  }
+                }
+               ?>
+              >
               Obligatoire
             </label>
           </div>
           <div class="radio">
             <label>
-              <input type="radio" name="optionsRadios" id="optionsRadios2" value="0">
+              <input type="radio" name="optionsRadios" id="optionsRadios2" value="0"
+              <?php if (empty($_POST['submitted'])){
+                if ($vaccin['obligatoire'] == 0) {
+                    echo 'checked ="checked"';
+                  }}
+                  ?>>
               Optionnel
             </label>
           </div>
