@@ -20,7 +20,7 @@
               <img src="assets/image/jonathan.jpg" alt="emilie">
               <p>Emilie</p>
             </div>
-            <
+
           </div>
 
           <div class="clear"></div>
