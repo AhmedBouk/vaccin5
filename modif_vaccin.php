@@ -46,14 +46,30 @@ if(is_logged()){
     }else {
         header("Location: 404.php");
     }
+    $vaccin_id = $listVaccins['id'];
+
+    if (!empty($_POST['submit_aj'])) {
+
+      $sql = "INSERT INTO `v5_relation`(`user_id`, `vaccin_id`, `created_at`) VALUES (:user_id , :vaccin_id , now()) ";
+
+
+      $query= $pdo -> prepare($sql) ;
+      $query-> bindvalue(':user_id' , $id , PDO::PARAM_STR );
+      $query-> bindvalue(':vaccin_id' , $vaccin_id , PDO::PARAM_STR );
+      $query-> execute();
 }
+
+
+
+}
+
 else {
     header("Location: 404.php");
 }
 
 // creation d'un lien Modifier qui emmene vers une nouvelle page ou il ya un formulaire avec nom prenom etc pour modifier les informations
 
-
+debug($vaccin_id);
 include('inc/header.php');
 ?>
 
@@ -67,7 +83,7 @@ include('inc/header.php');
 
 
             <div class="modif_vaccin">
-              <h2>Ajouts / retrait vaccins</h2>
+              <h2>Ajouts / Retrait vaccins</h2>
               <table class="form table_vaccin">
                 <tr>
                   <th class="parent"><p class="enfant">Nom</p></th>
@@ -95,7 +111,8 @@ include('inc/header.php');
                     echo '<td>';
                     ?>
 
-                    <input class="button" type="submit" name="" value="Ajouter"><?php echo '</td></tr>' ;
+                    <form action="" method="post">
+                    <input class="button" type="submit" name="submit_aj" value="Ajouter"></form><?php echo '</td></tr>' ;
                   } ?>
               </table>
 
