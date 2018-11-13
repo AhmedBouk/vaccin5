@@ -233,12 +233,12 @@ footer{
 	margin: auto;
 }
 .zoom{
-margin-left: 20%;
+margin-left: 13%;
 }
 
 
 .photos:last-child {
-	padding-bottom: 60px;
+	padding-bottom: 2%;
   float: right;
 }
 .photos::after {
@@ -249,9 +249,9 @@ margin-left: 20%;
 .photos div {
 	position: relative;
 	float: left;
-	width: 200px;
-	height: 150px;
-	margin: 0 0 0 35px;
+	width: 23%;
+	height: 25%;
+	margin: 0 0 0 1%;
 	padding: 0;
 }
 .photos div:first-child {
@@ -259,11 +259,17 @@ margin-left: 20%;
 }
 .photo {
 	width: 100%;
-	height: 150px;
+	height: 100%;
 	margin: 0;
 	padding: 0;
-	background: #F4F4F4;
-	overflow: hidden;}
+	overflow: hidden;
+  }
+
+  .photo p {
+    text-align: center;
+    font-weight: bold;
+
+  }
 
   .zoom div img {
   	transform: scale(1);
@@ -323,7 +329,6 @@ margin-left: 20%;
   font-size: 252px;
   font-weight: 900;
   margin: 0px;
-  color: #262626;
   text-transform: uppercase;
   letter-spacing: -40px;
   margin-left: -20px;
@@ -339,8 +344,8 @@ margin-left: 20%;
   font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #262626;
   margin: 0px;
+  color: #110934;
   letter-spacing: 3px;
   padding-left: 6px;
 }
@@ -350,7 +355,7 @@ margin-left: 20%;
   font-size: 20px;
   font-weight: 400;
   text-transform: uppercase;
-  color: #000;
+  color: #110934;
   margin-top: 0px;
   margin-bottom: 25px;
 }
