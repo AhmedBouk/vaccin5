@@ -1,7 +1,5 @@
 <?php
 include('../inc/pdo.php');
-<<<<<<< HEAD
-=======
 include('../inc/fonctions.php');
 include('inc/request.php');
 
@@ -9,37 +7,9 @@ include('inc/request.php');
 
 
 
->>>>>>> 78127b5ebc907fecc1ba625ee283e17a6e277b62
 include('inc/header.php');
-include('inc/fonctions.php');
 include('inc/sidebar.php');
-
-
-
-$user = $_GET['user'];
-
-$sql= "SELECT * FROM v5_users WHERE status='actif'";
-
-  $query = $pdo -> prepare($sql);
-  $query -> execute();
-  $usercompte = $query -> fetchColumn();
-
-print_r($usercompte);
-
-$choixDate = explode("-", $_POST['year']);
-$sql = "SELECT COUNT(id) FROM v5_users WHERE created_at BETWEEN >= :mois1 AND <= :mois2";
-    $query = $pdo -> prepare($sql);
-    $query -> bindValue(':mois1', $choixDate, PDO::PARAM_STR);
-    $query -> bindValue(':mois2', $choixDate, PDO::PARAM_STR);
-    $query -> execute();
-    $date = $query -> fetchAll();
-
-
-
-debug();
-
  ?>
-
  <!-- Content Header (Page header) -->
  <section class="content-header">
    <h1>
@@ -54,15 +24,6 @@ debug();
      <div class="box-header with-border">
        <h3 class="box-title">Line Chart</h3>
 
-<<<<<<< HEAD
-
-   <!-- LINE CHART -->
-   <div class="box box-info">
-     <div class="box-header with-border">
-       <h3 class="box-title">Nombre d'utilisateurs inscrits</h3>
-
-=======
->>>>>>> 78127b5ebc907fecc1ba625ee283e17a6e277b62
        <div class="box-tools pull-right">
          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
          </button>
