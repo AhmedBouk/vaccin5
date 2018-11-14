@@ -6,17 +6,18 @@ body{
   color: #110934;
   background: #ECF0F5;
 }
- /* url('assets/image/wallpaper_body.png')  right bottom */
+
 h1{
   position: absolute;
   left: -500000000000px;
 }
 
-h2{
+h2 {
   font-family: 'Pattaya', sans-serif;
   text-align: center;
-  font-size: 2.5em;
-  color: #110934;
+  font-size: 2em;
+  color: #fff;
+  margin: auto;
 
 }
 #wrapper {
@@ -31,57 +32,89 @@ h2{
 }
 
 /* header */
-header{
-  height: 200px;
-  background-color: #577ba0;
+
+
+header img {
+  float: left;
+  width: 80px;
+  display: inline-block;
+  margin-left: 2%;
+  margin-top: 1%;
 
 }
 
-header img{
-  float: left;
-  width: 7%;
-  margin-left: 2%;
-  margin-top: 1%;
-  /* height: 100px; */
+
+header .titre {
+  vertical-align: middle;
+  margin: auto;
+  padding-top: 2px;
 }
 
 header .titre h2{
   float: left;
   font-size: 1.5em;
-  width: 60%;
-  margin: 50px 0 0 8%;
+  width: 83%;
+  display: inline-block;
 
 }
 
 header .bienvenue{
-  float: right;
-  width: 15%;
-  margin: 20px 2% 0 2%;
-  /* background-color: ; */
+position: absolute;
+top: 10px;
+right: 10px;
+
+
+  color: #fff;
+  background-color: red ;
+
 }
 
-
-
-
 header ul {
+
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 200px;
-    background-color: #577ba0;
+    margin: auto;
+
+    /* background-color: #b58d51; */
 }
 
 li a {
+  /* font-family:'Pattaya'; */
     display: block;
-    color: #000;
-    padding: 8px 16px;
+    color: #fff;
+    padding: 0 16px;
     text-decoration: none;
+    text-align: center;
+    width: 100%;
+
 }
 
 /* Change the link color on hover */
     li a:hover {
-    background-color: #555;
-    color: red;
+    /* background-color: #BDCC6D; */
+    color: #FF4F5C;
+}
+
+
+/* barenav */
+.nav {
+  /* background: #BDCC6D; */
+  font: 1em sans-serif;
+
+}
+.nav ul{
+    display: table;
+    width: 700px;
+    margin:  auto;
+    padding: 0;
+}
+.nav ul li{
+    display: table-cell;
+
+}
+
+header{
+  height: 150px;
+  background-color: #018722;
 }
 
 /* BODY */
@@ -406,11 +439,14 @@ margin-left: 13%;
   margin-top: 0px;
   margin-bottom: 25px;
 }
+
+
+ /* css faq */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,800);
 
 body {
   font-family: 'Open Sans';
-  font-size: 1.5em;
+  font-size: 1.2em;
   background: #eee;
 }
 
@@ -429,7 +465,7 @@ body {
 
 .question {
   position: relative;
-  background: #6b4848;
+  background: #d8cdcd;
   margin: 0;
   padding: 10px 10px 10px 50px;
   display: block;
@@ -438,7 +474,7 @@ body {
 }
 
 .answers {
-  background: #baabab;
+  background: #896565;
   padding: 0px 15px;
   margin: 5px 0;
   height: 0;
@@ -446,10 +482,10 @@ body {
   z-index: -1;
   position: relative;
   opacity: 0;
-  -webkit-transition: .7s ease;
-  -moz-transition: .7s ease;
-  -o-transition: .7s ease;
-  transition: .7s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -o-transition: .5s ease;
+  transition: .5s ease;
 }
 
 .questions:checked ~ .answers{
@@ -486,6 +522,10 @@ body {
   display: none;
 }
 
+
+
+
+
 @media only screen and (max-width: 767px) {
   .notfound .notfound-404 {
     height: 200px;
@@ -515,7 +555,7 @@ body {
   display:none;
 }
 
-@media screen and (max-width: 50em) {
+@media screen and (max-width: 60em) {
   /* #menu is the original menu */
   #menu {
     display:none;
@@ -528,5 +568,12 @@ body {
 @media (max-width : 480px) {
   header .titre{
     font-size: 1em;
+  }
+}
+@media (max-width : 1050px) {
+  header .bienvenue{
+    /* position: relative; */
+    float:none;
+
   }
 }

@@ -26,7 +26,7 @@ if(is_logged()){
       $listVaccinObligatoires= $query -> fetchAll();
 
 // Requete des vaccins non obligatoires
-      $sql = $sql = "SELECT * FROM v5_vaccin AS v
+     $sql = "SELECT * FROM v5_vaccin AS v
               LEFT JOIN v5_relation AS pivot
               ON v.id = pivot.vaccin_id
               WHERE pivot.user_id = $id

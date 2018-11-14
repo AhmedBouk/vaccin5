@@ -25,9 +25,7 @@
 
           <div class="clear"></div>
       </div>
-<div class="faq">
-  <a href="faq.php">faq</a>
-</div>
+
 
     <div class="copyright">
       <p>Copyright (c) 2018 Copyright Holder All Rights Reserved.</p>
@@ -62,25 +60,19 @@
   <script type="text/javascript" src='inscription.js'></script>
 
 <!-- slicknav -->
-  <script src="assets/slicknav/jquery.slicknav.min.js"></script>
 
-  <script type="text/javascript" charset="utf-8">
-  $(function(){
-        $('#menu').slicknav();
-      });
-    </script>
+      <script src="assets/slicknav/jquery.slicknav.min.js"></script>
 
-
+  <script>
+  	$(function(){
+  		$('#menu').slicknav();
+  	});
+  </script>
 
 
   <!-- SLIDERS -->
 
-  <script
-    src="https://code.jquery.com/jquery-1.6.2.js"
-    integrity="sha256-pXKSYZ0U64y9kjvenyjPmUrGarxI98l1t2kyj/M73ck="
-    crossorigin="anonymous"></script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script src="assets/flexslider/jquery.flexslider.js"></script>
 
     <script type="text/javascript" charset="utf-8">

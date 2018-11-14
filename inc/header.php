@@ -10,8 +10,9 @@
      <link rel="stylesheet" href="assets/slicknav/slicknav.css" />
     <title><?php echo $title; ?></title>
     <link rel="icon" href="assets/image/favicon.ico" />
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/slicknav/slicknav.css" />
     <link rel="stylesheet" href="assets/flexslider/flexslider.css" type="text/css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
 
@@ -25,45 +26,49 @@
   <body>
       <header>
         <div class="wrapHF">
+
           <a href="index.php"><img src="assets/image/logo.png" alt="logo"></a>
+
           <div class="titre">
             <h2 id="fittext2">Mon Carnet de Vaccination</h2>
           </div>
 
-          <div class="bienvenue">
-
-
-                <ul id="menu">
-                        <?php
-                          if (is_logged()) {
-
-                            echo '<li> Bienvenue  '. $_SESSION['user']['prenom'] .'</li>' ;
-
-                            echo '<li> <a href="profil.php"> Mon Profil </a></li>';
-                            echo '<li> <a href="deconnexion.php"> Deconnexion </a></li>';
-
-                            ?>
-                            <style media="screen">
+    <div class="bienvenue">
+            <?php
+              if (is_logged()) {
+                  echo '<p> Bienvenue  '. $_SESSION['user']['prenom'] .'<p>';
+                } ?>
+      </div>
+</div>
+  <div class="testnav">
+     <nav class="nav">
+          <ul id="menu">
+              <?php if(is_logged()) {
+                     echo '<li> <a href="profil.php">Mon profil</a> </li>';
+                     echo '<li> <a href="deconnexion.php">Déconnexion</a> </li>';
+                   ?>
+                        <style media="screen">
                               .inscription{display: none;}
                               .flexslider{width: 100%;margin: 40px 0;}
-                            </style>
-                            <?php
-                            }
-                        ?>
+                        </style>
+                <?php
+                          } ?>
+                      <li> <a href="contact.php">contact</a> </li>
+                      <li>  <a href="faq.php">FAQ</a> </li>
+                <?php
+                      if (is_admin()) {
+                         echo '<li><a href="dashboard_vaccin/index.php">back office</a></li>';
+                      }
+                  ?>
+          </ul>
+      </nav>
+  </div>
 
-                            <li><a href="contact.php">Contact</a></li>
+<div class="clear"></div> <!-- float header-->
 
-                      <?php
-                          if (is_admin()) {
-                            echo '<li><a href="dashboard_vaccin/index.php">back office</a></li>';
-                          }
-                      ?>
-                    </ul>
-        </div>
 
-      </div>
 
-      <div class="clear"></div> <!-- float header-->
 
+<div class="clear"></div>
       </header>
     <div id="wrapper">
