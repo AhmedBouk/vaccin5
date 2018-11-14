@@ -47,7 +47,7 @@
            <span><?php spanError($error_reg,'pwd1') ?></span>
 
            <input class="button" type="submit" name="submit_register" value="Créer">
-          
+
 
            <p class="message">Déjà inscrit ? <a href="#">Connectez-vous</a></p>
 
