@@ -7,28 +7,26 @@ include('inc/request.php');
 require '../vendor/autoload.php';
 
 use JasonGrimes\Paginator;
-$nbreUsers = compteUtilisateur();
-$usersPerPage = 20;
+
+$nbreItem = compteUtilisateur();
+$itemPerPage = 15;
 $page = 1;
 $offset = 0;
 $urlPattern = '?page=(:num)';
+$nomTable = 'v5_users';
 
 if (!empty($_GET['page']) && is_numeric($_GET['page'])) {
     $page = $_GET['page'];
-    $offset = $page * $usersPerPage - $usersPerPage;
+    $offset = $page * $itemPerPage - $itemPerPage;
 }
 
-$paginator = new Paginator($nbreUsers, $usersPerPage, $page, $urlPattern);
+$paginator = new Paginator($nbreItem, $itemPerPage, $page, $urlPattern);
 
-$sql = "SELECT * FROM v5_users LIMIT $offset,$usersPerPage";
-$query= $pdo -> prepare($sql) ;
-$query-> execute();
-$tableauUsers = $query -> fetchall();
+$tableauUsers = requeteListe($nomTable,$offset,$itemPerPage);
 
 
-// debug($nbreUsers);
-// $nbredePage = ceil($nbreUsers/$usersPerPage);
-// debug($nbredePage);
+
+
 include('inc/header.php');
 include('inc/sidebar.php');
 
@@ -89,7 +87,7 @@ include('inc/sidebar.php');
                       </a>
                     </td>
                     <td>
-                      <a href="delete_user.php?id=<?php echo $tableauUser['id'];?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer?')" >
+                      <a href="delete_user.php?id=<?php echo $tableauUser['id'];?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer?')">
                         <i class="fa fa-trash-o"></i>
                       </a>
                     </td>

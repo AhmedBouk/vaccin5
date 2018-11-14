@@ -3,31 +3,31 @@ include('../inc/pdo.php');
 include('../inc/fonctions.php');
 include('inc/request.php');
 
-require '../vendor/autoload.php';
+  require '../vendor/autoload.php';
 
-use JasonGrimes\Paginator;
-$nbreUsers = compteVaccins();
-$usersPerPage = 20;
-$page = 1;
-$offset = 0;
-$urlPattern = '?page=(:num)';
+  use JasonGrimes\Paginator;
 
-if (!empty($_GET['page']) && is_numeric($_GET['page'])) {
-    $page = $_GET['page'];
-    $offset = $page * $usersPerPage - $usersPerPage;
-}
-
-$paginator = new Paginator($nbreUsers, $usersPerPage, $page, $urlPattern);
-
-$sql = "SELECT * FROM v5_vaccin LIMIT $offset,$usersPerPage";
-$query= $pdo -> prepare($sql) ;
-$query-> execute();
-$tableauVaccins = $query -> fetchall();
+  $nbreItem = compteVaccins();
+  $itemPerPage = 15;
+  $page = 1;
+  $offset = 0;
+  $urlPattern = '?page=(:num)';
+  $nomTable = 'v5_vaccin';
 
 
+  if (!empty($_GET['page']) && is_numeric($_GET['page'])) {
+      $page = $_GET['page'];
+      $offset = $page * $itemPerPage - $itemPerPage;
+  }
 
-  include('inc/header.php');
-  include('inc/sidebar.php');
+  $paginator = new Paginator($nbreItem, $itemPerPage, $page, $urlPattern);
+
+  $tableauVaccins =  requeteListe($nomTable,$offset,$itemPerPage);
+
+
+
+include('inc/header.php');
+include('inc/sidebar.php');
 ?>
 <section class="content-header">
   <h1>

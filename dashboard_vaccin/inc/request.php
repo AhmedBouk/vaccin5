@@ -1,24 +1,15 @@
 <?php
 
-function requeteListeUser(){
-global $pdo;
+function requeteListe($nomTable,$offset,$itemPerPage){
+  global $pdo;
 
-$sql = "SELECT * FROM v5_users";
-$query= $pdo -> prepare($sql) ;
-$query-> execute();
-$tableauUsers = $query -> fetchall();
-return $tableauUsers;
+  $sql = "SELECT * FROM $nomTable LIMIT $offset,$itemPerPage";
+  $query= $pdo -> prepare($sql) ;
+  $query-> execute();
+  $tableau = $query -> fetchall();
+  return $tableau;
 }
 
-function requeteListeVaccins(){
-global $pdo;
-
-$sql = "SELECT * FROM v5_vaccin";
-$query= $pdo -> prepare($sql) ;
-$query-> execute();
-$tableauVaccins = $query -> fetchall();
-return $tableauVaccins;
-}
 
 
 //Fonction pour effacer un utilisateur en fonction de son id
