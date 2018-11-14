@@ -289,6 +289,7 @@ li a:hover {
   margin-left:  38%;
 }
 
+<<<<<<< HEAD
 .form .red{
   background: #F44336;
 }
@@ -298,6 +299,9 @@ li a:hover {
 }
 
 /* FOOTER */
+=======
+/* FOOTER  */
+>>>>>>> 0370ffd1547738e1f6278131d870b7da56c1bda1
 /* Notre equipe */
 footer{
   background-color: #577ba0;

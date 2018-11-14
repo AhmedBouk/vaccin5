@@ -3,10 +3,31 @@ include('../inc/pdo.php');
 include('../inc/fonctions.php');
 include('inc/request.php');
 
-  $tableauVaccins = requeteListeVaccins();
+  require '../vendor/autoload.php';
 
-  include('inc/header.php');
-  include('inc/sidebar.php');
+  use JasonGrimes\Paginator;
+
+  $nbreItem = compteVaccins();
+  $itemPerPage = 15;
+  $page = 1;
+  $offset = 0;
+  $urlPattern = '?page=(:num)';
+  $nomTable = 'v5_vaccin';
+
+
+  if (!empty($_GET['page']) && is_numeric($_GET['page'])) {
+      $page = $_GET['page'];
+      $offset = $page * $itemPerPage - $itemPerPage;
+  }
+
+  $paginator = new Paginator($nbreItem, $itemPerPage, $page, $urlPattern);
+
+  $tableauVaccins =  requeteListe($nomTable,$offset,$itemPerPage);
+
+
+
+include('inc/header.php');
+include('inc/sidebar.php');
 ?>
 <section class="content-header">
   <h1>
@@ -33,6 +54,7 @@ include('inc/request.php');
                   <th>Created_at</th>
                   <th>Uptaded_at</th>
                   <th>Modifier</th>
+                  <th>Delete</th>
                 </tr>
                 <?php foreach ($tableauVaccins as $tableauVaccin) {
                     echo '<tr><td>'.$tableauVaccin['id']
@@ -50,12 +72,18 @@ include('inc/request.php');
                     changementDate($tableauVaccin,'created_at');
                     echo '</td><td>';
                     changementDate($tableauVaccin,'updated_at');
-                    echo '</td><td><a href="modification_vaccins.php?id='.$tableauVaccin['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a><td></tr>' ;
+                    echo '</td><td><a href="modification_vaccins.php?id='.$tableauVaccin['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a></td>
+                    <td>
+                      <a href="delete_vaccins.php?id='.$tableauVaccin['id'].'" onclick="return confirm(\'Êtes-vous sûr de vouloir supprimer?\')">
+                        <i class="fa fa-trash-o"></i>
+                      </a>
+                    </td></tr>';
                 }
 
 
                 ?>
               </table>
+              <?php echo $paginator ?>
             </div>
             <!-- /.box-body -->
           </div>

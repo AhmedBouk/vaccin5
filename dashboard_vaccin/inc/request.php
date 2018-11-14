@@ -1,28 +1,19 @@
 <?php
 
-function requeteListeUser(){
-global $pdo;
+function requeteListe($nomTable,$offset,$itemPerPage){
+  global $pdo;
 
-$sql = "SELECT * FROM v5_users";
-$query= $pdo -> prepare($sql) ;
-$query-> execute();
-$tableauUsers = $query -> fetchall();
-return $tableauUsers;
+  $sql = "SELECT * FROM $nomTable LIMIT $offset,$itemPerPage";
+  $query= $pdo -> prepare($sql) ;
+  $query-> execute();
+  $tableau = $query -> fetchall();
+  return $tableau;
 }
 
-function requeteListeVaccins(){
-global $pdo;
-
-$sql = "SELECT * FROM v5_vaccin";
-$query= $pdo -> prepare($sql) ;
-$query-> execute();
-$tableauVaccins = $query -> fetchall();
-return $tableauVaccins;
-}
 
 
 //Fonction pour effacer un utilisateur en fonction de son id
-function deleteuser($id){
+function deleteUser($id){
   global $pdo;
 
   $sql="DELETE FROM v5_users WHERE id=:id";
@@ -31,6 +22,14 @@ function deleteuser($id){
   $query -> execute();
 }
 
+function deleteVaccins($id){
+  global $pdo;
+
+  $sql="DELETE FROM v5_vaccin WHERE id=:id";
+  $query = $pdo ->prepare($sql);
+  $query -> bindValue(':id',$id,PDO::PARAM_INT);
+  $query -> execute();
+}
 function compteUtilisateur(){
   global $pdo;
   $sql = "SELECT COUNT(id) FROM v5_users ";
@@ -39,7 +38,14 @@ function compteUtilisateur(){
   $count = $stmt->fetchColumn();
   return $count;
 }
-
+function compteVaccins(){
+  global $pdo;
+  $sql = "SELECT COUNT(id) FROM v5_vaccin ";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute();
+  $count = $stmt->fetchColumn();
+  return $count;
+}
 
 
 ?>
