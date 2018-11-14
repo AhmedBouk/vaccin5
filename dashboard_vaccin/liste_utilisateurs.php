@@ -89,7 +89,7 @@ include('inc/sidebar.php');
                       </a>
                     </td>
                     <td>
-                      <a href="delete_user.php?id=<?php echo $tableauUser['id'];?>">
+                      <a href="delete_user.php?id=<?php echo $tableauUser['id'];?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer?')" >
                         <i class="fa fa-trash-o"></i>
                       </a>
                     </td>

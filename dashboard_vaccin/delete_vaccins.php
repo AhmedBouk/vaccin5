@@ -5,6 +5,6 @@ include('inc/request.php');
 
 if(!empty($_GET['id']) && is_numeric($_GET['id'])) {
   $id = $_GET['id'];
-  deleteUser($id);
-  header("Location: liste_utilisateurs.php");
+  deleteVaccins($id);
+  header("Location: liste_vaccin.php");
   }
