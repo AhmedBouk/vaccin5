@@ -9,6 +9,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="assets/slicknav/slicknav.css" />
     <title><?php echo $title; ?></title>
+    <link rel="icon" href="assets/image/favicon.ico" />
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/flexslider/flexslider.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Cabin:400,700" rel="stylesheet">
@@ -44,7 +45,7 @@
                             ?>
                             <style media="screen">
                               .inscription{display: none;}
-                              .sliders{width: 100%;margin: 40px 0;}
+                              .flexslider{width: 100%;margin: 40px 0;}
                             </style>
                             <?php
                             }
@@ -66,4 +67,3 @@
 
       </header>
     <div id="wrapper">
-<a href="#">kko</a>

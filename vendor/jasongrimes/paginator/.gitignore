@@ -1,5 +1,5 @@
-pdo.php
-
 /vendor/
-composer.json
 composer.lock
+*.swp
+*.swo
+*~

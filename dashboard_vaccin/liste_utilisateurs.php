@@ -4,24 +4,31 @@ include('../inc/fonctions.php');
 include('inc/request.php');
 
 
+require '../vendor/autoload.php';
 
+use JasonGrimes\Paginator;
+$nbreUsers = compteUtilisateur();
 $usersPerPage = 20;
 $page = 1;
 $offset = 0;
+$urlPattern = '?page=(:num)';
 
 if (!empty($_GET['page']) && is_numeric($_GET['page'])) {
     $page = $_GET['page'];
     $offset = $page * $usersPerPage - $usersPerPage;
-    // or
-    // $offset = ($page - 1) * $articlePerPage;
 }
 
-$tableauUsers=requeteListeUser();
+$paginator = new Paginator($nbreUsers, $usersPerPage, $page, $urlPattern);
 
-$nbreUsers = compteUtilisateur();
+$sql = "SELECT * FROM v5_users LIMIT $offset,$usersPerPage";
+$query= $pdo -> prepare($sql) ;
+$query-> execute();
+$tableauUsers = $query -> fetchall();
 
-debug($nbreUsers);
 
+// debug($nbreUsers);
+// $nbredePage = ceil($nbreUsers/$usersPerPage);
+// debug($nbredePage);
 include('inc/header.php');
 include('inc/sidebar.php');
 
@@ -41,8 +48,8 @@ include('inc/sidebar.php');
             <div class="box-header">
             </div>
             <!-- /.box-header -->
-            <div class="box-body table-responsive no-padding">
-              <table class="table table-hover">
+            <div  class="box-body table-responsive no-padding">
+              <table id="example2" class="table table-hover">
                 <tr>
                   <th>Id</th> <!-- titre -->
                   <th>Email</th>
@@ -54,44 +61,43 @@ include('inc/sidebar.php');
                   <th>Modifier</th>
                   <th>Delete</th>
                 </tr>
-                <?php foreach ($tableauUsers as $tableauUser) {
-                    echo '<tr><td>'.$tableauUser['id']
-                    .'</td><td>'
-                    .$tableauUser['mail']
-                    .'</td><td>'
-                    .$tableauUser['nom']
-                    .'</td><td>'
-                    .$tableauUser['prenom']
-                    .'</td><td>';
-                    changementDate($tableauUser,'created_at');
-                    echo '</td><td>';
-                    changementDate($tableauUser,'updated_at');
-                    echo '</td><td>'
-                    .$tableauUser['role']
-                    .'</td><td><a href="modification_utilisateurs.php?id='.$tableauUser['id'].'" class=".btn.btn-app"><i class="fa fa-edit"></i></a></td><td><a href="delete_user.php?id='
-                    .$tableauUser['id']
-                    .'"><i class="fa fa-trash-o"></i></a><td></tr>';
-                } ?>
+                <?php foreach ($tableauUsers as $tableauUser) {?>
+                  <tr>
+                      <td><?php echo $tableauUser['id'];?>
+                  </td>
+                  <td>
+                        <?php echo $tableauUser['mail'];?>
+                  </td>
+                  <td>
+                        <?php echo $tableauUser['nom'];?>
+                  </td>
+                  <td>
+                          <?php echo $tableauUser['prenom'];?>
+                  </td>
+                  <td>
+                        <?php changementDate($tableauUser,'created_at'); ?>
+                  </td>
+                    <td>
+                          <?php changementDate($tableauUser,'updated_at'); ?>
+                    </td>
+                    <td>
+                        <?php echo $tableauUser['role'];?>1
+                    </td>
+                    <td>
+                      <a href="modification_utilisateurs.php?id=<?php echo $tableauUser['id'];?>" class=".btn.btn-app">
+                        <i class="fa fa-edit"></i>
+                      </a>
+                    </td>
+                    <td>
+                      <a href="delete_user.php?id=<?php echo $tableauUser['id'];?>">
+                        <i class="fa fa-trash-o"></i>
+                      </a>
+                    </td>
+                  </tr>
+              <?php  } ?>
               </table>
-              <div class="col-sm-7">
-                <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-                  <ul class="pagination">
-                    <li class="paginate_button previous disabled" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">Previous</a>
-                    </li>
-
-                    <li class="paginate_button active"><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
-
-                    <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0">3</a></li>
-
-                    <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0">4</a></li><li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0">5</a></li>
-
-                    <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0">6</a></li>
-
-                    <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">Next</a></li>
-                    </ul>
-                  </div>
-              </div>
             </div>
+            <?php echo $paginator ?>
             <!-- /.box-body -->
           </div>
 <?php

@@ -61,9 +61,7 @@ if (!empty($_POST['submit'])) {
     $query-> execute();
   }
 
-
-  include('inc/header.php');
-
+include('inc/header.php');
 
 ?>
 <!-- Il y a une id class container autour du body  -->
