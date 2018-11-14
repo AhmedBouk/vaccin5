@@ -2,16 +2,17 @@
 include('inc/fonctions.php');
 include('inc/pdo.php');
 $title = 'Contact';
+
 $error = array();
 
-if (!empty($_POST['submit'])) {
+if (!empty($_POST['submitted'])) {
 
 // fonction declarant et nettoyant (expace au debut et à la fin & supprimant les caractère pouvant créer un script) une variable
 
-  $nom      = trim(strip_tags($_POST[$nom]));
-  $mail     = trim(strip_tags($_POST[$mail]));
-  $objet    = trim(strip_tags($_POST[$objet]));
-  $message  = trim(strip_tags($_POST[$message]));
+  $nom      = trim(strip_tags($_POST['nom']));
+  $mail     = trim(strip_tags($_POST['mail']));
+  $objet    = trim(strip_tags($_POST['objet']));
+  $message  = trim(strip_tags($_POST['message']));
 
   if(!empty($nom)) {
     if(strlen($nom) < 3 ) {
@@ -34,8 +35,8 @@ if (!empty($_POST['submit'])) {
     if(!empty($objet)) {
       if(strlen($objet) < 3 ) {
         $error['objet'] = 'Ce champs est trop court. (minimum 3 caractères)';
-      } elseif(strlen($objet) > 20) {
-          $error['objet'] = 'Ce champs est trop long. (maximum 20 caractères)';
+      } elseif(strlen($objet) > 50) {
+          $error['objet'] = 'Ce champs est trop long. (maximum 50 caractères)';
         }
     } else {
         $error['objet'] = 'Veuillez renseigner ce champs.';
@@ -51,7 +52,7 @@ if (!empty($_POST['submit'])) {
           $error['message'] = 'Veuillez renseigner ce champs.';
         }
 
-    $sql = "INSERT INTO v5_contact ('id', 'nom', 'mail', 'objet', 'message', 'created_at') VALUES ('id,:nom,:mail,:objet,:message,now())";
+    $sql = "INSERT INTO v5_contact (nom, mail, objet, message, created_at) VALUES (:nom,:mail,:objet,:message,NOW())";
 
     $query= $pdo -> prepare($sql) ;
     $query-> bindvalue(':nom' , $nom , PDO::PARAM_STR );
@@ -81,9 +82,9 @@ include('inc/header.php');
         <input type="text" name="objet" placeholder="Objet" value="<?php value('objet') ?>" />
         <span><?php spanError($error,'objet') ?></span>
 
-        <textarea name="msg" rows="8" cols="80" placeholder="Votre Message"><?php spanError($error,'nom') ?></textarea>
+        <textarea name="message" rows="8" cols="80" placeholder="Votre Message"><?php spanError($error,'message') ?></textarea>
 
-        <input class="button" type="submit" name="submit" value="Envoyer">
+        <input class="button" type="submit" name="submitted" value="Envoyer">
 
       </form>
     </div>

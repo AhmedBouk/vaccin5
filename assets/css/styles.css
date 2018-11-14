@@ -276,19 +276,39 @@ header{
 
 /* P*modif_vaccin */
 /* aussi dans inscription */
-
 .modif_vaccin{
   margin-top: 50px;
 }
 
+.table_vaccin {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.table_vaccin input, .table_vaccin input, .table_vaccin textarea, .table_vaccin .radio {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 50px;
+  font-size: 14px;
+  resize: none;
+}
+
 .table_vaccin th, .table_vaccin td{
-  border: 3px solid black;
+  border: 2px solid black;
 }
 
 .table_vaccin .parent {
   text-align: center;
 }
-
 
 .table_vaccin .enfant {
   vertical-align:middle;
@@ -302,7 +322,19 @@ header{
   margin-left:  38%;
 }
 
+
+.form .red{
+  background: #F44336;
+}
+
+.form .red:hover,.form .red:active,.form .red:focus {
+  background: #DE3B30;
+}
+
 /* FOOTER */
+
+
+
 /* Notre equipe */
 footer{
   background-color: #577ba0;
