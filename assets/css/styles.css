@@ -1,5 +1,5 @@
 @import "reset.css";
-@import url('https://fonts.googleapis.com/css?family=Pattaya|Roboto');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto');
 
 body{
   font: 400 16px/1.3 'Roboto', Arial, sans-serif;
@@ -13,7 +13,7 @@ h1{
 }
 
 h2 {
-  font-family: 'Pattaya', sans-serif;
+  font-family: 'Roboto', sans-serif;
   text-align: center;
   font-size: 2em;
   color: #fff;
@@ -35,6 +35,7 @@ h2 {
 header{
   height: 200px;
   background-color: #44B2AE;
+
 }
 
 header img {
@@ -62,29 +63,25 @@ header .titre h2{
 }
 
 header .bienvenue{
-position: absolute;
-top: 10px;
-right: 10px;
-
-
+  position: absolute;
+  top: 10px;
+  right: 10px;
   color: #fff;
-  background-color: red ;
+  background-color: #018722 ;
 
 }
 
 header ul {
 
-    list-style-type: none;
-    margin: auto;
-
-    /* background-color: #b58d51; */
+  list-style-type: none;
+  margin: auto;
 }
 
 li a {
-  /* font-family:'Pattaya'; */
+  /* font-family:'Roboto'; */
     display: block;
     color: #fff;
-    padding: 0 16px;
+    padding: 30px 16px 0 0;
     text-decoration: none;
     text-align: center;
     width: 100%;
@@ -114,6 +111,8 @@ li a {
     display: table-cell;
 
 }
+
+
 
 
 
@@ -341,7 +340,7 @@ li a {
 
 /* Notre equipe */
 footer{
-  background-color: #577ba0;
+  background-color: #4caf50;
 }
 
 .wrapF {
@@ -606,10 +605,18 @@ body {
     font-size: 1em;
   }
 }
+@media (max-width :580px){
+  header img {
+    /* display: block; */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media (max-width : 1050px) {
   header .bienvenue{
-    /* position: relative; */
-    float:none;
-
+    position: static;
+    float:right;
+    margin-top: 20px;
+    margin-right: 10px;
   }
 }

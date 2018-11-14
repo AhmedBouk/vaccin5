@@ -7,7 +7,6 @@
      <meta name="author" content="" />
      <meta name="robots" content=""/>
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="assets/slicknav/slicknav.css" />
     <title><?php echo $title; ?></title>
     <link rel="icon" href="assets/image/favicon.ico" />
     <link rel="stylesheet" href="assets/slicknav/slicknav.css" />
@@ -53,11 +52,13 @@
                         </style>
                 <?php
                           } ?>
-                      <li> <a href="contact.php">contact</a> </li>
-                      <li>  <a href="faq.php">FAQ</a> </li>
+
+                      <li> <a href="contact.php">Contact</a> </li>
+                      <li> <a href="faq.php">FAQ</a> </li>
+
                 <?php
                       if (is_admin()) {
-                         echo '<li><a href="dashboard_vaccin/index.php">back office</a></li>';
+                         echo '<li><a href="dashboard_vaccin/index.php">Back Office</a></li>';
                       }
                   ?>
           </ul>
