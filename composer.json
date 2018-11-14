@@ -1,0 +1,12 @@
+{
+    "name": "admin/vaccin5",
+    "authors": [
+        {
+            "name": "camillelupo",
+            "email": "camille.lupo@hotmail.fr"
+        }
+    ],
+    "require": {
+        "jasongrimes/paginator": "~1.0"
+    }
+}
