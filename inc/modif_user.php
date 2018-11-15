@@ -1,13 +1,8 @@
 <?php
+include('dashboard_vaccin/inc/request.php');
 $id = $_SESSION['user']['id'];
 
-$sql = "SELECT *
-        FROM v5_users
-        WHERE id = :id";
-$query = $pdo -> prepare($sql);
-$query-> bindvalue(':id' , $id , PDO::PARAM_INT );
-$query -> execute();
-$user = $query -> fetch();
+$user = id_search($id);
 
 $error = array();
 // Lors de la soumission du formulaire
@@ -49,27 +44,10 @@ if (!empty($_POST['submitted'])) {
     $error['mail'] = 'Veuillez renseigner ce champs';
   }
 
-// A verifier ? comment ? checkdate() necessite 3 paramètreds
-  // if(!empty($date_naissance)) {
-  //   if(!is_numeric($date_naissance)) {
-  //     $error['date_naissance'] = 'ceci n\'est pas une date';
-  //   }
-  // } else {
-  //     $error['date_naissance'] = 'Veuillez renseigner ce champs';
-  //   }
-
 
   if (count($error)==0) {
 
-      $sql ="UPDATE v5_users SET mail = :mail , updated_at = NOW() , nom = :nom , prenom = :prenom , sexe = :sexe , date_naissance = :date_naissance WHERE id = :id";
-      $query = $pdo->prepare($sql);
-      $query->bindValue(':id', $id, PDO::PARAM_STR);
-      $query->bindValue(':mail', $mail, PDO::PARAM_STR);
-      $query->bindValue(':nom', $nom, PDO::PARAM_STR);
-      $query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
-      $query->bindValue(':sexe', $sexe, PDO::PARAM_STR);
-      $query->bindValue(':date_naissance', $date_naissance, PDO::PARAM_STR);
-      $query->execute();
+    update_profil($id, $nom, $prenom, $mail, $sexe, $date_naissance );
 
       header("Location: profil.php");
 
