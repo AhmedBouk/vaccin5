@@ -1,23 +1,25 @@
 </div>
   <footer>
       <div class="wrapF">
-          <h2 id="fittext4">Notre Équipe</h2>
+        <div class="titre_footer">
+          <h2 id="fittext_footer">Notre Équipe</h2>
+        </div>
           <div class="zoom photos">
 
             <div class="photo">
-              <img src="assets/image/jonathan.jpg" alt="camille">
+              <img src="assets/image/profil_camille.jpg" alt="camille">
               <p>Camille</p>
             </div>
             <div class="photo">
-              <img src="assets/image/jonathan.jpg" alt="jonathan">
+              <img src="assets/image/profil_jonathan.jpg" alt="jonathan">
               <p>Jonathan</p>
             </div>
             <div class="photo">
-              <img src="assets/image/jonathan.jpg" alt="ahmed">
+              <img src="assets/image/profil_ahmed.jpg" alt="ahmed">
               <p>Ahmed</p>
             </div>
             <div class="photo">
-              <img src="assets/image/jonathan.jpg" alt="emilie">
+              <img src="assets/image/profil_emilie.jpg" alt="emilie">
               <p>Emilie</p>
             </div>
 
@@ -41,10 +43,14 @@
     <script src="assets\fittext\jquery.fittext.js"></script>
     <script type="text/javascript"></script>
     <script>
+    jQuery("#fittext_titreindex").fitText(1.6);
+    jQuery("#fittext_commentaires").fitText(1.8);
     jQuery("#fittext1").fitText(1.5);
     jQuery("#fittext2").fitText(1.5);
     jQuery("#fittext3").fitText(1.5);
     jQuery("#fittext4").fitText(1.8);
+    jQuery("#fittext_footer").fitText(0.8);
+
     </script>
 
   <!-- INSCRIPTION -->
