@@ -43,11 +43,13 @@
     <script src="assets\fittext\jquery.fittext.js"></script>
     <script type="text/javascript"></script>
     <script>
+    jQuery("#fittext_titreindex").fitText(1.6);
+    jQuery("#fittext_commentaires").fitText(1.8);
     jQuery("#fittext1").fitText(1.5);
     jQuery("#fittext2").fitText(1.5);
     jQuery("#fittext3").fitText(1.5);
     jQuery("#fittext4").fitText(1.8);
-    jQuery("#fittext_footer").fitText(0.6);
+    jQuery("#fittext_footer").fitText(0.8);
 
     </script>
 

@@ -30,7 +30,7 @@
           <a href="index.php"><img src="assets/image/logo.png" alt="logo"></a>
 
           <div class="titre">
-            <h2 id="fittext2">Mon Carnet de Vaccination</h2>
+            <h2 id="fittext_titreindex">Mon Carnet de Vaccination</h2>
           </div>
 
     <div class="bienvenue">
