@@ -457,7 +457,7 @@ margin-left: 13%;
 
 .notfound .notfound-404 h2 {
   padding-top: 50px;
-
+  color: #44B2AE;
 }
 
 .notfound .notfound-404 h2 span {
@@ -472,7 +472,7 @@ margin-left: 13%;
   font-weight: 700;
   text-transform: uppercase;
   margin: 0px;
-  color: #50d1cc;
+  color: #44B2AE;
   letter-spacing: 3px;
   padding-left: 6px;
 
@@ -492,14 +492,13 @@ margin-left: 13%;
 color: #50d1cc;
 text-decoration: none;
 font-family: fantasy;
-/* font-weight: bold; */
 }
 
 .notfound p a{
 color: #18408B;
 text-decoration: none;
 font-family: fantasy;
-/* font-weight: bold; */
+font-weight: bold;
 }
 
 

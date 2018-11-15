@@ -52,14 +52,18 @@ if (!empty($_POST['submitted'])) {
           $error['message'] = 'Veuillez renseigner ce champs.';
         }
 
-    $sql = "INSERT INTO v5_contact (nom, mail, objet, message, created_at) VALUES (:nom,:mail,:objet,:message,NOW())";
+      if (count($error) == 0) {
 
-    $query= $pdo -> prepare($sql) ;
-    $query-> bindvalue(':nom' , $nom , PDO::PARAM_STR );
-    $query-> bindvalue(':mail' , $mail , PDO::PARAM_STR );
-    $query-> bindvalue(':objet' , $objet , PDO::PARAM_STR );
-    $query-> bindvalue(':message' , $message , PDO::PARAM_STR );
-    $query-> execute();
+        $sql = "INSERT INTO v5_contact (nom, mail, objet, message, created_at) VALUES (:nom,:mail,:objet,:message,NOW())";
+
+        $query= $pdo -> prepare($sql) ;
+        $query-> bindvalue(':nom' , $nom , PDO::PARAM_STR );
+        $query-> bindvalue(':mail' , $mail , PDO::PARAM_STR );
+        $query-> bindvalue(':objet' , $objet , PDO::PARAM_STR );
+        $query-> bindvalue(':message' , $message , PDO::PARAM_STR );
+        $query-> execute();
+        header('location: index.php');
+        }
   }
 
 include('inc/header.php');
