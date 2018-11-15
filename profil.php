@@ -50,6 +50,7 @@ if(is_logged()){
       $tableauId = array();
       foreach ($vaccinObligatoires as $v) {
             $tableauId[] = $v['vaccin_id'];
+
       }
 
 
@@ -115,7 +116,7 @@ include('inc/header.php');
           }
 
         echo '<td class="parent"><p class="enfant">' .$listVaccinObligatoire['frequences_injections']. '</p></td>';
-        echo '<td class="parent"><p class="enfant">' .$listVaccinObligatoire['rappel']. '</p></td>';
+        echo '<td class="parent"><p class="enfant">' .$listVaccinObligatoire['frequences_injections']. '</p></td>';
            ?> </tr> <?php
           endforeach; ?>
     </table>
