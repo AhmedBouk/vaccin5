@@ -47,10 +47,10 @@ include('inc/sidebar.php');
           <th>Nom</th>
           <th>Prénom</th>
           <th>Date de création</th>
-          <th>Modificaton le</th>
+          <th>Date de modification</th>
           <th>Role</th>
           <th>Modifier</th>
-          <th>Delete</th>
+          <th>Supprimer</th>
         </tr>
         <?php foreach ($tableauUsers as $tableauUser) {?>
         <tr>
