@@ -48,26 +48,28 @@ if(is_logged()){
 
 
 // ajout d'un vaccin
-    if (!empty($_POST['submit_aj'])) {
+if (!empty($_POST['submit_aj'])) {
 
-      $date_injection = clean('date_injection');
-      if (!empty($date_injection)) {
-        $vaccin_id = clean('idvaccin');
+  $vaccin_id = clean('idvaccin');
+  $date_injection = clean('date_injection');
 
-        $validite = '+'.$listVaccins['validite'] . ' year';
-        $rappel = date("Y-m-d", strtotime($validite, strtotime($date_injection)));
+  $rappel_annee = ' +'. $_POST['validite_vaccin'] .' month';
 
-        $sql = "INSERT INTO v5_relation(user_id, vaccin_id, date_injection, validite, created_at, ) VALUES (:user_id , :vaccin_id , :date_injection, :validite, NOW() )";
-        $query= $pdo -> prepare($sql) ;
-        $query-> bindvalue(':validite' , $validite , PDO::PARAM_STR );
-        $query-> bindvalue(':vaccin_id' , $vaccin_id , PDO::PARAM_STR );
-        $query-> bindvalue(':user_id' , $id , PDO::PARAM_STR );
-        $query-> bindvalue(':date_injection' , $date_injection , PDO::PARAM_STR );
-        $query-> execute();
-        header('Location: modif_vaccin.php');
-      }else {
-        $error['date_injection'] = 'Veuillez entrer une date';
-      }
+  $rappel = date('Y-m-d', strtotime($date_injection. "$rappel_annee"));
+// echo $date_injection;
+// echo $rappel_annee;
+// echo $rappel;
+// die('');
+  $sql = "INSERT INTO v5_relation (user_id, vaccin_id, date_injection, rappel, created_at ) VALUES (:user_id , :vaccin_id ,:date_injection, :rappel, NOW())";
+
+  $query= $pdo -> prepare($sql) ;
+  $query-> bindvalue(':user_id' , $id , PDO::PARAM_STR );
+  $query-> bindvalue(':vaccin_id' , $vaccin_id , PDO::PARAM_STR );
+  $query-> bindvalue(':date_injection' , $date_injection );
+  $query-> bindvalue(':rappel' , $rappel );
+  $query-> execute();
+  header('Location: modif_vaccin.php');
+
 }
 
 // retrait d'un vaccin
@@ -75,7 +77,7 @@ if (!empty($_POST['submit_ret'])) {
 
   $vaccin_id = clean('idvaccin');
 
-  $sql = "DELETE FROM `v5_relation` WHERE user_id = :user_id AND vaccin_id = :vaccin_id";
+  $sql = "DELETE FROM v5_relation WHERE user_id = :user_id AND vaccin_id = :vaccin_id";
 
   $query= $pdo -> prepare($sql) ;
   $query-> bindvalue(':user_id' , $id , PDO::PARAM_STR );
@@ -94,6 +96,9 @@ include('inc/header.php');
 ?>
 
 <!-- Il y a une id class container autour du body  -->
+<div class="button_div">
+  <a class="button" href="profil.php">Retour</a>
+</div>
 
         <div class="modif_vaccin">
               <h2>Ajouts de vaccins</h2>
@@ -124,11 +129,13 @@ include('inc/header.php');
                     echo '<td>';
 
 
-                    if(!in_array($listVaccin['id'],$tableauId)) {?>
 
+
+                    if(!in_array($listVaccin['id'],$tableauId)) {?>
                     <form action="" method="post">
-                      <input type="date" name="date_injection" value="">
+                      <input type="hidden" name="validite_vaccin" value="<?= $listVaccin['validite']; ?>">
                       <input type="hidden" name="idvaccin" value="<?= $listVaccin['id']; ?>">
+                      <input type="date" name="date_injection" value="" required>
                       <input class="button" type="submit" name="submit_aj" value="Ajouter">
                       <span><?php spanError($error, '$date_injection') ?></span>
                     </form><?php echo '</td></tr>' ;
@@ -150,4 +157,6 @@ include('inc/header.php');
         </div>
 
 
-<?php echo $listVaccins['validite'] ;include('inc/footer.php');
+<?php
+
+include('inc/footer.php');

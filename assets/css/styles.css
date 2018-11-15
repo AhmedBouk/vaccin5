@@ -489,7 +489,7 @@ margin-left: 13%;
   font-weight: 400;
   text-transform: uppercase;
   color: #50d1cc;
-  margin-top: 0px;
+  padding-top: 35px;
   margin-bottom: 25px;
 }
 .notfound p {
@@ -531,6 +531,7 @@ font-weight: bold;
   margin: 0 auto;
   max-width: 270px;
   font-size: 60px;
+  color: #44B2AE;
 }
 
 .question {

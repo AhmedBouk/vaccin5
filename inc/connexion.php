@@ -17,10 +17,10 @@ $user = $query -> fetch(); // $a variable retourner / fetchall() pour les requet
 // test si le mot de passe existe
 if(!empty($user)) {
   if (!password_verify ($pwd_loggin , $user['mdp'] )) {
-    $error_log['mdp'] = 'Mauvais mot de passe';
+    $error_log['pwd'] = 'Mauvais mot de passe';
   }
   }else{
-    $error_mdp['mdp'] = 'Veuillez vous inscrire';
+    $error_log['mail'] = 'Veuillez vous inscrire';
 }
 
 if (count($error_log) == 0) {
