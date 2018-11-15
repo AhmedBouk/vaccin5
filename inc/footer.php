@@ -1,7 +1,9 @@
 </div>
   <footer>
       <div class="wrapF">
-          <h2 id="fittext4">Notre Équipe</h2>
+        <div class="titre_footer">
+          <h2 id="fittext_footer">Notre Équipe</h2>
+        </div>
           <div class="zoom photos">
 
             <div class="photo">
@@ -45,6 +47,8 @@
     jQuery("#fittext2").fitText(1.5);
     jQuery("#fittext3").fitText(1.5);
     jQuery("#fittext4").fitText(1.8);
+    jQuery("#fittext_footer").fitText(0.6);
+
     </script>
 
   <!-- INSCRIPTION -->
