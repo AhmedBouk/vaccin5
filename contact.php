@@ -1,4 +1,5 @@
 <?php
+include('dashboard_vaccin/inc/request.php');
 include('inc/fonctions.php');
 include('inc/pdo.php');
 $title = 'Contact';
@@ -9,10 +10,10 @@ if (!empty($_POST['submitted'])) {
 
 // fonction declarant et nettoyant (expace au debut et à la fin & supprimant les caractère pouvant créer un script) une variable
 
-  $nom      = trim(strip_tags($_POST['nom']));
-  $mail     = trim(strip_tags($_POST['mail']));
-  $objet    = trim(strip_tags($_POST['objet']));
-  $message  = trim(strip_tags($_POST['message']));
+  $nom      = clean('nom');
+  $mail     = clean('mail');
+  $objet    = clean('objet');
+  $message  = clean('message');
 
   if(!empty($nom)) {
     if(strlen($nom) < 3 ) {
@@ -54,14 +55,7 @@ if (!empty($_POST['submitted'])) {
 
       if (count($error) == 0) {
 
-        $sql = "INSERT INTO v5_contact (nom, mail, objet, message, created_at) VALUES (:nom,:mail,:objet,:message,NOW())";
-
-        $query= $pdo -> prepare($sql) ;
-        $query-> bindvalue(':nom' , $nom , PDO::PARAM_STR );
-        $query-> bindvalue(':mail' , $mail , PDO::PARAM_STR );
-        $query-> bindvalue(':objet' , $objet , PDO::PARAM_STR );
-        $query-> bindvalue(':message' , $message , PDO::PARAM_STR );
-        $query-> execute();
+        insert_mail($nom, $mail, $objet, $message);
         header('location: index.php');
         }
   }

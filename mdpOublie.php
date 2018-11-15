@@ -1,4 +1,5 @@
 <?php
+include('dashboard_vaccin/inc/request.php');
 include('inc/pdo.php');
 include('inc/fonctions.php');
 $title = 'MDP oublié';
@@ -15,11 +16,8 @@ if(!empty($_POST['submitted'])) {
     if(!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
       $error['mail'] = 'Ceci n\'est pas une adresse mail.';
     } else {
-      $sql="SELECT mail, token FROM v5_users WHERE mail = :mail"; //requete à modifier
-      $query= $pdo -> prepare($sql) ;//preparer la requete
-      $query-> bindValue(':mail' , $mail , PDO::PARAM_STR );
-      $query-> execute(); //execute la requete
-      $user = $query -> fetch();
+
+      $user = testmail($mail);
 
       if (!empty($user)) {
         $body = '<p>Veuillez cliquer sur ce lien</p>';

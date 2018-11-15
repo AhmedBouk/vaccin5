@@ -10,30 +10,17 @@ if(is_logged()){
 
 // requete on selectionne tout de la table v5_users de la personne connecté selon son id
     $id = $_SESSION['user']['id'];
-    $sql = " SELECT *
-             FROM v5_users
-             WHERE id = $id";
-    $query =$pdo ->prepare($sql);
-    $query -> execute();
-    $profil= $query -> fetch();
+
+    $profil = id_search($id);
 
 //requete pour avoir tous les vaccins de la table users
     if(!empty($profil)) {
 
-      $sql = "SELECT *
-              FROM v5_vaccin";
-      $query = $pdo -> prepare($sql);
-      $query -> execute();
-      $listVaccins= $query -> fetchAll();
+      $listVaccins= listvaccins();
 
 // Requete des vaccins fait par l'user
-      $sql = "SELECT * FROM v5_vaccin AS v
-              LEFT JOIN v5_relation AS pivot
-              ON v.id = pivot.vaccin_id
-              WHERE pivot.user_id = $id";
-      $query = $pdo -> prepare($sql);
-      $query -> execute();
-      $vaccinfaits= $query -> fetchall();
+
+      $vaccinfaits= vaccinfaits($id);
 
 //tableau nourrit par la requete précedente
       $tableauId = array();
@@ -60,14 +47,7 @@ if (!empty($_POST['submit_aj'])) {
 // echo $rappel_annee;
 // echo $rappel;
 // die('');
-  $sql = "INSERT INTO v5_relation (user_id, vaccin_id, date_injection, rappel, created_at ) VALUES (:user_id , :vaccin_id ,:date_injection, :rappel, NOW())";
-
-  $query= $pdo -> prepare($sql) ;
-  $query-> bindvalue(':user_id' , $id , PDO::PARAM_STR );
-  $query-> bindvalue(':vaccin_id' , $vaccin_id , PDO::PARAM_STR );
-  $query-> bindvalue(':date_injection' , $date_injection );
-  $query-> bindvalue(':rappel' , $rappel );
-  $query-> execute();
+  insert_vaccin($id, $vaccin_id, $date_injection, $rappel);
   header('Location: modif_vaccin.php');
 
 }
@@ -77,12 +57,8 @@ if (!empty($_POST['submit_ret'])) {
 
   $vaccin_id = clean('idvaccin');
 
-  $sql = "DELETE FROM v5_relation WHERE user_id = :user_id AND vaccin_id = :vaccin_id";
-
-  $query= $pdo -> prepare($sql) ;
-  $query-> bindvalue(':user_id' , $id , PDO::PARAM_STR );
-  $query-> bindvalue(':vaccin_id' , $vaccin_id , PDO::PARAM_STR );
-  $query-> execute();
+  delete_vaccin($id, $vaccin_id);
+  
   header('Location: modif_vaccin.php');
 }
 

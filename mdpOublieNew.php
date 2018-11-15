@@ -1,4 +1,5 @@
 <?php
+include('dashboard_vaccin/inc/request.php');
 include('inc/pdo.php');
 include('inc/fonctions.php');
 $title = 'MDP oublié New';
@@ -9,12 +10,8 @@ if(!empty($_GET['mail']) && !empty($_GET['token'])){
     $mail   = urldecode($_GET['mail']);
     $token  = urldecode($_GET['token']);
 
-    $sql="SELECT id FROM v5_users WHERE mail = :mail AND token = :token";
-    $query= $pdo -> prepare($sql) ;
-    $query-> bindValue(':mail' , $mail , PDO::PARAM_STR );
-    $query-> bindValue(':token' , $token , PDO::PARAM_STR );
-    $query-> execute();
-    $user = $query -> fetch();
+    $user = mdpoublienew($mail, $token);
+
     if(!empty($user)){
 
       if (!empty($_POST['submitted'])) {
@@ -32,12 +29,7 @@ if(!empty($_GET['mail']) && !empty($_GET['token'])){
           $hash     = password_hash($password , PASSWORD_DEFAULT);
           $token    = generateRandomString(120);
 
-          $sql = "UPDATE v5_users SET mdp = :password ,token= :token, updated_at = NOW() WHERE id= :id";
-          $query= $pdo -> prepare($sql) ;
-          $query-> bindvalue(':password' , $hash , PDO::PARAM_STR );
-          $query-> bindvalue(':token' , $token , PDO::PARAM_STR );
-          $query-> bindvalue(':id' , $user['id'] , PDO::PARAM_INT );
-          $query-> execute();
+          update_password($hash, $token, $user);
 
 debug($user);
           header('location: index.php');

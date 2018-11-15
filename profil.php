@@ -1,6 +1,8 @@
 <?php
 include('inc/fonctions.php');
 include('inc/pdo.php');
+include('dashboard_vaccin/inc/request.php');
+
 // titre de la page
 $title = 'profil';
 
@@ -9,43 +11,21 @@ if(is_logged()){
 
 // requete on selectionne tout de la table v5_users de la personne connecté selon son id
     $id = $_SESSION['user']['id'];
-    $sql = " SELECT *
-             FROM v5_users
-             WHERE id = $id";
-    $query =$pdo ->prepare($sql);
-    $query -> execute();
-    $profil= $query -> fetch();
+    $profil = id_search($id);
 
     if(!empty($profil)) {
 
-      $sql = "SELECT *
-              FROM v5_vaccin
-              WHERE obligatoire = 1";
-      $query = $pdo -> prepare($sql);
-      $query -> execute();
-      $listVaccinObligatoires= $query -> fetchAll();
+      $listVaccinObligatoires= listVaccinObligatoires();
 
 // Requete des vaccins non obligatoires
-     $sql = "SELECT * FROM v5_vaccin AS v
-              LEFT JOIN v5_relation AS pivot
-              ON v.id = pivot.vaccin_id
-              WHERE pivot.user_id = $id
-              AND v.obligatoire = 0";
-      $query = $pdo -> prepare($sql);
-      $query -> execute();
-      $vaccinNonObligatoires = $query -> fetchAll();
+
+      $vaccinNonObligatoires = vaccinNonObligatoires($id);
 
 
 
 // Requete des vaccins obligatoires
-      $sql = "SELECT * FROM v5_vaccin AS v
-              JOIN v5_relation AS pivot
-              ON v.id = pivot.vaccin_id
-              WHERE pivot.user_id = $id
-              AND v.obligatoire = 1";
-      $query = $pdo -> prepare($sql);
-      $query -> execute();
-      $vaccinObligatoires= $query -> fetchall();
+
+      $vaccinObligatoires= vaccinObligatoires($id);
 
       $tableauId = array();
       foreach ($vaccinObligatoires as $v) {

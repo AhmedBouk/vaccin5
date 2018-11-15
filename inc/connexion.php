@@ -1,4 +1,5 @@
 <?php
+include('dashboard_vaccin/inc/request.php');
   $error_log = array();
 // Lors de la soumission du formulaire
 if(!empty($_POST['submit_login'])){
@@ -8,12 +9,7 @@ $mail_login  = clean('mail');
 $pwd_loggin  = clean('pwd');
 
 // test si le mail existe
-$sql="SELECT * FROM v5_users WHERE mail =:mail "; //requete à modifier
-$query= $pdo -> prepare($sql) ;//preparer la requete
-$query-> bindvalue(':mail' , $mail_login , PDO::PARAM_STR );
-$query-> execute(); //execute la requete
-$user = $query -> fetch(); // $a variable retourner / fetchall() pour les requetes avec multiple array sinon fetch()
-
+$user = testmail($mail_login);
 // test si le mot de passe existe
 if(!empty($user)) {
   if (!password_verify ($pwd_loggin , $user['mdp'] )) {
