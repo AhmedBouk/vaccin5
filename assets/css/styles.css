@@ -12,8 +12,9 @@ h1{
   left: -500000000000px;
 }
 
+
 h2 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Fjalla One', sans-serif;
   text-align: center;
   font-size: 2em;
   color: #fff;
@@ -375,12 +376,13 @@ margin-left: 13%;
 	display: block;
 }
 .photos div {
-  background-color: red;
+  background-color: #4bc5c0;
 	position: relative;
 	float: left;
 	width: 24%;
 	height: 25%;
 	margin-top: 30px;
+  padding-bottom: 20px;
 }
 
 .photos div:first-child {
@@ -413,7 +415,8 @@ margin-left: 13%;
 
 /* footer Legal */
 .copyright{
-  margin-top: 30px;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .copyright p{
