@@ -1,5 +1,5 @@
 <?php
-
+// Requete permettant de retourner tous les éléments d'une table + pagination
 function requeteListe($nomTable,$offset,$itemPerPage){
   global $pdo;
 
@@ -9,43 +9,23 @@ function requeteListe($nomTable,$offset,$itemPerPage){
   $tableau = $query -> fetchall();
   return $tableau;
 }
-
-
-
-//Fonction pour effacer un utilisateur en fonction de son id
-function deleteUser($id){
+//Fonction pour effacer une ligne dans la table
+function delete($nomTable,$id){
   global $pdo;
 
-  $sql="DELETE FROM v5_users WHERE id=:id";
+  $sql="DELETE FROM $nomTable WHERE id=:id";
   $query = $pdo ->prepare($sql);
   $query -> bindValue(':id',$id,PDO::PARAM_INT);
   $query -> execute();
 }
-
-function deleteVaccins($id){
+//Comptre le nombre de lignes dans une table
+function compteItem($nomTable){
   global $pdo;
 
-  $sql="DELETE FROM v5_vaccin WHERE id=:id";
-  $query = $pdo ->prepare($sql);
-  $query -> bindValue(':id',$id,PDO::PARAM_INT);
-  $query -> execute();
-}
-function compteUtilisateur(){
-  global $pdo;
-  $sql = "SELECT COUNT(id) FROM v5_users ";
+  $sql = "SELECT COUNT(id) FROM $nomTable ";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
   $count = $stmt->fetchColumn();
   return $count;
 }
-function compteVaccins(){
-  global $pdo;
-  $sql = "SELECT COUNT(id) FROM v5_vaccin ";
-  $stmt = $pdo->prepare($sql);
-  $stmt->execute();
-  $count = $stmt->fetchColumn();
-  return $count;
-}
-
-
 ?>

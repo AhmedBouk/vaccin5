@@ -1,8 +1,9 @@
 <?php
-include('inc/fonctions.php');
 include('inc/pdo.php');
+include('inc/fonctions.php');
 include('dashboard_vaccin/inc/request.php');
 $title = 'Ajout de vaccin';
+$error = array();
 
 // si la personne est connecté
 if(is_logged()){
@@ -16,6 +17,7 @@ if(is_logged()){
     $query -> execute();
     $profil= $query -> fetch();
 
+//requete pour avoir tous les vaccins de la table users
     if(!empty($profil)) {
 
       $sql = "SELECT *
@@ -24,10 +26,7 @@ if(is_logged()){
       $query -> execute();
       $listVaccins= $query -> fetchAll();
 
-
-
-
-// Requete des vaccins obligatoires
+// Requete des vaccins fait par l'user
       $sql = "SELECT * FROM v5_vaccin AS v
               LEFT JOIN v5_relation AS pivot
               ON v.id = pivot.vaccin_id
@@ -36,30 +35,54 @@ if(is_logged()){
       $query -> execute();
       $vaccinfaits= $query -> fetchall();
 
+//tableau nourrit par la requete précedente
       $tableauId = array();
       foreach ($vaccinfaits as $v) {
             $tableauId[] = $v['vaccin_id'];
+
       }
-
-
 
     }else {
         header("Location: 404.php");
     }
-    $vaccin_id = $listVaccins['id'];
 
+
+// ajout d'un vaccin
     if (!empty($_POST['submit_aj'])) {
 
-      $sql = "INSERT INTO `v5_relation`(`user_id`, `vaccin_id`, `created_at`) VALUES (:user_id , :vaccin_id , now()) ";
+      $date_injection = clean('date_injection');
+      if (!empty($date_injection)) {
+        $vaccin_id = clean('idvaccin');
 
+        $validite = '+'.$listVaccins['validite'] . ' year';
+        $rappel = date("Y-m-d", strtotime($validite, strtotime($date_injection)));
 
-      $query= $pdo -> prepare($sql) ;
-      $query-> bindvalue(':user_id' , $id , PDO::PARAM_STR );
-      $query-> bindvalue(':vaccin_id' , $vaccin_id , PDO::PARAM_STR );
-      $query-> execute();
+        $sql = "INSERT INTO v5_relation(user_id, vaccin_id, date_injection, validite, created_at, ) VALUES (:user_id , :vaccin_id , :date_injection, :validite, NOW() )";
+        $query= $pdo -> prepare($sql) ;
+        $query-> bindvalue(':validite' , $validite , PDO::PARAM_STR );
+        $query-> bindvalue(':vaccin_id' , $vaccin_id , PDO::PARAM_STR );
+        $query-> bindvalue(':user_id' , $id , PDO::PARAM_STR );
+        $query-> bindvalue(':date_injection' , $date_injection , PDO::PARAM_STR );
+        $query-> execute();
+        header('Location: modif_vaccin.php');
+      }else {
+        $error['date_injection'] = 'Veuillez entrer une date';
+      }
 }
 
+// retrait d'un vaccin
+if (!empty($_POST['submit_ret'])) {
 
+  $vaccin_id = clean('idvaccin');
+
+  $sql = "DELETE FROM `v5_relation` WHERE user_id = :user_id AND vaccin_id = :vaccin_id";
+
+  $query= $pdo -> prepare($sql) ;
+  $query-> bindvalue(':user_id' , $id , PDO::PARAM_STR );
+  $query-> bindvalue(':vaccin_id' , $vaccin_id , PDO::PARAM_STR );
+  $query-> execute();
+  header('Location: modif_vaccin.php');
+}
 
 }
 
@@ -67,23 +90,13 @@ else {
     header("Location: 404.php");
 }
 
-// creation d'un lien Modifier qui emmene vers une nouvelle page ou il ya un formulaire avec nom prenom etc pour modifier les informations
-
-debug($vaccin_id);
 include('inc/header.php');
 ?>
 
-<style media="screen">
-  table tr, table tr td{
-    padding : 15px;
-  }
-</style>
 <!-- Il y a une id class container autour du body  -->
 
-
-
-            <div class="modif_vaccin">
-              <h2>Ajouts / Retrait vaccins</h2>
+        <div class="modif_vaccin">
+              <h2>Ajouts de vaccins</h2>
               <table class="form table_vaccin">
                 <tr>
                   <th class="parent"><p class="enfant">Nom</p></th>
@@ -109,17 +122,32 @@ include('inc/header.php');
 
                     echo '</td><td class="parent"><p class="enfant">'.$listVaccin['frequences_injections'].'</p></td>' ;
                     echo '<td>';
-                    ?>
+
+
+                    if(!in_array($listVaccin['id'],$tableauId)) {?>
 
                     <form action="" method="post">
-                    <input class="button" type="submit" name="submit_aj" value="Ajouter"></form><?php echo '</td></tr>' ;
-                  } ?>
+                      <input type="date" name="date_injection" value="">
+                      <input type="hidden" name="idvaccin" value="<?= $listVaccin['id']; ?>">
+                      <input class="button" type="submit" name="submit_aj" value="Ajouter">
+                      <span><?php spanError($error, '$date_injection') ?></span>
+                    </form><?php echo '</td></tr>' ;
+
+                    } elseif (in_array($listVaccin['id'],$tableauId)) {?>
+                      <form action="" method="post">
+                      <input type="hidden" name="idvaccin" value="<?= $listVaccin['id']; ?>">
+                      <input class="button red" type="submit" name="submit_ret" value="Retirer"></form><?php echo '</td></tr>' ;
+                      }
+                }
+
+
+                  ?>
               </table>
 
-              <div class="button_div">
-                <a class="button" href="profil.php">Retour</a>
-              </div>
+            <div class="button_div">
+              <a class="button" href="profil.php">Retour</a>
             </div>
+        </div>
 
 
-<?php include('inc/footer.php');
+<?php echo $listVaccins['validite'] ;include('inc/footer.php');

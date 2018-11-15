@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  jeu. 15 nov. 2018 à 09:50
+-- Généré le :  mer. 14 nov. 2018 à 13:53
 -- Version du serveur :  10.1.36-MariaDB
 -- Version de PHP :  7.2.10
 
@@ -43,8 +43,7 @@ CREATE TABLE `v5_contact` (
 
 INSERT INTO `v5_contact` (`id`, `nom`, `mail`, `objet`, `message`, `created_at`) VALUES
 (1, 'emy', 'e@live.fr', 'hello', 'hkglu(jfltfnkrlfnkltnfkuonllfklutgfk,g,:l;mèhj', '2018-11-14'),
-(2, '', '', '', '', '2018-11-14'),
-(3, '', '', '', '', '2018-11-14');
+(2, '', '', '', '', '2018-11-14');
 
 -- --------------------------------------------------------
 
@@ -271,30 +270,30 @@ CREATE TABLE `v5_vaccin` (
 --
 
 INSERT INTO `v5_vaccin` (`id`, `nom`, `obligatoire`, `validite`, `frequences_injections`, `created_at`, `updated_at`) VALUES
-(33, 'Le Tétanos', 1, 20, 'Obligatoire dès la naissance. Les rappels de l\'adulte sont recommandés à âges fixes (25, 45, 65 ans).', '2018-11-01 10:01:21', NULL),
-(34, 'La Poliomyélite', 1, 20, 'Obligatoire dès la naissance. Les rappels de l\'adulte sont recommandés à âges fixes (25, 45, 65 ans…).', '2018-11-01 10:01:21', NULL),
-(35, 'L’Haemophilius Influenzae B ', 1, NULL, 'Obligatoire dès la naissance.  Rappel à 2 mois, 4 mois et 11 mois. Inutile après 5 ans.', '2018-11-01 10:01:21', NULL),
-(36, 'La Coqueluche', 1, 10, 'Recommandée à l\'âge de 2 mois ainsi qu\'à l\'entourage du nourrisson si leur dernier rappel de la coqueluche date de plus de 10 ans', '2018-11-01 10:01:21', NULL),
-(37, 'L’Hépatite B', 1, NULL, 'Recommandée à l\'âge de 2 mois. Si la vaccination n\'a pas été réalisée au cours de la 1ère année de vie, elle peut être réalisée jusqu\'à 15 ans inclus. À partir de 16 ans, elle est recommandée uniquement chez les personnes exposées au risque de l\'hépatite ', '2018-11-01 10:01:21', NULL),
-(38, 'La Rougeole', 1, NULL, 'Recommandée à l\'âge de 12 mois avec une 2e dose entre 16 et 18 mois', '2018-11-01 10:01:21', NULL),
-(39, 'Les Oreillons', 1, NULL, 'Recommandée à l\'âge de 12 mois avec une 2e dose entre 16 et 18 mois', '2018-11-01 10:01:21', NULL),
-(40, 'La Rubéole', 1, NULL, 'Recommandée à l\'âge de 12 mois avec une 2e dose entre 16 et 18 mois', '2018-11-01 10:01:21', NULL),
-(41, 'Le Méningocoque ', 1, NULL, 'Recommandée à l\'âge de 5 mois avec un rattrapage jusqu\'à 24 ans inclus', '2018-11-01 10:01:21', NULL),
-(42, 'Le Pneumocoque', 1, NULL, 'Recommandée à l\'âge de 2 mois', '2018-11-01 10:01:21', NULL),
-(46, 'Le Papillomavirus Humains ', 0, NULL, 'Recommandée chez les jeunes filles de 11 à 14 ans avec un rattrapage jusqu\'à 19 inclus', '2018-11-01 10:01:21', NULL),
-(47, 'Fièvre typhoïde', 0, 3, 'La vaccination est par contre clairement indiquée pour des voyages aventureux dans de mauvaises conditions d\'hygiène ou dans des voyages d\'une durée de plus de trois semaines.', '2018-11-01 10:01:21', NULL),
-(48, 'La Rage', 0, 5, 'La vaccination de pré-exposition doit être proposée aux sujets ayant un risque élevé de contamination par le virus de la rage. ', '2018-11-01 10:01:21', NULL),
-(49, 'La Leptospirose', 0, 2, 'La vaccination peut être proposée pour les personnes susceptibles d\'être en contact avec un environnement contaminé du fait de la pratique régulière et durable d\'une activité en zone humide ou aquatique.', '2018-11-01 10:01:21', NULL),
-(50, 'L’Encéphalite japonaise', 0, NULL, 'La vaccination contre le virus de l’encéphalite japonaise est recommandée chez les personnes partant en expatriation dans un pays situé dans l\'Asie ou chez des voyageurs devant séjourner dans cette même zone.', '2018-11-01 10:01:21', NULL),
-(51, 'L’Encéphalite à Tiques', 0, 3, 'La vaccination contre l’encéphalite à tiques est recommandée chez les voyageurs (adulte et enfant de plus d’1 an) devant séjourner en zone rurale ou boisée des régions touchées (Europe centrale, Europe de l’Est et du Nord, nord de l’Asie centrale, nord de', '2018-11-01 10:01:21', NULL),
-(52, 'La Fièvre jaune', 0, NULL, 'En France, la vaccination contre la fièvre jaune est obligatoire chez les enfants de plus de 12 mois et les adultes voyageant ou résidant en Guyane.', '2018-11-01 10:01:21', NULL),
-(53, 'L\'Hépatite A', 0, 3, 'La vaccination contre l’hépatite A concerne les personnes exposées à ce virus. Elle a pour effet de diminuer fortement le risque de contracter cette infection.', '2018-11-01 10:01:21', NULL),
-(54, 'Le Choléra', 0, NULL, 'Le personnel humanitaire peut être exposé dans les zones sinistrées et les camps de réfugiés. Notamment en Afrique, Moyen-Orient , Amérique Centrale et en Asie.', '2018-11-01 10:01:21', NULL),
-(55, 'La Grippe', 0, NULL, 'Recommandée chaque année pour les personnes à risques y compris les enfants à partir de 6 mois, les femmes enceintes et les personnes âgées de 65 ans et plus', '2018-11-01 10:01:21', NULL),
-(56, 'La poliomyélite', 0, NULL, 'La vaccination contre la poliomyélite s’adresse à tous, enfants et adultes tout au long de la vie. Elle permet d’éviter la maladie et ses complications. ', '2018-11-01 10:01:21', NULL),
-(57, 'La Diphtérie', 0, 20, 'Obligatoire dès la naissance. Les rappels de l\'adulte sont recommandés à âges fixes (25, 45, 65 ans…).', '2018-11-01 10:01:21', NULL),
-(58, 'Le Zona', 1, NULL, 'Recommandée chez les personnes âgées de 65 à 74 ans inclus.', '2018-11-01 10:01:21', NULL),
-(62, 'Le Tétanos ', 1, 20, 'Obligatoire dès la naissance. Les rappels de l\'adulte sont recommandés à âges fixes (25, 45, 65 ans…).', '2018-11-01 10:01:21', NULL);
+(33, 'Le Tétanos', 1, 20, 'Obligatoire dès la naissance. Les rappels de l\'adulte sont recommandés à âges fixes (25, 45, 65 ans).', '0000-00-00 00:00:01', NULL),
+(34, 'La Poliomyélite', 1, 20, 'Obligatoire dès la naissance. Les rappels de l\'adulte sont recommandés à âges fixes (25, 45, 65 ans…).', '0000-00-00 00:00:00', NULL),
+(35, 'L’Haemophilius Influenzae B ', 1, NULL, 'Obligatoire dès la naissance.  Rappel à 2 mois, 4 mois et 11 mois. Inutile après 5 ans.', '0000-00-00 00:00:00', NULL),
+(36, 'La Coqueluche', 1, 10, 'Recommandée à l\'âge de 2 mois ainsi qu\'à l\'entourage du nourrisson si leur dernier rappel de la coqueluche date de plus de 10 ans', '0000-00-00 00:00:00', NULL),
+(37, 'L’Hépatite B', 1, NULL, 'Recommandée à l\'âge de 2 mois. Si la vaccination n\'a pas été réalisée au cours de la 1ère année de vie, elle peut être réalisée jusqu\'à 15 ans inclus. À partir de 16 ans, elle est recommandée uniquement chez les personnes exposées au risque de l\'hépatite ', '0000-00-00 00:00:00', NULL),
+(38, 'La Rougeole', 1, NULL, 'Recommandée à l\'âge de 12 mois avec une 2e dose entre 16 et 18 mois', '0000-00-00 00:00:00', NULL),
+(39, 'Les Oreillons', 1, NULL, 'Recommandée à l\'âge de 12 mois avec une 2e dose entre 16 et 18 mois', '0000-00-00 00:00:00', NULL),
+(40, 'La Rubéole', 1, NULL, 'Recommandée à l\'âge de 12 mois avec une 2e dose entre 16 et 18 mois', '0000-00-00 00:00:00', NULL),
+(41, 'Le Méningocoque ', 1, NULL, 'Recommandée à l\'âge de 5 mois avec un rattrapage jusqu\'à 24 ans inclus', '0000-00-00 00:00:00', NULL),
+(42, 'Le Pneumocoque', 1, NULL, 'Recommandée à l\'âge de 2 mois', '0000-00-00 00:00:00', NULL),
+(46, 'Le Papillomavirus Humains ', 0, NULL, 'Recommandée chez les jeunes filles de 11 à 14 ans avec un rattrapage jusqu\'à 19 inclus', '0000-00-00 00:00:00', NULL),
+(47, 'Fièvre typhoïde', 0, 3, 'La vaccination est par contre clairement indiquée pour des voyages aventureux dans de mauvaises conditions d\'hygiène ou dans des voyages d\'une durée de plus de trois semaines.', '0000-00-00 00:00:00', NULL),
+(48, 'La Rage', 0, 5, 'La vaccination de pré-exposition doit être proposée aux sujets ayant un risque élevé de contamination par le virus de la rage. ', '0000-00-00 00:00:00', NULL),
+(49, 'La Leptospirose', 0, 2, 'La vaccination peut être proposée pour les personnes susceptibles d\'être en contact avec un environnement contaminé du fait de la pratique régulière et durable d\'une activité en zone humide ou aquatique.', '0000-00-00 00:00:00', NULL),
+(50, 'L’Encéphalite japonaise', 0, NULL, 'La vaccination contre le virus de l’encéphalite japonaise est recommandée chez les personnes partant en expatriation dans un pays situé dans l\'Asie ou chez des voyageurs devant séjourner dans cette même zone.', '0000-00-00 00:00:00', NULL),
+(51, 'L’Encéphalite à Tiques', 0, 3, 'La vaccination contre l’encéphalite à tiques est recommandée chez les voyageurs (adulte et enfant de plus d’1 an) devant séjourner en zone rurale ou boisée des régions touchées (Europe centrale, Europe de l’Est et du Nord, nord de l’Asie centrale, nord de', '0000-00-00 00:00:00', NULL),
+(52, 'La Fièvre jaune', 0, NULL, 'En France, la vaccination contre la fièvre jaune est obligatoire chez les enfants de plus de 12 mois et les adultes voyageant ou résidant en Guyane.', '0000-00-00 00:00:00', NULL),
+(53, 'L\'Hépatite A', 0, 3, 'La vaccination contre l’hépatite A concerne les personnes exposées à ce virus. Elle a pour effet de diminuer fortement le risque de contracter cette infection.', '0000-00-00 00:00:00', NULL),
+(54, 'Le Choléra', 0, NULL, 'Le personnel humanitaire peut être exposé dans les zones sinistrées et les camps de réfugiés. Notamment en Afrique, Moyen-Orient , Amérique Centrale et en Asie.', '0000-00-00 00:00:00', NULL),
+(55, 'La Grippe', 0, NULL, 'Recommandée chaque année pour les personnes à risques y compris les enfants à partir de 6 mois, les femmes enceintes et les personnes âgées de 65 ans et plus', '0000-00-00 00:00:00', NULL),
+(56, 'La poliomyélite', 0, NULL, 'La vaccination contre la poliomyélite s’adresse à tous, enfants et adultes tout au long de la vie. Elle permet d’éviter la maladie et ses complications. ', '0000-00-00 00:00:00', NULL),
+(57, 'La Diphtérie', 0, 20, 'Obligatoire dès la naissance. Les rappels de l\'adulte sont recommandés à âges fixes (25, 45, 65 ans…).', '0000-00-00 00:00:00', NULL),
+(58, 'Le Zona', 1, NULL, 'Recommandée chez les personnes âgées de 65 à 74 ans inclus.', '0000-00-00 00:00:00', NULL),
+(62, 'Le Tétanos ', 1, 20, 'Obligatoire dès la naissance. Les rappels de l\'adulte sont recommandés à âges fixes (25, 45, 65 ans…).', '0000-00-00 00:00:01', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -332,7 +331,7 @@ ALTER TABLE `v5_vaccin`
 -- AUTO_INCREMENT pour la table `v5_contact`
 --
 ALTER TABLE `v5_contact`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `v5_relation`
@@ -344,7 +343,7 @@ ALTER TABLE `v5_relation`
 -- AUTO_INCREMENT pour la table `v5_users`
 --
 ALTER TABLE `v5_users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
 -- AUTO_INCREMENT pour la table `v5_vaccin`

@@ -61,12 +61,17 @@ if (!empty($_POST['submitted'])) {
 
   if (count($error)==0) {
 
-      $sql = "INSERT INTO `v5_relation`( `user_id`, `vaccin_id`, `created_at`, `updated_at`) VALUES ()";
+      $sql ="UPDATE v5_users SET mail = :mail , updated_at = NOW() , nom = :nom , prenom = :prenom , sexe = :sexe , date_naissance = :date_naissance WHERE id = :id";
       $query = $pdo->prepare($sql);
-      $query->bindValue(':user_id', $id, PDO::PARAM_STR);
+      $query->bindValue(':id', $id, PDO::PARAM_STR);
+      $query->bindValue(':mail', $mail, PDO::PARAM_STR);
+      $query->bindValue(':nom', $nom, PDO::PARAM_STR);
+      $query->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+      $query->bindValue(':sexe', $sexe, PDO::PARAM_STR);
+      $query->bindValue(':date_naissance', $date_naissance, PDO::PARAM_STR);
       $query->execute();
 
-      header("Location: index.php");
+      header("Location: profil.php");
 
   }
 }

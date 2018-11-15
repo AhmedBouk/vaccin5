@@ -14,10 +14,10 @@
    <div class="flexslider">
      <ul class="slides">
        <li>
-         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/austin-fireworks.jpg" />
+         <img src="assets/image/image1.jpg" alt="Image1 slider" />
        </li>
        <li>
-         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/taj-mahal_copy.jpg" alt>
+         <img src="assets/image/image2.jpg" alt="Image2 slider">
        </li>
        <li>
          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ibiza.jpg" alt>
@@ -47,10 +47,7 @@
            <span><?php spanError($error_reg,'pwd1') ?></span>
 
            <input class="button" type="submit" name="submit_register" value="Créer">
-           <span><?php if ($inscrit =1234) {
-             echo $inscrit;
-           }
-            ?></span>
+
 
            <p class="message">Déjà inscrit ? <a href="#">Connectez-vous</a></p>
 
