@@ -129,7 +129,8 @@ li a {
   width: 48%;
   float: left;
   margin-left: 2%;
-  height: 400px;
+  margin-top: 100px;
+
   display: flex; /* contexte sur le parent*/
   flex-direction: column; /* direction d'affichage verticale */
   justify-content: center; /* alignement vertical */
@@ -138,6 +139,7 @@ li a {
 .inscription{
   width: 48%;
   float: right;
+  margin-top: 60px;
   display: flex;
   /* height: 400px; */
   /* margin: 0 auto; */
@@ -241,6 +243,7 @@ li a {
 }
 
 .comment-users .commentaires .commentaire{
+
   margin: 0 20px 0 20px;
   width: 20%;
 }
@@ -583,9 +586,8 @@ body {
 @media (max-width : 550px){
 .modif_vaccin h2{
   font-size: 1.5em;
+ }
 }
-}
-
 
 /* responsive page 404 767 px */
 @media only screen and (max-width: 767px) {
@@ -611,7 +613,6 @@ body {
   }
 }
 
-
 /* responsive navigation menu */
 .slicknav_menu {
   display:none;
@@ -627,10 +628,6 @@ body {
   }
 }
 
-@media (max-width: 450px){
-  #menu{ margin-right: 50px;}
-}
-
 
 /* responsive du titre */
 @media (max-width : 480px) {
@@ -638,16 +635,6 @@ body {
     font-size: 1em;
   }
 }
-
-
-/* responsive titre 480px taille ecriture */
-@media (max-width : 480px) {
-  header .titre{
-    font-size: 1em;
-
-  }
-}
-
 
 /* responsive du titre */
 @media (max-width : 1050px) {
@@ -674,25 +661,57 @@ body {
   }
 }
 
-responsive
+/* responsive */
 @media (max-width : 540px) {
   header .bienvenue{
-    padding-top: 30px;
+    padding-top: 20px;
     text-align: center;
+    font-size: 0.8em;
   }
 }
+/* responsive header titre */
+@media (max-width : 540px) {
+  header .wrapHF .titre{
+    text-align: center;
+    margin-left: 50px;
+  }
 
-
+}
+/* responsive header img logo */
 @media (max-width : 540px) {
   header .wrapHF img{
     display: none;
   }
 }
-
+/* responsive header  */
+@media (max-width : 520px) {
+  header {
+    height: 100px;
+  }
+}
 /* //responsive pour 1900px header taille */
 @media (min-width :1900px){
-  /* header */
   header{
     height: 220px;
   }
+}
+/* responsive slider et inscription */
+@media (max-width : 790px) {
+  .contenu .flexslider {
+    width: 98%;
+  }
+}
+
+@media (max-width : 790px) {
+  .contenu .inscription {
+    width: 98%;
+  }
+}
+@media (max-width :1060px;){
+.comment-users .commentaires .commentaire{
+
+  margin: 0 20px 0 20px;
+  float: left;
+  width: 40%;
+ }
 }
