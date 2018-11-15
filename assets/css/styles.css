@@ -128,6 +128,7 @@ li a {
   justify-content: center; /* alignement vertical */
 }
 
+
 .inscription{
   width: 48%;
   float: right;
@@ -143,6 +144,7 @@ li a {
 }
 
 .login-page {
+
   width: 360px;
   margin: 10% auto;
 }
@@ -190,6 +192,7 @@ li a {
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+
 }
 
 .form .button:hover,.form .button:active,.form .button:focus,
@@ -287,6 +290,7 @@ li a {
 /* aussi dans inscription */
 .modif_vaccin{
   margin-top: 50px;
+  margin-bottom: 40px;
 }
 
 .table_vaccin {
