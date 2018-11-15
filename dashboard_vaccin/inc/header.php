@@ -61,17 +61,9 @@ if (is_admin()){
     <ul class="nav navbar-nav">
       <li class="dropdown user user-menu">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-          <span class="hidden-xs">Administrateur</span>
+          <span class="hidden-xs"><?php echo $_SESSION['user']['prenom'].'  '.$_SESSION['user']['nom']; ?></span>
         </a>
         <ul class="dropdown-menu">
-          <!-- User image -->
-          <li class="user-header">
-            <p>
-              Bonjour
-            </p>
-          </li>
-        <!-- Menu Body -->
-          <!-- Menu Footer-->
           <li class="user-footer">
               <a href="../deconnexion.php" class="btn btn-default btn-flat">Déconnexion</a>
           </li>
