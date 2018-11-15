@@ -122,10 +122,10 @@ li a {
   float: left;
   margin-left: 2%;
   margin-top: 100px;
-
-  display: flex; /* contexte sur le parent*/
-  flex-direction: column; /* direction d'affichage verticale */
-  justify-content: center; /* alignement vertical */
+/*
+  display: flex;
+  flex-direction: column;
+  justify-content: center; */
 }
 
 
@@ -260,6 +260,7 @@ li a {
 
 .comment-users .commentaires .commentaire p:last-child{
   color: #44B2AE;
+  padding-top: 10px;
   font-size: 0.7em;
 }
 

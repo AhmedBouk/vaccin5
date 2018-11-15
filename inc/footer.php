@@ -83,7 +83,14 @@
 
     <script type="text/javascript" charset="utf-8">
       $(window).load(function() {
-        $('.flexslider').flexslider();
+        $('.flexslider').flexslider({
+            animation: "fade", // slide
+            controlNav: false,
+            directionNav: false,
+            slideshowSpeed: 2500,  
+          });
+
+
       });
     </script>
 
