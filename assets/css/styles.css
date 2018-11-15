@@ -339,10 +339,9 @@ li a {
   background-color: #DE3B30;
 }
 
-/* FOOTER */
 
 
-/* Notre equipe */
+/* footer Notre equipe */
 footer{
   background-color: #50D1CC;
   padding-top: 30px;
@@ -401,8 +400,8 @@ margin-left: 13%;
   .zoom div:hover img {
   	transform: scale(1.1);
   }
-/* FOOTER */
-/* Legal */
+
+/* footer Legal */
 .copyright{
   margin-top: 30px;
 }
@@ -456,14 +455,8 @@ margin-left: 13%;
   margin-left: -20px;
 }
 
-.notfound .notfound-404 h2 {
-  padding-top: 50px;
-  color: #44B2AE;
-}
-
 .notfound .notfound-404 h2 span {
-  text-shadow: -8px 0px 0px #B0E0E6;
-
+  text-shadow: -8px 0px 0px #fff;
 }
 
 .notfound .notfound-404 h3 {
@@ -473,10 +466,9 @@ margin-left: 13%;
   font-weight: 700;
   text-transform: uppercase;
   margin: 0px;
-  color: #44B2AE;
+  color: #110934;
   letter-spacing: 3px;
   padding-left: 6px;
-
 }
 
 .notfound h4 {
@@ -484,22 +476,9 @@ margin-left: 13%;
   font-size: 20px;
   font-weight: 400;
   text-transform: uppercase;
-  color: #50d1cc;
-  margin-bottom: 25px;
+  color: #110934;
   margin-top: 0px;
-}
-
-.notfound p {
-color: #50d1cc;
-text-decoration: none;
-font-family: fantasy;
-}
-
-.notfound p a{
-color: #18408B;
-text-decoration: none;
-font-family: fantasy;
-font-weight: bold;
+  margin-bottom: 25px;
 }
 
 
@@ -622,28 +601,28 @@ body {
 }
 
 @media screen and (max-width: 1050px) {
-
   #menu {
     display:none;
 
   }
-
   .slicknav_menu {
     display:block;
-
-
   }
 }
+
 @media (max-width: 450px){
   #menu{ margin-right: 50px;}
 }
+
+
 /* responsive du titre */
 @media (max-width : 480px) {
   header .titre{
     font-size: 1em;
-
   }
 }
+
+
 /* responsive titre 480px taille ecriture */
 @media (max-width : 480px) {
   header .titre{
@@ -651,12 +630,16 @@ body {
 
   }
 }
+
+
 /* responsive du titre */
 @media (max-width : 1050px) {
   header {
     height: 140px;
   }
 }
+
+/* responsive titre 1050px */
 @media (max-width : 1050px) {
   header .titre {
     padding-top: 20px;
@@ -673,12 +656,16 @@ body {
     margin-bottom: 20px;
   }
 }
+
+responsive 
 @media (max-width : 540px) {
   header .bienvenue{
     padding-top: 30px;
     text-align: center;
   }
 }
+
+
 @media (max-width : 540px) {
   header .wrapHF img{
     display: none;
