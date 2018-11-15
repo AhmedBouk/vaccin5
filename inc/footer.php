@@ -1,7 +1,7 @@
 </div>
   <footer>
       <div class="wrapF">
-          <h2 id="fittext4">Notre Equipe</h2>
+          <h2 id="fittext4">Notre Équipe</h2>
           <div class="zoom photos">
 
             <div class="photo">
