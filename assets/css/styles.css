@@ -114,7 +114,9 @@ li a {
 
 .contenu{
   margin-left: -2%;
+  padding: 0 50px;
 }
+
 .flexslider{
   width: 48%;
   float: left;
@@ -230,6 +232,7 @@ li a {
 
 .comment-users {
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .comment-users .commentaires .commentaire{
