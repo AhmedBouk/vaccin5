@@ -46,10 +46,10 @@ include('inc/sidebar.php');
           <th>Nom</th>
           <th>Obligatoire</th>
           <th>Fréquences d'injection</th>
-          <th>Created_at</th>
-          <th>Uptaded_at</th>
+          <th>Date de création</th>
+          <th>Date de modification</th>
           <th>Modifier</th>
-          <th>Delete</th>
+          <th>Supprimer</th>
         </tr>
       <?php foreach ($tableauVaccins as $tableauVaccin) {
           echo '<tr><td>'.$tableauVaccin['id']

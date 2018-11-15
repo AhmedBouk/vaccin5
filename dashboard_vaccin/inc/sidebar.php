@@ -9,7 +9,7 @@
         <img src="../assets/image/logo.png" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p>Administrateur</p>
+        <p><?php echo $_SESSION['user']['prenom'].'  '.$_SESSION['user']['nom']; ?></p>
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
     </div>

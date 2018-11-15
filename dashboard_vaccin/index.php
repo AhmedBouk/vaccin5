@@ -3,12 +3,33 @@ include('../inc/pdo.php');
 include('../inc/fonctions.php');
 include('inc/request.php');
 
+require '../vendor/autoload.php';
+
+use JasonGrimes\Paginator;
+
 //Compte le nombre d'utilisateurs
 $nomTable = 'v5_users';
 $nbreUsers = compteItem($nomTable);
 //Compte le nombre de vaccins
 $nomTable = 'v5_vaccin';
 $nbreVaccins = compteItem($nomTable);
+
+$nomTable = 'v5_contact';
+$nbreItem = compteItem($nomTable);
+$itemPerPage = 10;
+$page = 1;
+$offset = 0;
+$urlPattern = '?page=(:num)';
+
+
+if (!empty($_GET['page']) && is_numeric($_GET['page'])) {
+    $page = $_GET['page'];
+    $offset = $page * $itemPerPage - $itemPerPage;
+}
+
+$paginator = new Paginator($nbreItem, $itemPerPage, $page, $urlPattern);
+
+$tableauContacts = requeteListe($nomTable,$offset,$itemPerPage);
 
 include('inc/header.php');
 include('inc/sidebar.php');
@@ -51,6 +72,39 @@ include('inc/sidebar.php');
         </div>
       </div>
   </div>
+<div class="box">
+  <div  class="box-body table-responsive no-padding">
+    <table  class="table table-hover">
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Objet</th>
+        <th>Message</th>
+        <th>Date de création</th>
+      </tr>
+      <?php foreach ($tableauContacts as $tableauContact) {?>
+      <tr>
+        <td><?php echo $tableauContact['nom'];?></td>
+        <td><?php echo $tableauContact['mail'];?></td>
+        <td><?php echo $tableauContact['objet'];?></td>
+        <td><?php echo $tableauContact['message'];?></td>
+        <td><?php changementDate($tableauContact,'created_at'); ?></td>
+        <td>
+            <a href="delete_message.php?id=<?php echo $tableauContact['id'];?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer?')"><i class="fa fa-trash-o"></i>
+            </a>
+        </td>
+      </tr>
+      <?php  } ?>
+    </table>
+    <!--Affichage de la Pagination -->
+    <?php echo $paginator ?>
+  </div>
+
+  </div>
+
+
+
+  <!--  class mailbox-read-message -->
     <div class="box-footer">
       Footer
     </div>

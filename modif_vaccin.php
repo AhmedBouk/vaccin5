@@ -107,7 +107,7 @@ include('inc/header.php');
                   <th class="parent"><p class="enfant">Nom</p></th>
                   <th class="parent"><p class="enfant">Obligatoire / Recommandé</p></th>
                   <th class="parent"><p class="enfant">Effectué</p></th>
-                  <th class="parent"><p class="enfant">Fréquences d'injection</p></th>
+                  <th class="parent"><p class="enfant">Fréquence d'injections</p></th>
                   <th class="parent"><p class="enfant">Ajouter</p></th>
                 </tr>
                 <?php foreach ($listVaccins as $listVaccin) {

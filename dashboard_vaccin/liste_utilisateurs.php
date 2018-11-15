@@ -40,17 +40,17 @@ include('inc/sidebar.php');
 <div class="box">
   <div class="box-header"></div>
     <div  class="box-body table-responsive no-padding">
-      <table id="example2" class="table table-hover">
+      <table  class="table table-hover">
         <tr>
           <th>Id</th>
           <th>Email</th>
           <th>Nom</th>
           <th>Prénom</th>
           <th>Date de création</th>
-          <th>Modificaton le</th>
+          <th>Date de modification</th>
           <th>Role</th>
           <th>Modifier</th>
-          <th>Delete</th>
+          <th>Supprimer</th>
         </tr>
         <?php foreach ($tableauUsers as $tableauUser) {?>
         <tr>
