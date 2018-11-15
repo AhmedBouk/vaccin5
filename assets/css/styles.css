@@ -184,6 +184,7 @@ li a {
 
 .form .button , .formulaire .button ,.modif_vaccin .button, .button_div .button {
   text-transform: uppercase;
+  text-decoration: none;
   outline: 0;
   background-color: #44B2AE;
   width: 100%;
@@ -305,9 +306,12 @@ li a {
   resize: none;
 }
 
+
 .table_vaccin th, .table_vaccin td{
   border: 2px solid black;
 }
+
+
 
 .table_vaccin .parent {
   text-align: center;

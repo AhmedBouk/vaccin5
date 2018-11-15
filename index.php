@@ -20,7 +20,7 @@
          <img src="assets/image/image2.jpg" alt="Image2 slider">
        </li>
        <li>
-         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/ibiza.jpg" alt>
+         <img src="assets/image/photo3.jpg" alt="Image3 Slider">
        </li>
      </ul>
    </div>

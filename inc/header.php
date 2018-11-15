@@ -44,6 +44,8 @@
           <ul id="menu">
               <?php if(is_logged()) {
                      echo '<li> <a href="profil.php">Mon profil</a> </li>';
+                     echo '<li> <a href="contact.php">Contact</a> </li>';
+                     echo '<li> <a href="faq.php">FAQ</a> </li>';
                      echo '<li> <a href="deconnexion.php">Déconnexion</a> </li>';
                    ?>
                         <style media="screen">
