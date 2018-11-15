@@ -457,10 +457,12 @@ margin-left: 13%;
   text-transform: uppercase;
   letter-spacing: -40px;
   margin-left: -20px;
+  padding-top: 50px;
+  color: #44B2AE;
 }
 
 .notfound .notfound-404 h2 span {
-  text-shadow: -8px 0px 0px #fff;
+  text-shadow: -8px 0px 0px #B0E0E6;
 }
 
 .notfound .notfound-404 h3 {
@@ -470,7 +472,7 @@ margin-left: 13%;
   font-weight: 700;
   text-transform: uppercase;
   margin: 0px;
-  color: #110934;
+  color: #50d1cc;
   letter-spacing: 3px;
   padding-left: 6px;
 }
@@ -480,9 +482,21 @@ margin-left: 13%;
   font-size: 20px;
   font-weight: 400;
   text-transform: uppercase;
-  color: #110934;
+  color: #50d1cc;
   margin-top: 0px;
   margin-bottom: 25px;
+}
+.notfound p {
+color: #50d1cc;
+text-decoration: none;
+font-family: fantasy;
+}
+
+.notfound p a{
+color: #18408B;
+text-decoration: none;
+font-family: fantasy;
+font-weight: bold;
 }
 
 
@@ -661,7 +675,7 @@ body {
   }
 }
 
-responsive 
+responsive
 @media (max-width : 540px) {
   header .bienvenue{
     padding-top: 30px;
