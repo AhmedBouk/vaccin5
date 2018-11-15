@@ -54,10 +54,12 @@ header .titre h2{
 }
 
 header .bienvenue{
-  float: right;
-  width: 15%;
-  margin: 20px 2% 0 2%;
-  /* background-color: ; */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+
+
 }
 
 
@@ -269,7 +271,18 @@ li a:hover {
   margin-left:  38%;
 }
 
-/* FOOTER  */
+
+.form .red{
+  background-color: #F44336;
+}
+
+.form .red:hover,.form .red:active,.form .red:focus {
+  background-color: #DE3B30;
+}
+
+/* FOOTER */
+
+
 /* Notre equipe */
 footer{
   background-color: #577ba0;
@@ -381,7 +394,7 @@ margin-left: 13%;
   margin-left: -20px;
 }
 
-.notfound .notfound-404 h2>span {
+.notfound .notfound-404 h2 span {
   text-shadow: -8px 0px 0px #fff;
 }
 

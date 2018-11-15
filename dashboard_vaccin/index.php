@@ -3,6 +3,10 @@ include('../inc/pdo.php');
 include('../inc/fonctions.php');
 include('inc/request.php');
 
+require '../vendor/autoload.php';
+
+use JasonGrimes\Paginator;
+
 //Compte le nombre d'utilisateurs
 $nomTable = 'v5_users';
 $nbreUsers = compteItem($nomTable);
@@ -10,6 +14,24 @@ $nbreUsers = compteItem($nomTable);
 $nomTable = 'v5_vaccin';
 $nbreVaccins = compteItem($nomTable);
 
+$nomTable = 'v5_contact';
+$nbreItem = compteItem($nomTable);
+$itemPerPage = 15;
+$page = 1;
+$offset = 0;
+$urlPattern = '?page=(:num)';
+
+
+if (!empty($_GET['page']) && is_numeric($_GET['page'])) {
+    $page = $_GET['page'];
+    $offset = $page * $itemPerPage - $itemPerPage;
+}
+
+$paginator = new Paginator($nbreItem, $itemPerPage, $page, $urlPattern);
+
+$tableauContact = requeteListe($nomTable,$offset,$itemPerPage);
+
+debug($tableauContact);
 include('inc/header.php');
 include('inc/sidebar.php');
 ?>
@@ -51,6 +73,11 @@ include('inc/sidebar.php');
         </div>
       </div>
   </div>
+
+
+
+
+  <!--  class mailbox-read-message -->
     <div class="box-footer">
       Footer
     </div>

@@ -50,7 +50,8 @@ include('inc/request.php');
   </h1>
   <ol class="breadcrumb">
     <li><a href="index.php"><i class="fa fa-dashboard"></i>Home</a></li>
-         <li class="active">Modification utilisateurs</li>
+    <li><a href="liste_utilisateurs.php"><i class="fa fa-dashboard"></i>Listes des utilisateurs</a></li>
+    <li class="active">Modification utilisateurs</li>
   </ol>
 </section>
 
