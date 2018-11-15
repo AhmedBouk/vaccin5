@@ -51,9 +51,9 @@ include('inc/header.php'); ?>
     <div class="form table_vaccin">
         <ul class="description">
               <li>  Nom : <?php echo $profil['nom'] ;?> </li>
-              <li>  Prenom : <?php echo $profil['prenom'] ; ?></li>
+              <li>  Prénom : <?php echo $profil['prenom'] ; ?></li>
               <li>  Sexe : <?php echo $profil['sexe'] ; ?> </li>
-              <li>  mail :  <?php echo $profil['mail'] ; ?> </li>
+              <li>  Mail :  <?php echo $profil['mail'] ; ?> </li>
               <li>  Date de Naissance : <?php echo $profil['date_naissance'] ;?></li>
 
         </ul>
@@ -63,7 +63,7 @@ include('inc/header.php'); ?>
     </div>
 </div>
 
-<div class="button_div">
+<div class="button_div bla">
   <a class="button center" href="modif_vaccin.php">Ajouts et retraits de vaccins</a>
 </div>
 

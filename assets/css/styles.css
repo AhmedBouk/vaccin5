@@ -322,12 +322,13 @@ li a {
   display:inline-block;
 }
 
-.button_div{
-  margin-bottom: 30px;
+.bla{
+  /* margin-bottom: 30px; */
+  margin-left: 34%;
 }
-.button_div .center{
-  margin-left:  38%;
-}
+/* .center{
+margin:30%;
+} */
 
 
 .form .red{
