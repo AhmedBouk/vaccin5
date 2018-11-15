@@ -102,9 +102,9 @@ li a {
 .nav ul{
     display: table;
     width: 700px;
-    margin:  auto;
-    padding: 0;
+    /* margin:  auto; */
 }
+
 .nav ul li{
     display: table-cell;
 

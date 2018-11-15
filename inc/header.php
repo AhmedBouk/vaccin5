@@ -46,6 +46,9 @@
                      echo '<li> <a href="profil.php">Mon profil</a> </li>';
                      echo '<li> <a href="contact.php">Contact</a> </li>';
                      echo '<li> <a href="faq.php">FAQ</a> </li>';
+                     if(is_admin()) {
+                       echo '<li><a href="dashboard_vaccin/index.php">Back Office</a></li>';
+                     }
                      echo '<li> <a href="deconnexion.php">Déconnexion</a> </li>';
                    ?>
                         <style media="screen">
@@ -54,15 +57,13 @@
                         </style>
                 <?php
                           } ?>
+                <?php if(is_logged() === FALSE) {?>
 
                       <li> <a href="contact.php">Contact</a> </li>
                       <li> <a href="faq.php">FAQ</a> </li>
 
-                <?php
-                      if (is_admin()) {
-                         echo '<li><a href="dashboard_vaccin/index.php">Back Office</a></li>';
-                      }
-                  ?>
+                    <?php } ?>
+
           </ul>
       </nav>
   </div>
