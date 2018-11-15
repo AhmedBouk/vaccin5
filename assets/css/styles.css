@@ -180,6 +180,7 @@ li a {
 }
 
 .form .button , .formulaire .button ,.modif_vaccin .button, .button_div .button {
+  padding-top: 20px;
   text-transform: uppercase;
   text-decoration: none;
   outline: 0;
