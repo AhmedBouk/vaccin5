@@ -451,8 +451,14 @@ margin-left: 13%;
   margin-left: -20px;
 }
 
+.notfound .notfound-404 h2 {
+  padding-top: 50px;
+
+}
+
 .notfound .notfound-404 h2 span {
-  text-shadow: -8px 0px 0px #fff;
+  text-shadow: -8px 0px 0px #B0E0E6;
+
 }
 
 .notfound .notfound-404 h3 {
@@ -462,9 +468,10 @@ margin-left: 13%;
   font-weight: 700;
   text-transform: uppercase;
   margin: 0px;
-  color: #110934;
+  color: #50d1cc;
   letter-spacing: 3px;
   padding-left: 6px;
+
 }
 
 .notfound h4 {
@@ -472,9 +479,23 @@ margin-left: 13%;
   font-size: 20px;
   font-weight: 400;
   text-transform: uppercase;
-  color: #110934;
-  margin-top: 0px;
+  color: #50d1cc;
   margin-bottom: 25px;
+  margin-top: 0px;
+}
+
+.notfound p {
+color: #50d1cc;
+text-decoration: none;
+font-family: fantasy;
+/* font-weight: bold; */
+}
+
+.notfound p a{
+color: #18408B;
+text-decoration: none;
+font-family: fantasy;
+/* font-weight: bold; */
 }
 
 
