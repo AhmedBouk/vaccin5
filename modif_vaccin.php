@@ -58,7 +58,7 @@ if (!empty($_POST['submit_ret'])) {
   $vaccin_id = clean('idvaccin');
 
   delete_vaccin($id, $vaccin_id);
-  
+
   header('Location: modif_vaccin.php');
 }
 
@@ -72,9 +72,7 @@ include('inc/header.php');
 ?>
 
 <!-- Il y a une id class container autour du body  -->
-<div class="button_div">
-  <a class="button" href="profil.php">Retour</a>
-</div>
+
 
         <div class="modif_vaccin">
               <h2>Ajouts de vaccins</h2>
