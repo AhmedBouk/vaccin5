@@ -64,18 +64,18 @@ include('inc/header.php'); ?>
 </div>
 
 <div class="button_div">
-  <a class="button center" href="modif_vaccin.php">Ajout retrait de vaccin</a>
+  <a class="button center" href="modif_vaccin.php">Ajouts et retraits de vaccins</a>
 </div>
 
 <?php if ($vaccin_id = $tableauId) {
   ?><div class="modif_vaccin">
 
-    <h2>Vaccins obligatoires efféctués</h2>
+    <h2>Vaccins obligatoires effectués</h2>
       <table class="form table_vaccin">
 
         <tr>
           <th class="parent"><p class="enfant">Nom</p></th>
-          <th class="parent"><p class="enfant">Fréquences d'injection</p></th>
+          <th class="parent"><p class="enfant">Fréquence d'injections</p></th>
           <th class="parent"><p class="enfant">Rappel</p></th>
         </tr>
 
@@ -95,12 +95,12 @@ include('inc/header.php'); ?>
             endforeach; ?>
       </table>
 
-      <h2>Vaccins non obligatoires efféctués</h2>
+      <h2>Vaccins non obligatoires effectués</h2>
       <table class="form table_vaccin">
 
         <tr>
           <th class="parent"><p class="enfant">Nom</p></th>
-          <th class="parent"><p class="enfant">Fréquences d'injection</p></th>
+          <th class="parent"><p class="enfant">Fréquence d'injections</p></th>
           <th class="parent"><p class="enfant">Rappel</p></th>
         </tr>
 

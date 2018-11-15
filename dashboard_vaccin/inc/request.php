@@ -185,8 +185,7 @@ function requeteListe($nomTable,$offset,$itemPerPage){
   $sql = "SELECT * FROM $nomTable LIMIT $offset,$itemPerPage";
   $query= $pdo -> prepare($sql) ;
   $query-> execute();
-  $tableau = $query -> fetchall();
-  return $tableau;
+  return $query -> fetchall();
 }
 //Fonction pour effacer une ligne dans la table
 function delete($nomTable,$id){
@@ -204,7 +203,6 @@ function compteItem($nomTable){
   $sql = "SELECT COUNT(id) FROM $nomTable ";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
-  $count = $stmt->fetchColumn();
-  return $count;
+  return $stmt->fetchColumn();
 }
 ?>
