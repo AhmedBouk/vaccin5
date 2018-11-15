@@ -4,7 +4,7 @@
 body{
   font: 400 16px/1.3 'Roboto', Arial, sans-serif;
   color: #110934;
-  background: #ECF0F5;
+  background-color: #ECF0F5;
 }
 
 h1{
@@ -18,7 +18,6 @@ h2 {
   font-size: 2em;
   color: #fff;
   margin: auto;
-
 }
 #wrapper {
 	width:100%;
@@ -34,7 +33,7 @@ h2 {
 /* header */
 header{
   height: 200px;
-  background-color: #4caf50;
+  background-color: #44B2AE;
 }
 
 header img {
@@ -90,13 +89,13 @@ li a {
 /* Change the link color on hover */
     li a:hover {
     /* background-color: #BDCC6D; */
-    color: #FF4F5C;
+    color: #eee;
 }
 
 
 /* barenav */
 .nav {
-  /* background: #BDCC6D; */
+  /* background-color: #BDCC6D; */
   font: 1em sans-serif;
 
 }
@@ -156,7 +155,7 @@ li a {
 .form {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
@@ -166,7 +165,7 @@ li a {
 
 .form input, .formulaire input, .formulaire textarea, .form .radio {
   outline: 0;
-  background: #f2f2f2;
+  background-color: #f2f2f2;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
@@ -186,7 +185,7 @@ li a {
 .form .button , .formulaire .button ,.modif_vaccin .button, .button_div .button {
   text-transform: uppercase;
   outline: 0;
-  background: #4CAF50;
+  background-color: #44B2AE;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -198,7 +197,7 @@ li a {
 }
 .form .button:hover,.form .button:active,.form .button:focus,
 .formulaire .button:hover,.formulaire .button:active,.formulaire .button:focus {
-  background: #43A047;
+  background-color: #50D1CC;
 }
 .form .message , .form .pwdoublie {
   margin: 15px 0 0;
@@ -206,9 +205,14 @@ li a {
   font-size: 12px;
 }
 .form .message a , .form .pwdoublie a{
-  color: #4CAF50;
+  color: #44B2AE;
   text-decoration: none;
 }
+.form .message a:hover , .form .pwdoublie a:hover{
+  color: #50D1CC;
+  text-decoration: none;
+}
+
 .form .register-form {
   display: none;
 }
@@ -219,7 +223,7 @@ li a {
 .commentaires{
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   /* max-width: 360px; */
   /* margin: 0 auto 100px; */
   padding: 20px;
@@ -235,18 +239,19 @@ li a {
   width: 20%;
 }
 .comment-users h2{
+  color: #44B2AE;
   margin-bottom: 20px;
 }
 
 .comment-users .commentaires .commentaire p:first-child{
-  color: #4CAF50;
+  color: #44B2AE;
   font-size: 1.3em;
   font-weight: bold;
   padding-bottom: 5px;
 }
 
 .comment-users .commentaires .commentaire p:last-child{
-  color: #4CAF50;
+  color: #44B2AE;
   font-size: 0.7em;
 }
 
@@ -281,7 +286,7 @@ li a {
 .table_vaccin {
   position: relative;
   z-index: 1;
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   max-width: 360px;
   margin: 0 auto 100px;
   padding: 45px;
@@ -291,7 +296,7 @@ li a {
 
 .table_vaccin input, .table_vaccin input, .table_vaccin textarea, .table_vaccin .radio {
   outline: 0;
-  background: #f2f2f2;
+  background-color: #f2f2f2;
   width: 100%;
   border: 0;
   margin: 0 0 15px;
@@ -320,22 +325,29 @@ li a {
   margin-left:  38%;
 }
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 409b11d6db5454b4f1866caa4a63330a7221db17
 .form .red{
-  background: #F44336;
+  background-color: #F44336;
 }
 
 .form .red:hover,.form .red:active,.form .red:focus {
-  background: #DE3B30;
+  background-color: #DE3B30;
 }
 
 /* FOOTER */
+<<<<<<< HEAD
+=======
 
 
 
+>>>>>>> 409b11d6db5454b4f1866caa4a63330a7221db17
 /* Notre equipe */
 footer{
-  background-color: #4caf50;
+  background-color: #50D1CC;
+  padding-top: 30px;
 }
 
 .wrapF {
@@ -361,8 +373,8 @@ margin-left: 13%;
 	float: left;
 	width: 23%;
 	height: 25%;
-	margin: 0 0 0 1%;
-	padding: 0;
+	margin-bottom: 1%;
+	padding-top: 30px;
 }
 .photos div:first-child {
 	margin-left: 0;
@@ -378,16 +390,18 @@ margin-left: 13%;
   .photo p {
     text-align: center;
     font-weight: bold;
+    padding-top: 14px;
+    color: #fff;
 
   }
 
   .zoom div img {
-  	transform: scale(1);
+  	transform: scale(0.9);
   	transition: .3s ease-in-out;
   }
 
   .zoom div:hover img {
-  	transform: scale(1.3);
+  	transform: scale(1.1);
   }
 /* FOOTER */
 /* Legal */
@@ -397,7 +411,7 @@ margin-left: 13%;
 
 .copyright p{
   text-align: center;
-  color: #110934;
+  color: #fff;
   font-size: 0.8em;
 }
 
@@ -477,7 +491,7 @@ margin-left: 13%;
 body {
   font-family: 'Open Sans';
   font-size: 1.2em;
-  background: #eee;
+  background-color: #eee;
 }
 
 .content {
@@ -495,7 +509,7 @@ body {
 
 .question {
   position: relative;
-  background: #d8cdcd;
+  background-color: #d8cdcd;
   margin: 0;
   padding: 10px 10px 10px 50px;
   display: block;
@@ -504,7 +518,7 @@ body {
 }
 
 .answers {
-  background: #896565;
+  background-color: #896565;
   padding: 0px 15px;
   margin: 5px 0;
   height: 0;
