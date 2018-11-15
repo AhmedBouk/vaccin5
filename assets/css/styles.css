@@ -239,15 +239,9 @@ li a {
 }
 
 .comment-users .commentaires .commentaire{
-<<<<<<< HEAD
-
-  margin: 0 20px 0 20px;
-  width: 20%;
-=======
   margin: 0 auto;
   width: 25%;
   float: right;
->>>>>>> 058bb7a5cad27ce99e48eb9db727646477d9c248
 }
 .comment-users h2{
   color: #44B2AE;
