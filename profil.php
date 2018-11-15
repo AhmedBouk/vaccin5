@@ -72,11 +72,11 @@ include('inc/header.php'); ?>
     <h2>Description</h2>
     <div class="form table_vaccin">
         <ul class="description">
-              <li>  Nom : <?php echo $profil['nom'] ;?> </li>
-              <li>  Prenom : <?php echo $profil['prenom'] ; ?></li>
-              <li>  Sexe : <?php echo $profil['sexe'] ; ?> </li>
-              <li>  mail :  <?php echo $profil['mail'] ; ?> </li>
-              <li>  Date de Naissance : <?php echo $profil['date_naissance'] ;?></li>
+              <li>Nom :<?php echo $profil['nom'] ;?> </li>
+              <li>Prénom : <?php echo $profil['prenom'] ; ?></li>
+              <li>Sexe : <?php echo $profil['sexe'] ; ?> </li>
+              <li>E-mail : <?php echo $profil['mail'] ; ?> </li>
+              <li>Date de Naissance : <?php echo $profil['date_naissance'] ;?></li>
         </ul>
         <div class="button_div">
           <a class="button" href="modifier_profil.php">Modifier profil</a>
@@ -92,7 +92,7 @@ include('inc/header.php'); ?>
       <tr>
         <th class="parent"><p class="enfant">Nom</p></th>
         <th class="parent"><p class="enfant">Fait</p></th>
-        <th class="parent"><p class="enfant">Fréquences d'injection</p></th>
+        <th class="parent"><p class="enfant">Fréquence d'injections</p></th>
         <th class="parent"><p class="enfant">Rappel</p></th>
       </tr>
 
@@ -132,7 +132,7 @@ include('inc/header.php'); ?>
     </table>
 
     <div class="button_div">
-      <a class="button center" href="modif_vaccin.php">Ajout retrait de vaccin</a>
+      <a class="button center" href="modif_vaccin.php">Ajouts ou retraits de vaccins</a>
     </div>
 
     <div class="button_div">
