@@ -57,9 +57,6 @@ include('inc/header.php'); ?>
               <li>  Date de Naissance : <?php echo $profil['date_naissance'] ;?></li>
 
         </ul>
-        <div class="button_div">
-          <a class="button" href="modifier_profil.php">Modifier profil</a>
-        </div>
     </div>
 </div>
 
