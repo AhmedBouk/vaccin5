@@ -76,35 +76,36 @@
 
 
 <div class="comment-users">
-  <h2 id="fittext_commentaires">Commentaires de nos utilisateurs satisfaits.</h2>
-  <div class="commentaires">
-    <div class="commentaire">
-      <p>Michel</p>
-      <p>Je trouve ce service utile et d'utilité publique.</p>
-      <p>Inscrit depuis le 10/05/2017</p>
-    </div>
+    <h2 id="fittext3">Commentaires de nos utilisateurs satisfaits.</h2>
+        <div class="commentaires">
 
-    <div class="commentaire">
-      <p>Berénice</p>
-      <p>Je l'utilise pour mes enfants, plus de risque d'oublier.</p>
-      <p>Inscrite depuis le 21/09/2017</p>
-    </div>
+          <div class="commentaire">
+            <p>Michel</p>
+            <p>Je trouve ce service utile et d'utilité publique.</p>
+            <p>Inscrit depuis le 10/05/2017</p>
+          </div>
 
-    <div class="commentaire">
-      <p>Rashid</p>
-      <p>Simple et utile, je le recommande et bla bla bla.</p>
-      <p>Inscrit depuis le 01/02/2018</p>
-    </div>
+          <div class="commentaire">
+            <p>Berénice</p>
+            <p>Je l'utilise pour mes enfants, plus de risque d'oublier.</p>
+            <p>Inscrite depuis le 21/09/2017</p>
+          </div>
 
-    <div class="commentaire">
-      <p>Joseph</p>
-      <p>Super Cool, youp salla boule et bla bla bla.</p>
-      <p>Inscrit depuis le 30/10/2017</p>
-    </div>
+          <div class="commentaire">
+            <p>Rashid</p>
+            <p>Simple et utile, je le recommande à tous mes amis.</p>
+            <p>Inscrit depuis le 01/02/2018</p>
+          </div>
+
+          <div class="commentaire">
+            <p>Joseph</p>
+            <p>Super Cool, l'equipe du site à l'air genial.</p>
+            <p>Inscrit depuis le 30/10/2017</p>
+          </div>
 
 
-  </div>
-<div class="clear"></div>
+        </div>
+    <div class="clear"></div>
 </div>
 
 
