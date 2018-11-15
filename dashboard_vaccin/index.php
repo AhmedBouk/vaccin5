@@ -16,7 +16,7 @@ $nbreVaccins = compteItem($nomTable);
 
 $nomTable = 'v5_contact';
 $nbreItem = compteItem($nomTable);
-$itemPerPage = 15;
+$itemPerPage = 10;
 $page = 1;
 $offset = 0;
 $urlPattern = '?page=(:num)';
@@ -29,9 +29,8 @@ if (!empty($_GET['page']) && is_numeric($_GET['page'])) {
 
 $paginator = new Paginator($nbreItem, $itemPerPage, $page, $urlPattern);
 
-$tableauContact = requeteListe($nomTable,$offset,$itemPerPage);
+$tableauContacts = requeteListe($nomTable,$offset,$itemPerPage);
 
-debug($tableauContact);
 include('inc/header.php');
 include('inc/sidebar.php');
 ?>
@@ -73,7 +72,35 @@ include('inc/sidebar.php');
         </div>
       </div>
   </div>
+<div class="box">
+  <div  class="box-body table-responsive no-padding">
+    <table  class="table table-hover">
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Objet</th>
+        <th>Message</th>
+        <th>Date de création</th>
+      </tr>
+      <?php foreach ($tableauContacts as $tableauContact) {?>
+      <tr>
+        <td><?php echo $tableauContact['nom'];?></td>
+        <td><?php echo $tableauContact['mail'];?></td>
+        <td><?php echo $tableauContact['objet'];?></td>
+        <td><?php echo $tableauContact['message'];?></td>
+        <td><?php changementDate($tableauContact,'created_at'); ?></td>
+        <td>
+            <a href="delete_message.php?id=<?php echo $tableauContact['id'];?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer?')"><i class="fa fa-trash-o"></i>
+            </a>
+        </td>
+      </tr>
+      <?php  } ?>
+    </table>
+    <!--Affichage de la Pagination -->
+    <?php echo $paginator ?>
+  </div>
 
+  </div>
 
 
 
