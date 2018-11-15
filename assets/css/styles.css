@@ -110,6 +110,11 @@ li a {
 
 }
 
+/* titre page profil */
+.modif_vaccin h2 {
+  color: black;
+
+}
 
 
 
@@ -502,7 +507,7 @@ body {
 
 .question {
   position: relative;
-  background-color: #d8cdcd;
+  background-color: #79b2af;
   margin: 0;
   padding: 10px 10px 10px 50px;
   display: block;
@@ -511,7 +516,7 @@ body {
 }
 
 .answers {
-  background-color: #896565;
+  background-color: #dbd5bb;
   padding: 0px 15px;
   margin: 5px 0;
   height: 0;
@@ -559,10 +564,14 @@ body {
   display: none;
 }
 
+@media (max-width : 550px){
+.modif_vaccin h2{
+  font-size: 1.5em;
+}
+}
 
 
-
-
+/* responsive page 404 767 px */
 @media only screen and (max-width: 767px) {
   .notfound .notfound-404 {
     height: 200px;
@@ -571,7 +580,7 @@ body {
     font-size: 200px;
   }
 }
-
+/* //responsive page 404 480px */
 @media only screen and (max-width: 480px) {
   .notfound .notfound-404 {
     height: 162px;
@@ -592,34 +601,74 @@ body {
   display:none;
 }
 
-@media screen and (max-width: 60em) {
+@media screen and (max-width: 1050px) {
 
   #menu {
     display:none;
+
   }
 
   .slicknav_menu {
     display:block;
+
+
   }
+}
+@media (max-width: 450px){
+  #menu{ margin-right: 50px;}
 }
 /* responsive du titre */
 @media (max-width : 480px) {
   header .titre{
     font-size: 1em;
+
   }
 }
+/* responsive titre 480px taille ecriture */
+@media (max-width : 480px) {
+  header .titre{
+    font-size: 1em;
+
+  }
+}
+/* responsive du titre */
+@media (max-width : 1050px) {
+  header {
+    height: 140px;
+  }
+}
+@media (max-width : 1050px) {
+  header .titre {
+    padding-top: 20px;
+  }
+}
+
 /* responsive bienvenue [user] */
 @media (max-width : 1050px) {
   header .bienvenue{
     position: static;
-    float:right;
-    margin-top: 30px;
+    text-align: center;
+    margin-top: 20px;
     margin-right: 10px;
+    margin-bottom: 20px;
   }
 }
-/* responsive notre equipe */
-@media (max-width : 1270px){
-  .wrapF .photos{
+@media (max-width : 540px) {
+  header .bienvenue{
+    padding-top: 30px;
+    text-align: center;
+  }
+}
+@media (max-width : 540px) {
+  header .wrapHF img{
+    display: none;
+  }
+}
 
+/* //responsive pour 1900px header taille */
+@media (min-width :1900px){
+  /* header */
+  header{
+    height: 220px;
   }
 }
