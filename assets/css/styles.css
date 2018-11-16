@@ -20,9 +20,10 @@ h2 {
   margin: auto;
 }
 #wrapper {
-	width:100%;
+	/* width:100%; */
 	max-width: 800px;
 	margin: 0 auto;
+  text-align: center;
 }
 
 .wrapHF {
@@ -193,11 +194,27 @@ li a {
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
-
 }
+
 .button_div{
   margin-bottom: 20px;
 }
+
+ .button_div.bla {
+   position: relative;
+ }
+
+ .button_div.bla a{
+
+   width:100%;
+   margin-left: -52%;
+   display: inline-block;
+   /* position: absolute;
+left: 50%;
+transform: translateX(-50%); */
+ }
+
+
 .form .button:hover,.form .button:active,.form .button:focus,
 .formulaire .button:hover,.formulaire .button:active,.formulaire .button:focus {
   background-color: #50D1CC;
@@ -737,13 +754,31 @@ font-weight: bold;
 @media (max-width : 790px) {
   .contenu .inscription {
     width: 98%;
+  }.photos div{
+    width: 48%;
   }
 }
-@media (max-width :1060px;){
+@media (max-width :1060px){
 .comment-users .commentaires .commentaire{
 
   margin: 0 20px 0 20px;
   float: left;
   width: 40%;
  }
+}
+@media (max-width : 480px){
+  .photos div {
+    width: 98%;
+  } .wrapF .titre_footer h2 {
+    font-size: 2em;
+  } .modif_vaccin  {
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width : 425px){
+  .bla a {
+    text-align: center;
+    font-size: 0.8em;
+  }
 }

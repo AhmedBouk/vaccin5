@@ -63,7 +63,9 @@ include('inc/header.php'); ?>
     </div>
 </div>
 
+
 <div class="button_div bla">
+
   <a class="button center" href="modif_vaccin.php">Ajouts et retraits de vaccins</a>
 </div>
 
@@ -118,8 +120,6 @@ include('inc/header.php'); ?>
         <a class="button" href="index.php">Retour</a>
       </div>
   </div><?php
-
-}else {
 
 } ?>
 
