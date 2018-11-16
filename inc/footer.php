@@ -50,6 +50,8 @@
     jQuery("#fittext3").fitText(1.5);
     jQuery("#fittext4").fitText(1.8);
     jQuery("#fittext_footer").fitText(0.8);
+  
+
 
     </script>
 
@@ -87,7 +89,7 @@
             animation: "fade", // slide
             controlNav: false,
             directionNav: false,
-            slideshowSpeed: 2500,  
+            slideshowSpeed: 2500,
           });
 
 
