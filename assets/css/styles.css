@@ -711,6 +711,13 @@ font-weight: bold;
   header {
     height: 100px;
   }
+  .photo p {
+      text-align: center;
+      font-weight: bold;
+      padding-top: 5px;
+      color: #fff;
+      font-size: 0.8em;
+    }
 }
 /* //responsive pour 1900px header taille */
 @media (min-width :1900px){
