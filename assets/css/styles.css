@@ -195,7 +195,9 @@ li a {
   cursor: pointer;
 
 }
-
+.button_div{
+  margin-bottom: 20px;
+}
 .form .button:hover,.form .button:active,.form .button:focus,
 .formulaire .button:hover,.formulaire .button:active,.formulaire .button:focus {
   background-color: #50D1CC;
